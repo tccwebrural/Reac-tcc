@@ -10,16 +10,33 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 
-const ListReportPage = (): ReactElement => {        
+// export function StickyHeadTable() {
+ 
+// }
+const ListReportPage = (): ReactElement=> {    
+  
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    interface Column {
-        id: 'name' | 'code';
-        label: string;
-        minWidth?: number;
-        align?: 'right';
-        format?: (value: number) => string;
-    }
+  const handleChangePage = (event: unknown, newPage: number) => {
+      setPage(newPage);
+  };
 
+  const handleChangeRowsPerPage = (
+      event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+  interface Column {
+    id: 'name' | 'code';
+    label: string;
+    minWidth?: number;
+    align?: 'right';
+    format?: (value: number) => string;
+  }
+  
     const columns: readonly Column[] = [
         { id: 'name', label: 'Name', minWidth: 100 },
         { id: 'code', label: 'Descripition', minWidth: 200 },
@@ -40,21 +57,7 @@ const ListReportPage = (): ReactElement => {
         createData('George', 'Vacina aplicada'),
     ];
 
-    export default function StickyHeadTable() {
-        const [page, setPage] = React.useState(0);
-        const [rowsPerPage, setRowsPerPage] = React.useState(10);
-      
-        const handleChangePage = (event: unknown, newPage: number) => {
-            setPage(newPage);
-        };
-      
-        const handleChangeRowsPerPage = (
-            event: React.ChangeEvent<HTMLInputElement>
-        ) => {
-          setRowsPerPage(+event.target.value);
-          setPage(0);
-        };
-    
+
 
     return(
     <>
@@ -109,5 +112,5 @@ const ListReportPage = (): ReactElement => {
     </>
     );
     }
-}
+
 export default ListReportPage;
