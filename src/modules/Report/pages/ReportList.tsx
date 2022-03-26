@@ -30,7 +30,7 @@ const ListReportPage = (): ReactElement=> {
   };
 
   interface Column {
-    id: 'name' | 'code';
+    id: 'Data' | 'Description';
     label: string;
     minWidth?: number;
     align?: 'right';
@@ -38,30 +38,44 @@ const ListReportPage = (): ReactElement=> {
   }
   
     const columns: readonly Column[] = [
-        { id: 'name', label: 'Name', minWidth: 100 },
-        { id: 'code', label: 'Descripition', minWidth: 200 },
+        { id: 'Data', label: 'Data', minWidth: 10 },
+        { id: 'Description', label: 'Descrição', minWidth: 600 },
     ];
       
       interface Data {
-        name: string;
-        code: string;
+        Data: String;
+        Description: string;
     }
       
-      function createData(name: string, code: string): Data {
+      function createData(Data: String, Description: string): Data {
         const density = '';
-        return { name, code };
+        return { Data, Description };
     }
 
     const rows = [
-        createData('Leticia', 'Vacina aplicada'),
-        createData('George', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
     ];
-
-
 
     return(
     <>
-        <Paper sx={{ width: '90%', overflow: 'hidden' }}>
+    <Paper sx={
+        { 
+          width: '90%', 
+          overflow: 'hidden',
+          margin: '5%'
+        }
+      }>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -82,7 +96,7 @@ const ListReportPage = (): ReactElement=> {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.Description}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
@@ -111,6 +125,5 @@ const ListReportPage = (): ReactElement=> {
     </Paper>
     </>
     );
-    }
-
+}
 export default ListReportPage;
