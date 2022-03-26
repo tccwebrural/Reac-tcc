@@ -106,12 +106,12 @@ const ListAnimalsPage = (): ReactElement => {
     /** 
      * No inicio do carregamento da pagina é executado a função de carregar os animais 
      */
-    useEffect(() => {
-        //TODO: Implementar chamada para o backend
-        animalService.getAnimals().then(
-            animals => setAnimals(animals)
-        );
-    }, []);
+    // useEffect(() => {
+    //     //TODO: Implementar chamada para o backend
+    //     animalService.getAnimals().then(
+    //         animals => setAnimals(animals)
+    //     );
+    // }, []);
 
     /** Método responsável por abrir o modal de excluir o animal */
     const openDeleteAnimalModal = () => {
@@ -136,7 +136,7 @@ const ListAnimalsPage = (): ReactElement => {
 
 //     
 
-            animalService.delteAnimalById(selectedAnimal.id)
+            // animalService.delteAnimalById(selectedAnimal.id)
         //   animalService.getAnimals()
         //   .then(
         //      ()=> setAnimals(animals)

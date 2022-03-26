@@ -23,7 +23,7 @@ const FormAnimalPage = (): ReactElement => {
         onSubmit={(e) => {
           e.preventDefault();
           console.log(e.currentTarget.validation); //we have accessed to the validation results via submit event currentTarget
-          setErrors(validation()); //get validation errors and set errors state for rendering
+          // setErrors(validation()); //get validation errors and set errors state for rendering
         }}
       >
         <label htmlFor="email">Email:</label>
@@ -54,7 +54,7 @@ const FormAnimalPage = (): ReactElement => {
           }}
         />
         {/* list all name erros*/}
-        <ul>{nameErrors}</ul>
+        {/* <ul>{nameErrors}</ul> */}
         <br />
         <label htmlFor="age">Age:</label>
         <Input
@@ -85,10 +85,10 @@ const FormAnimalPage = (): ReactElement => {
             isUnicode: true,
           }}
           onBlur={() => {
-            setAddressErrors(validationForAddress());
+            // setAddressErrors(validationForAddress());
           }}
         />
-        <ul>{onlyAddressErrors}</ul>
+        {/* <ul>{onlyAddressErrors}</ul> */}
         <button>Send</button>
       </Form>
     </div>    
