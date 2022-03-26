@@ -1,6 +1,8 @@
 import { FC } from "react";
 import FormAnimalPage from "../modules/animals/pages/Form";
 import ListAnimalsPage from "../modules/animals/pages/List";
+import FormReportPage  from "../modules/Report/pages/ReportForm";
+import ListReportPage  from "../modules/Report/pages/ReportList";
 
 interface Route {
 	key: string;
@@ -30,5 +32,11 @@ export const ROOT_ROUTES: Array<Route> = [
 		component: FormAnimalPage,
 	},
 
-
+	{
+		key: "create-Form-Report",
+		title: "Lista Relatorio",
+		path: "modules/Repor/Pages/ReportList",
+		enabled: true,
+		component: ListReportPage,
+	},
 ];
