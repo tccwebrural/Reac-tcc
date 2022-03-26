@@ -92,6 +92,8 @@ const FormAnimalPage = (): ReactElement => {
         <button>Send</button>
       </Form>
     </div>    
+
+    
         <Box
             sx={{
                 flexGrow: 1,

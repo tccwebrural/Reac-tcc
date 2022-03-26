@@ -29,12 +29,6 @@ export const ROOT_ROUTES: Array<Route> = [
 		enabled: true,
 		component: FormAnimalPage,
 	},
-	{
-		key: "create-animals",
-		title: "Cadastrar animal",
-		path: "animals/form",
-		enabled: true,
-		component: FormAnimalPage,
-	},
+
 
 ];
