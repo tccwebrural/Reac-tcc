@@ -110,5 +110,4 @@ const ListReportPage = (): ReactElement => {
     );
     }
 }
-
 export default ListReportPage;
