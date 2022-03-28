@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, TextField } from "@mui/material";
+import { Box, Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import React, { ReactElement } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -32,6 +32,14 @@ const FormReportPage = (): ReactElement => {
     const onSubmit = (e:any) => {
         console.log(e);
     }
+
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setAge(event.target.value as string);
+    }
+    
+   
     return(<>
        <Container>   
             <div className="form">
@@ -43,12 +51,29 @@ const FormReportPage = (): ReactElement => {
                             type="number" 
                             label="Identificador"  
                             variant="outlined"   
-                            {...register("Identificador")} />
+                            {...register("Identificador")} />                        
                         <TextField 
                             id="Text" 
                             type="date" 
                             variant="outlined"
-                            {...register("Data")} /><br/><br/>
+                            {...register("Data")} />
+                        <Box sx={{ Width: 120 }}>
+                            <FormControl>
+                                <InputLabel id="demo-simple-select-label">Select</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    label="Vacinas" 
+                                    onChange={handleChange}
+                                    {...register("Vacinas")}
+                                    >
+                                <MenuItem value={1}>Vacina 1</MenuItem>
+                                <MenuItem value={2}>Vacina 2</MenuItem>
+                                <MenuItem value={3}>Vacina 3</MenuItem>
+                                </Select>    
+                            </FormControl>
+                        </Box>
                         <TextField 
                             id="Text-Description" 
                             label="Descrição" 
@@ -80,3 +105,5 @@ const FormReportPage = (): ReactElement => {
     </>);
 }
 export default FormReportPage;
+
+
