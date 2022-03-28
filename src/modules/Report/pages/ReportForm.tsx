@@ -58,7 +58,7 @@ const FormReportPage = (): ReactElement => {
                             variant="outlined"
                             {...register("Data")} />
                         <Box sx={{ Width: 120 }}>
-                            <FormControl>
+                            <FormControl sx={{width: 150}}>
                                 <InputLabel id="demo-simple-select-label">Select</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
@@ -66,7 +66,6 @@ const FormReportPage = (): ReactElement => {
                                     value={age}
                                     label="Vacinas" 
                                     onChange={handleChange}
-                                    {...register("Vacinas")}
                                     >
                                 <MenuItem value={1}>Vacina 1</MenuItem>
                                 <MenuItem value={2}>Vacina 2</MenuItem>
@@ -105,5 +104,3 @@ const FormReportPage = (): ReactElement => {
     </>);
 }
 export default FormReportPage;
-
-
