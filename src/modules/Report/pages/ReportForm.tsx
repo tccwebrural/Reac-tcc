@@ -57,23 +57,6 @@ const FormReportPage = (): ReactElement => {
                             type="date" 
                             variant="outlined"
                             {...register("Data")} />
-                        <Box sx={{ Width: 120 }}>
-                            <FormControl>
-                                <InputLabel id="demo-simple-select-label">Select</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={age}
-                                    label="Vacinas" 
-                                    onChange={handleChange}
-                                    {...register("Vacinas")}
-                                    >
-                                <MenuItem value={1}>Vacina 1</MenuItem>
-                                <MenuItem value={2}>Vacina 2</MenuItem>
-                                <MenuItem value={3}>Vacina 3</MenuItem>
-                                </Select>    
-                            </FormControl>
-                        </Box>
                         <TextField 
                             id="Text-Description" 
                             label="Descrição" 
