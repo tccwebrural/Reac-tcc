@@ -40,8 +40,8 @@ const ListAnimalsPage = (): ReactElement => {
             sortable: false,
         },
         {
-            field: 'sex',
-            headerName: 'Sexo',
+            field: 'category',
+            headerName: 'Categoria',
             sortable: false,
             width: 100,
             headerAlign: 'center',
