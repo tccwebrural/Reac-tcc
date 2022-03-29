@@ -216,9 +216,6 @@ const ListAnimalsPage = (): ReactElement => {
         }
     };
 
-    
-       
-
     return (<>
         <Paper sx={{ width: '100%', height: '100%', overflow: 'hidden', padding: '2%' }}>
             <TableContainer sx={{ height: '500px' }}>
