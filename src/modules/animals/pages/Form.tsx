@@ -1,111 +1,180 @@
+
 import React, { ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
-import { Form, Input, Textarea, useFormValidation } from "reactjs-forms";
+import TextField from '@mui/material/TextField';
+import {Link} from 'react-router-dom'
+
+import { styled } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import { useState } from "react";
-import { Animal } from "../models/Animal.model";
+import {  Animal  } from '../models/Animal.model';
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  margin:'auto',
+  marginTop:120,
+  maxWidth:800,
+  minheight:420,
+  borderTop:2,
+  color: theme.palette.text.secondary,
+}));
 
+const FormAnimalPage = (): ReactElement => {   
 
-
-const FormAnimalPage = (): ReactElement => {
-    const [email, setEmail] = useState<Animal[]>([]);
-    const [name, setName] = useState("");
-    const [age, setAge] = useState("");
-    const [address, setAddress] = useState("");
-    const [errors, setErrors] = useState({});
-    const [addressErrors, setAddressErrors] = useState({});
-  
+  const [dataForm,setDataForm] = useState<Animal>({}); 
     
-    return (<>
+  const onChangeDataForm = (event:any)=>{
+    const {name, value} = event.target;
+    setDataForm({ ...dataForm,[name]: value});
+  }
+  const salvarDadosAnimal = () => {
+    console.log(dataForm);
+  }
 
-<div>
-      <Form
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log(e.currentTarget.validation); //we have accessed to the validation results via submit event currentTarget
-          // setErrors(validation()); //get validation errors and set errors state for rendering
-        }}
-      >
-        <label htmlFor="email">Email:</label>
-        <Input
-         
-          identity="email" //also we have to declare identity attribute because of that value is used to get validation results
-          id="email" //
-          type="email"
-          validation={{
-            required: true,
-            isEmail: true,
+  const showQtyChildreen = () => {
+    if (dataForm.category === 1){
+      return<>
+      <TextField
+          label="Quantidade de Cria"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
           }}
+          name="Quantidade de cria"
+          onChange={onChangeDataForm}
+          value={dataForm.qtyChildreen}
         />
-        {/* list all email erros*/}
-        <ul> </ul>
-        <br />
-        <label htmlFor="name">Name:</label>
-        <Input
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          identity="name"
-          id="name"
-          validation={{
-            isName: {
-              msg: "custom message", //you may or not declare a custom message
-              value: true, //you dont have to declare value also
-            },
-          }}
-        />
-        {/* list all name erros*/}
-        {/* <ul>{nameErrors}</ul> */}
-        <br />
-        <label htmlFor="age">Age:</label>
-        <Input
-          onChange={(e) => setAge(e.target.value)}
-          value={age}
-          identity="age"
-          id="age"
-          validation={{
-            isNumeric: true,
-            min: 17, //you can assign value or msg like object notation
-            max: {
-              value: "120",
-              msg: "What was that.holy lighten!!!!!",
-            },
-          }}
-        />
-        <ul></ul>
-        <br />
-        <label htmlFor="address">Address:</label>
-        <br />
-        <Textarea
-          onChange={(e) => setAddress(e.target.value)}
-          value={address}
-          identity="address"
-          id="address"
-          validation={{
-            required: true,
-            isUnicode: true,
-          }}
-          onBlur={() => {
-            // setAddressErrors(validationForAddress());
-          }}
-        />
-        {/* <ul>{onlyAddressErrors}</ul> */}
-        <button>Send</button>
-      </Form>
-    </div>    
+      </>
+    }
+  }
+  const showQtyMilk = () => {
+    if(dataForm.category === 1 && dataForm.type === 2){
+   return <>
+      <FormControl sx={{ m: 1, minWidth: 220 }}>
+        <InputLabel htmlFor="qtyMilk" >Qtd de Leite por dia</InputLabel>
+          <Select  name='qtyMilk'  label="Grouping" onChange={onChangeDataForm} value={dataForm.qtyMilk}>
+            <MenuItem value={1}>1 Litro</MenuItem>
+            <MenuItem value={2}>2 Litros</MenuItem>
+            <MenuItem value={3}>3 Litros</MenuItem>
+            <MenuItem value={4}>4 Litros</MenuItem>
+            <MenuItem value={5}>5 Litros</MenuItem>
+            <MenuItem value={6}>6 Litros</MenuItem>
+            <MenuItem value={7}>7 Litros</MenuItem>
+            <MenuItem value={8}>8 Litros</MenuItem>
+            <MenuItem value={9}>9 Litros</MenuItem>
+            <MenuItem value={10}>10 Litros</MenuItem>
+            <MenuItem value={11}>À cima de 10 Litros</MenuItem>
+          </Select>
+        </FormControl>
+      </> 
+      
+    }
+  }
+   return (<>
+     
+    <Box sx={{'& .MuiTextField-root': { m: 1, width: '33ch', },}}>
+      <Grid >
+        <Item >
 
-    
-        <Box
-            sx={{
-                flexGrow: 1,
-                backgroundColor: "whitesmoke",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-        >   
-            <Typography variant="h3">Form</Typography>
-        </Box>
-    </>);
+        <h1>Cadastrar Animal</h1>
+        
+        <FormControl sx={{ m: 1, minWidth: 221 }}>
+          <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
+          <Select label="Grouping" name="category" value={dataForm.category} onChange={onChangeDataForm} >
+            <MenuItem  value={1} >Vaca</MenuItem>
+            <MenuItem  value={2} >Boi</MenuItem>
+            <MenuItem  value={3} >Bezerro</MenuItem>
+            
+          </Select>
+          
+        </FormControl>
+        
+        <TextField
+          label="Identificador"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          name='indentifier'
+          onChange={onChangeDataForm}
+          value={dataForm.identifier}
+           />
+          
+        <TextField 
+          label="Nome"
+          type="text"
+          name='name'
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={onChangeDataForm}
+          value={dataForm.name}
+        />
+
+        <TextField
+          label="Data de Nascimento"
+          type="date"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          name='birthday'
+          onChange={onChangeDataForm}
+          value={dataForm.birthday}
+        />
+       <FormControl sx={{ m: 1, minWidth: 221 }}>
+          <InputLabel htmlFor="type">Tipo</InputLabel>
+          <Select label="Grouping" name="type" value={dataForm.type} onChange={onChangeDataForm} >
+            <MenuItem  value={1} >Gado de Corte</MenuItem>
+            <MenuItem  value={2} >Gado Leitero</MenuItem>
+            
+          </Select>
+          
+        </FormControl>
+      
+      <TextField
+          label="Peso Aproximadamente"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          name='weigth'
+          onChange={onChangeDataForm}
+          value={dataForm.weight}
+        />
+       {showQtyChildreen()}
+       {showQtyMilk()}
+
+        <Stack direction="row" spacing={2}>
+        
+          <Grid container justifyContent="flex-end" >
+            <Stack spacing={2} direction="row" sx={{margin:3, marginTop:8}}>
+              
+                <Button variant="contained" color="error"component={Link} to='animals/list'>
+                  Cancelar
+                </Button> 
+            
+              <Button variant="contained" color="success" onClick={salvarDadosAnimal}>
+                Salvar
+              </Button>
+              </Stack>
+            </Grid>
+        </Stack>
+        </Item>
+      </Grid>
+    </Box>
+      
+    </>
+  );
 }
 
-export default FormAnimalPage;
+export default FormAnimalPage
