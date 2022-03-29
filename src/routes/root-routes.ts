@@ -18,8 +18,8 @@ export const ROOT_ROUTES: Array<Route> = [
 	{
 		key: "list-animals",
 		title: "Lista de animais",
-		path: "animals/list",
 		enabled: true,
+		path: "animals/list",
 		component: ListAnimalsPage,
 	},
 	{
@@ -29,12 +29,6 @@ export const ROOT_ROUTES: Array<Route> = [
 		enabled: true,
 		component: FormAnimalPage,
 	},
-	{
-		key: "create-animals",
-		title: "Cadastrar animal",
-		path: "animals/form",
-		enabled: true,
-		component: FormAnimalPage,
-	},
+
 
 ];
