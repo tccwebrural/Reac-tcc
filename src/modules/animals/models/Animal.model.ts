@@ -3,7 +3,7 @@ export interface Animal {
     identifier?: string,
     name?: string,
     birthday?: Date,
-    sex?: string,
+    category?: string,
     type?: string,
     qtyChildreen?: number,
     weight?: number,
