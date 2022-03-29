@@ -1,11 +1,13 @@
 export interface Animal {
     id?: string,
-    identifier?: string,
+    identifier?: number,
     name?: string,
     birthday?: Date,
-    category?: string,
-    type?: string,
+    category?: number,
+    type?: number,
     qtyChildreen?: number,
+    qtyMilk?: number,
     weight?: number,
     userId?: string,
+    
 }
