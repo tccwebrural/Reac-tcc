@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { Animal } from "../models/Animal.model";
 import { AnimalService } from "../services/Animals.service";
+import { Link } from "react-router-dom";
 
 const ListAnimalsPage = (): ReactElement => {
     const animalService = new AnimalService();
@@ -39,8 +40,8 @@ const ListAnimalsPage = (): ReactElement => {
             sortable: false,
         },
         {
-            field: 'sex',
-            headerName: 'Sexo',
+            field: 'category',
+            headerName: 'Categoria',
             sortable: false,
             width: 100,
             headerAlign: 'center',
@@ -74,25 +75,33 @@ const ListAnimalsPage = (): ReactElement => {
             align: 'center',
             sortable: false,
             renderCell: (params: GridRenderCellParams) => {
-                const animalSelected = params.row as Animal;
-                setSelectedAnimal(animalSelected);
+                const currentAnimalRow = params.row as Animal;              
+                // setSelectedAnimal(animalSelected);
                 return (
                     <>
-                        <Fab size="small" color="success">
-                            <EditIcon />
-                        </Fab>
-                        <Fab size="small" color="success" onClick={openDeleteAnimalModal}>
+                  <Link to={`/animals/form/${currentAnimalRow.id}/`}>
+                            <Fab size="small" color="success">
+                                <EditIcon />
+                            </Fab>
+                        </Link>
+                        <Fab size="small" color="success" onClick={() => openDeleteAnimalModal(currentAnimalRow)}>
                             <DeleteIcon />
                         </Fab>
-                        <Fab size="small" color="success">
-                            <ShoppingCartIcon />
-                        </Fab>
-                        <Fab size="small" color="success">
-                            <UpdateIcon />
-                        </Fab>
-                        <Fab size="small" color="success">
-                            <FormatAlignLeftIcon />
-                        </Fab>
+                        <Link to={`/ads/form/${currentAnimalRow.id}/`}>
+                            <Fab size="small" color="success">
+                                <ShoppingCartIcon />
+                            </Fab>
+                        </Link>
+                        <Link to={`/animals/${currentAnimalRow.id}/report`}>
+                            <Fab size="small" color="success">
+                                <UpdateIcon />
+                            </Fab>
+                        </Link>
+                        <Link to={`/animals/${currentAnimalRow.id}/report/form`}>
+                            <Fab size="small" color="success">
+                                <FormatAlignLeftIcon />
+                            </Fab>
+                        </Link>
                     </>
                 );
             },
@@ -106,37 +115,57 @@ const ListAnimalsPage = (): ReactElement => {
     /** 
      * No inicio do carregamento da pagina é executado a função de carregar os animais 
      */
-    // useEffect(() => {
-    //     //TODO: Implementar chamada para o backend
-    //     animalService.getAnimals().then(
-    //         animals => setAnimals(animals)
-    //     );
-    // }, []);
+    useEffect(() => {
+        //TODO: Implementar chamada para o backend
+        animalService.getAnimals().then(
+            animals => setAnimals(animals)
+        );
+    }, []);
 
     /** Método responsável por abrir o modal de excluir o animal */
-    const openDeleteAnimalModal = () => {
+    const openDeleteAnimalModal = (animalSelected: Animal) => {
+        setSelectedAnimal(animalSelected);
         setModalDeleteOpen(true);
     }
+
 
     /**
      * Método responsável por realizar a exclusão do animal no banco de dados;
      * @param isToDelete - Quando verdadeiro a ação de delete é realizada
      */
-
-    const HandleDeleteAnimal = (isToDelete: boolean) => {
+    // 
+    const HandleDeleteAnimal = async (isToDelete: boolean) => {
         
         // useEffect(() => {
         
             
         // }, []);
+      
+        // useEffect(()=>{
+        //     async function deleleteAnimal(selectedAnimal:any){
+            
+        //     await animalService.delteAnimalById(selectedAnimal?.id)
+        //     setAnimals(animals)
+            
+        //     await animalService.getAnimals().then(
+        //         ()=> setAnimals(animals)
+        //     )
+        //     }   
+        //     deleleteAnimal(animals)
+        //     console.log(deleleteAnimal)
+        // },[]) 
+      
         
         if (isToDelete && selectedAnimal && selectedAnimal.id) {
             //TODO: Chamar a api para realizar a exclusão
             //TODO: Chamar a api para atulizar a lista de animais;.
 
-//     
+//      
+       
+                
 
-            // animalService.delteAnimalById(selectedAnimal.id)
+          await  animalService.delteAnimalById(selectedAnimal.id)
+          await animalService.getAnimals().then(setAnimals)
         //   animalService.getAnimals()
         //   .then(
         //      ()=> setAnimals(animals)
@@ -149,7 +178,7 @@ const ListAnimalsPage = (): ReactElement => {
         console.log(animals)
     
         }
-         
+     
   
         // Limpa o animal atual do campo de selecionado para evitar problemas
         setSelectedAnimal({});
@@ -157,21 +186,9 @@ const ListAnimalsPage = (): ReactElement => {
         setModalDeleteOpen(false);
     };
     
-
     const renderDeleteAnimalModal = () => {
         
-        // useEffect(()=>{
-        //     async function deleleteAnimal(selectedAnimal:any){
-            
-        //     await animalService.delteAnimalById(selectedAnimal?.id)
-        //     setAnimals(animals)
-            
-        //     await animalService.getAnimals().then(
-        //         ()=> setAnimals(animals)
-        //     )
-        //     }   
-        //     deleleteAnimal(animals)
-        // },[])  
+      
         if (selectedAnimal) {
             return <Modal
                 hideBackdrop

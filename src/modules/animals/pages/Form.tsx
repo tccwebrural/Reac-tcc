@@ -95,7 +95,7 @@ const FormAnimalPage = (): ReactElement => {
             shrink: true,
           }}
         />
-        <div id='camposVaca'>
+        {/* <div id='camposVaca'>
          <TextField
           label="Quantidade de Cria"
           type="number"
@@ -119,7 +119,7 @@ const FormAnimalPage = (): ReactElement => {
           <MenuItem value={11}>À cima de 10 Litros</MenuItem>
         </Select>
       </FormControl>
-      </div>
+      </div> */}
       <Stack direction="row" spacing={2}>
        
         <Grid container justifyContent="flex-end" >
