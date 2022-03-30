@@ -119,6 +119,7 @@ const ListAnimalsPage = (): ReactElement => {
         //TODO: Implementar chamada para o backend
         animalService.getAnimals().then(
             animals => setAnimals(animals)
+            
         );
     }, []);
 

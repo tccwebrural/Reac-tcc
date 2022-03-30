@@ -3,6 +3,7 @@ import FormAnimalPage from "../modules/animals/pages/Form";
 import ListAnimalsPage from "../modules/animals/pages/List";
 import FormReportPage  from "../modules/Report/pages/ReportForm";
 import ListReportPage  from "../modules/Report/pages/ReportList";
+import Anuncio from "../modules/Anuncio/pages/Anuncio";
 
 interface Route {
 	key: string;
@@ -38,5 +39,12 @@ export const ROOT_ROUTES: Array<Route> = [
 		path: "animals/ReportList",
 		enabled: true,
 		component: ListReportPage,
+	},
+	{
+		key: "create-Anuncio",
+		title: "Anuncio",
+		path: "Anuncio/Anuncio",
+		enabled: true,
+		component: Anuncio,
 	},
 ];

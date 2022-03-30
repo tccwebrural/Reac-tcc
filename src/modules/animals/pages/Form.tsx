@@ -1,9 +1,8 @@
-
 import React, { ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import {Link} from 'react-router-dom'
-
+import './Form.css';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -24,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
   margin:'auto',
   marginTop:120,
   maxWidth:800,
-  minheight:420,
+  minheight:420, 
   borderTop:2,
   color: theme.palette.text.secondary,
 }));
@@ -76,15 +75,14 @@ const FormAnimalPage = (): ReactElement => {
             <MenuItem value={11}>À cima de 10 Litros</MenuItem>
           </Select>
         </FormControl>
-      </> 
-      
+      </>    
     }
   }
    return (<>
      
     <Box sx={{'& .MuiTextField-root': { m: 1, width: '33ch', },}}>
       <Grid >
-        <Item >
+        <Item id="formCadAnimal">
 
         <h1>Cadastrar Animal</h1>
         
