@@ -3,6 +3,7 @@ import React, { ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import {Link} from 'react-router-dom'
+import { AnimalService } from "../services/Animals.service";
 
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -32,12 +33,38 @@ const Item = styled(Paper)(({ theme }) => ({
 const FormAnimalPage = (): ReactElement => {   
 
   const [dataForm,setDataForm] = useState<Animal>({}); 
-    
+  const [animalForm,setAnimalForm] = useState<Animal>({}); 
+
+  const animalService = new AnimalService();
+  
   const onChangeDataForm = (event:any)=>{
-    const {name, value} = event.target;
+    const {name, value} = event.target
     setDataForm({ ...dataForm,[name]: value});
+
+    //  animalService.createAnimal(dataForm.id)
+    // animalService.createAnimal(dataForm, '5ab6e784-ef43-4b67-b2b2-09745272319a')
+
+
   }
   const salvarDadosAnimal = () => {
+ animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(()=>{
+   console.log('ok')
+   Response.data(setDataForm)
+ })
+
+
+
+//  animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(response=>{
+//    setDataForm({
+//      name : response.data.name,
+//      identifier: response.data.identifier,
+//      birthday: response.data.birthday,
+//      qtyMilk: response.data.qtyMilk,
+//      qtyChildreen: response.data.qtyChildreen,
+//      type: response.data.type
+//    })
+   
+//  })
     console.log(dataForm);
   }
 
@@ -50,7 +77,7 @@ const FormAnimalPage = (): ReactElement => {
           InputLabelProps={{
             shrink: true,
           }}
-          name="Quantidade de cria"
+          name=" qtyChildreen"
           onChange={onChangeDataForm}
           value={dataForm.qtyChildreen}
         />

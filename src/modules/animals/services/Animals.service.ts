@@ -27,9 +27,9 @@ export class AnimalService {
             .catch(err => console.error(err));
     }
 
-    createAnimal(animal: Animal) {
+    createAnimal(animal: Animal, userId: string) {
         //TODO: Implementar chamada para a api para realizar a operação;
-        return AXIOS_CONNECTOR_API.post(API_ANIMALS_ROUTE)
+        return AXIOS_CONNECTOR_API.post(`${API_ANIMALS_ROUTE}/${userId}`)
             .catch(err => console.error(err));
 
     }
