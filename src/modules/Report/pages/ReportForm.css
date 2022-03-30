@@ -28,10 +28,6 @@ body{
 }
 
 
-#Text-Description{
-    width: 60em;
-}
-
 #Button{
     display: flex;
     justify-content: flex-end;
