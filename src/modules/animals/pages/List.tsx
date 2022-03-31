@@ -68,6 +68,12 @@ const ListAnimalsPage = (): ReactElement => {
             sortable: false,
         },
         {
+            field: 'qtyMilk',
+            headerName: 'Quantidade de leite/dia',
+            headerAlign: 'center',
+            sortable: false,
+        },
+        {
             field: 'operacoes',
             headerName: 'Operacoes',
             width: 380,
