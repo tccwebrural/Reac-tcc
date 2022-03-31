@@ -29,14 +29,14 @@ export class AnimalService {
 
     createAnimal(animal: Animal, userId: string) {
         //TODO: Implementar chamada para a api para realizar a operação;
-        return AXIOS_CONNECTOR_API.post(`${API_ANIMALS_ROUTE}/${userId}`)
+        return AXIOS_CONNECTOR_API.post(`${API_ANIMALS_ROUTE}/${userId}`, animal)
             .catch(err => console.error(err));
 
     }
 
     updateAnimalById(animalId: string, animal: Animal) {
         //TODO: Implementar chamada para a api para realizar a operação;
-        return AXIOS_CONNECTOR_API.put(`${API_ANIMALS_ROUTE}/${animalId}`, animal)
+        return AXIOS_CONNECTOR_API.put(`${API_ANIMALS_ROUTE}/${animalId}`,animal)
             .catch(err => console.error(err));
     }
 
