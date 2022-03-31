@@ -15,6 +15,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useState } from "react";
 import {  Animal  } from '../models/Animal.model';
+import { AnimalService } from "../services/Animals.service";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -45,10 +46,11 @@ const FormAnimalPage = (): ReactElement => {
 
   }
   const salvarDadosAnimal = () => {
- animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(()=>{
-   console.log('ok')
-   Response.data(setDataForm)
- })
+//  animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(()=>{
+//    console.log('ok')
+
+//  })
+ animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then()
 
 
 
@@ -75,8 +77,11 @@ const FormAnimalPage = (): ReactElement => {
           InputLabelProps={{
             shrink: true,
           }}
-          name=" qtyChildreen"
           onChange={onChangeDataForm}
+          // name= 'showQtyChildreen'
+          name= 'qtyChildreen'
+
+
           value={dataForm.qtyChildreen}
         />
       </>
@@ -126,12 +131,15 @@ const FormAnimalPage = (): ReactElement => {
         <TextField
           label="Identificador"
           type="number"
+          name = 'identifier'
+
           InputLabelProps={{
             shrink: true,
           }}
-          name='indentifier'
           onChange={onChangeDataForm}
-          value={dataForm.identifier}
+          // name= 'identifier'
+
+              // value={dataForm.identifier}
            />
           
         <TextField 
@@ -167,13 +175,18 @@ const FormAnimalPage = (): ReactElement => {
       
       <TextField
           label="Peso Aproximadamente"
+          name= 'weight'
           type="number"
+
           InputLabelProps={{
             shrink: true,
           }}
-          name='weigth'
+         
           onChange={onChangeDataForm}
-          value={dataForm.weight}
+          // value={dataForm.weight}
+          value = {dataForm.weight}
+          
+
         />
        {showQtyChildreen()}
        {showQtyMilk()}

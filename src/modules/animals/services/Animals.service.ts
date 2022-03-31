@@ -36,7 +36,7 @@ export class AnimalService {
 
     updateAnimalById(animalId: string, animal: Animal) {
         //TODO: Implementar chamada para a api para realizar a operação;
-        return AXIOS_CONNECTOR_API.put(`${API_ANIMALS_ROUTE}/${animalId}`, animal)
+        return AXIOS_CONNECTOR_API.put(`${API_ANIMALS_ROUTE}/${animalId}`,animal)
             .catch(err => console.error(err));
     }
 
