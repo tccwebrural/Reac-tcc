@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
-
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -96,22 +95,21 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
   );
 }
 
-function createData(name: string, calories: number, fat: number) {
-  return { name, calories, fat };
+function createData(name: string) {
+  return { name };
 }
 
 const rows = [
-  createData('Vacina contra Brucelose', 305, 3.7),
-  createData('Vacina contra doencas da febre aftosa', 452, 25.0),
-  createData('Vacina contra raiva', 262, 16.0),
-  createData('Vacina', 159, 6.0),
-  createData('Vacina', 356, 16.0),
-  createData('Vacina', 408, 3.2),
-  createData('Vacina', 237, 9.0),
-  createData('Vacina', 375, 0.0),
-  createData('Vacina', 518, 26.0),
-
-].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+  createData('Vacina contra Brucelose'),
+  createData('Vacina contra doencas da febre aftosa'),
+  createData('Vacina contra raiva'),
+  createData('Vacina'),
+  createData('Vacina'),
+  createData('Vacina'),
+  createData('Vacina' ),
+  createData('Vacina'),
+  createData('Vacina'),
+]
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -192,9 +190,7 @@ const Anuncio = (): ReactElement => {
           name='indentifier'
         
            />
-         
-      
-      
+
       <TextField
           label="Peso Aproximadamente"
           type="number"
@@ -226,13 +222,7 @@ const Anuncio = (): ReactElement => {
                     <TableRow key={row.name}>
                       <TableCell component="th" scope="row">
                         {row.name}
-                      </TableCell>
-                      <TableCell style={{ width: 160 }} align="right">
-                        {row.calories}
-                      </TableCell>
-                      <TableCell style={{ width: 160 }} align="right">
-                        {row.fat}
-                      </TableCell>
+                      </TableCell>  
                     </TableRow>
                   ))}
                   {emptyRows > 0 && (

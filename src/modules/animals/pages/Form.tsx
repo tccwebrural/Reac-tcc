@@ -3,6 +3,9 @@ import { Box, Typography } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import {Link} from 'react-router-dom'
 import './Form.css';
+
+import { AnimalService } from "../services/Animals.service";
+
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -46,6 +49,7 @@ const FormAnimalPage = (): ReactElement => {
 
   }
   const salvarDadosAnimal = () => {
+
 //  animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(()=>{
 //    console.log('ok')
 
@@ -111,7 +115,10 @@ const FormAnimalPage = (): ReactElement => {
           <Select label="Grouping" name="category" value={dataForm.category} onChange={onChangeDataForm} >
             <MenuItem  value={1} >Vaca</MenuItem>
             <MenuItem  value={2} >Boi</MenuItem>
-            <MenuItem  value={3} >Bezerro</MenuItem>
+            <MenuItem  value={3} >Bezerra</MenuItem>
+            <MenuItem  value={4} >Bezerro</MenuItem>
+            <MenuItem  value={5} >Novilha</MenuItem>
+            <MenuItem  value={6} >Novilho</MenuItem>
             
           </Select>
           
