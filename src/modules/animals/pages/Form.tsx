@@ -52,21 +52,8 @@ const FormAnimalPage = (): ReactElement => {
 //  })
  animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then()
 
-
-
-//  animalService.createAnimal(dataForm,'5ab6e784-ef43-4b67-b2b2-09745272319a').then(response=>{
-//    setDataForm({
-//      name : response.data.name,
-//      identifier: response.data.identifier,
-//      birthday: response.data.birthday,
-//      qtyMilk: response.data.qtyMilk,
-//      qtyChildreen: response.data.qtyChildreen,
-//      type: response.data.type
-//    })
-   
-//  })
-    console.log(dataForm);
-  }
+ console.log(dataForm);
+  } 
 
   const showQtyChildreen = () => {
     if (dataForm.category === 1){
@@ -74,15 +61,17 @@ const FormAnimalPage = (): ReactElement => {
       <TextField
           label="Quantidade de Cria"
           type="number"
+          name= 'qtyChildreen'
+
           InputLabelProps={{
             shrink: true,
           }}
+          value={dataForm.qtyChildreen}
+
           onChange={onChangeDataForm}
           // name= 'showQtyChildreen'
-          name= 'qtyChildreen'
+         
 
-
-          value={dataForm.qtyChildreen}
         />
       </>
     }
