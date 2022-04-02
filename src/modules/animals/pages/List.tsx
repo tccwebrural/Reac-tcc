@@ -12,7 +12,7 @@ import { Animal } from "../models/Animal.model";
 import { AnimalService } from "../services/Animals.service";
 import { Link } from "react-router-dom";
 
-
+import  {  useParams , useNavigate , useLocation , } from  "react-router-dom" ;
 
 
 const ListAnimalsPage = (): ReactElement => {
@@ -103,6 +103,8 @@ const ListAnimalsPage = (): ReactElement => {
                                 <AiFillFileAdd/>
                             </Fab>
                         </Link>
+
+                        {/* AQUI VAMOS MUDAR ESSA ROTA */}
                         <Link to={`/animals/${currentAnimalRow.id}/reports`}>
                             <Fab size="small" color="secondary">
                                 <FormatAlignLeftIcon />
