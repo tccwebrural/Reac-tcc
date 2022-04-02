@@ -3,7 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import UpdateIcon from '@mui/icons-material/Update';
+import { AiFillFileAdd } from 'react-icons/ai';
 import { Box, Button, Fab, Modal } from "@mui/material";
 import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
@@ -11,6 +11,9 @@ import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { Animal } from "../models/Animal.model";
 import { AnimalService } from "../services/Animals.service";
 import { Link } from "react-router-dom";
+
+
+
 
 const ListAnimalsPage = (): ReactElement => {
     const animalService = new AnimalService();
@@ -86,28 +89,28 @@ const ListAnimalsPage = (): ReactElement => {
                 return (
                     <>
                   <Link to={`/animals/form/${currentAnimalRow.id}/`}>
-                            <Fab size="small" color="success">
+                            <Fab size="small" color="warning">
                                 <EditIcon />
                             </Fab>
                         </Link>
-                        <Fab size="small" color="success" onClick={() => openDeleteAnimalModal(currentAnimalRow)}>
-                            <DeleteIcon />
-                        </Fab>
                         <Link to={`/ads/form/${currentAnimalRow.id}/`}>
                             <Fab size="small" color="success">
                                 <ShoppingCartIcon />
                             </Fab>
                         </Link>
-                        <Link to={`/animals/${currentAnimalRow.id}/report`}>
-                            <Fab size="small" color="success">
-                                <UpdateIcon />
+                        <Link to={`/animals/${currentAnimalRow.id}/reports/form`}>
+                            <Fab size="small" color="primary">
+                                <AiFillFileAdd/>
                             </Fab>
                         </Link>
-                        <Link to={`/animals/${currentAnimalRow.id}/report/form`}>
-                            <Fab size="small" color="success">
+                        <Link to={`/animals/${currentAnimalRow.id}/reports`}>
+                            <Fab size="small" color="secondary">
                                 <FormatAlignLeftIcon />
                             </Fab>
                         </Link>
+                        <Fab size="small" color="error" onClick={() => openDeleteAnimalModal(currentAnimalRow)}>
+                            <DeleteIcon />
+                        </Fab>
                     </>
                 );
             },

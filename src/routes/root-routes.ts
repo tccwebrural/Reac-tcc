@@ -36,16 +36,16 @@ export const ROOT_ROUTES: Array<Route> = [
 	{
 		key: "create-Form-Report",
 		title: "Formulario Relatorio",
-		path: "Report/pages/ReportForm",
-		enabled: true,
+		path: "animals/:animalId/reports/form",
+		enabled: false,
 		component: FormReportPage,
 	},
 
 	{
 		key: "create-List-Report",
 		title: "Lista Relatorio",
-		path: "Report/pages/ReportList",
-		enabled: true,
+		path: "animals/:animalId/reports",
+		enabled:false,
 		component: ListReportPage,
 	},
 	{
