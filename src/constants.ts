@@ -19,3 +19,4 @@ export const ROOT_THEME = {
 /* ROTAS DA API */
 export const API_ANIMALS_ROUTE = 'animals';
 export const API_USER_ROUTE = 'user'
+export const API_REPORT_ROUTE = 'reports'
