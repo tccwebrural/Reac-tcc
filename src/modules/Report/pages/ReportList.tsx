@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import {Button} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -14,27 +14,11 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import './ReportList.css';
-import { ReportForm } from "../models/Report.model";
-import { ReportService } from "../services/Reports.services";
 
 const ListReportPage = (): ReactElement=> {    
   
-  const [page, setPage] = useState<ReportForm[]>([]);
-
-  
-  const [rowsPerPage, setRowsPerPage] =useState(10);
-  const reportService = new ReportService();
-
-  useEffect(() => {
-
-          //TODO: Implementar chamada para o backend
-         reportService.getReportById.then(
-              reports => setPage(reports)
-              
-          );
-      }, []);
-
-
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
@@ -70,22 +54,7 @@ const ListReportPage = (): ReactElement=> {
         return { Data, Description };
     }
 
-    const rows = [
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-    ];
+    const rows = [];
 
     return(<>
     
