@@ -54,7 +54,15 @@ const ListReportPage = (): ReactElement=> {
         return { Data, Description };
     }
 
+<<<<<<< HEAD
     const rows = [];
+=======
+    const rows = [
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+       
+    ];
+>>>>>>> b67fb90be96adec9f7f1d3998ce8c810ea3624c1
 
     return(<>
     
@@ -122,4 +130,4 @@ const ListReportPage = (): ReactElement=> {
     </div>    
     </>);
 }
-export default ListReportPage;
+export default ListReportPage;  
