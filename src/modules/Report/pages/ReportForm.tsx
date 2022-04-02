@@ -57,7 +57,7 @@ const FormReportPage = (): ReactElement => {
                                         <Select fullWidth
                                             id="demo-simple-select"
                                             name="vacina"
-                                            value={dataForm.vacina}
+                                            value={dataForm.vacine}
                                             label="Vacinas"
                                             onChange={onChangeDataForm}
                                         >
