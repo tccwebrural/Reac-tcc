@@ -1,4 +1,4 @@
-import React, { ReactElement , useEffect} from "react";
+import React, { ReactElement, useEffect } from "react";
 import { useState } from "react";
 
 import {Button} from "@mui/material";
@@ -17,22 +17,24 @@ import './ReportList.css';
 import { ReportService } from "../services/Reports.services";
 import { ReportForm } from "../models/Report.model";
 
+
 const ListReportPage = (): ReactElement=> {    
   
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
- 
-  const [reports, setReports]  = useState<ReportForm[]>([])
-  useEffect(() => {
-    //TODO: Implementar chamada para o backend
-    reportService.getReportById('20d4dd92-95cc-4d58-ad2f-4fa0fb6af08a').then((reports) => setReports(reports));
-  }, []);
-  const reportService = new ReportService()
 
+  const [reports, setReports]  = useState<ReportForm[]>([])
+  const reportService = new ReportService()
 
   const handleChangePage = (event: unknown, newPage: number) => {
       setPage(newPage);
   };
+
+  useEffect(() => {
+    //TODO: Implementar chamada para o backend
+    reportService.getReportById('20d4dd92-95cc-4d58-ad2f-4fa0fb6af08a').then((reports) => setReports(reports));
+  }, []);
+
 
   const handleChangeRowsPerPage = (
       event: React.ChangeEvent<HTMLInputElement>
@@ -65,9 +67,20 @@ const ListReportPage = (): ReactElement=> {
     }
 
     const rows = [
-        // createData( '20/02/2022', 'Vacina aplicada'),
-        // createData( '20/02/2022', 'Vacina aplicada'),
-       
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
+        createData( '20/02/2022', 'Vacina aplicada'),
     ];
 
     return(<>
@@ -136,4 +149,4 @@ const ListReportPage = (): ReactElement=> {
     </div>    
     </>);
 }
-export default ListReportPage;  
+export default ListReportPage;
