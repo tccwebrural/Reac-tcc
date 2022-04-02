@@ -17,7 +17,7 @@ const ListReportPagetst = (): ReactElement=> {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const [report, setReport]  = useState<ReportForm[]>([])
+  const [reports, setReports]  = useState<ReportForm[]>([])
   const reportService = new ReportService()
 
   const getReportAnimal= () =>{
@@ -39,11 +39,11 @@ const ListReportPagetst = (): ReactElement=> {
             <TableCell align="right">Vacina(g)</TableCell>
             <TableCell align="right">Protein&nbsp;(g)</TableCell>
           </TableRow>
-        </TableHead>
+        </TableHead>;
         <TableBody>
-          {report.map(({report}) => (
+          {reports.map(report => (
             <TableRow
-              key={report.date}
+            //   key={report}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
            
