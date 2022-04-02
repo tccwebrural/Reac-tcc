@@ -1,7 +1,7 @@
 
 export interface ReportForm {
   identifier?: number,
-  date?: Date,
+  register_date?: Date,
   description?: string,
   vacine?: number,
 }

@@ -46,7 +46,7 @@ const FormReportPage = (): ReactElement => {
                                     type="date"
                                     variant="outlined"
                                     name="date"
-                                    value={dataForm.date}
+                                    value={dataForm.register_date}
                                     onChange={onChangeDataForm}
                                 />
                             </Grid>

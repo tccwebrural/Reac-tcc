@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { useState } from "react";
 
 import Table from '@mui/material/Table';
@@ -14,9 +14,6 @@ import { ReportForm } from "../models/Report.model";
 
 const ListReportPagetst = (): ReactElement=> {    
   
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
   const [reports, setReports]  = useState<ReportForm[]>([])
   const reportService = new ReportService()
 
@@ -24,7 +21,10 @@ const ListReportPagetst = (): ReactElement=> {
 
     reportService.getReportById('').then()
   }
-
+  useEffect(() => {
+    //TODO: Implementar chamada para o backend
+    reportService.getReportById('20d4dd92-95cc-4d58-ad2f-4fa0fb6af08a').then((reports) => setReports(reports));
+  }, []);
 
   
     return(
@@ -33,21 +33,21 @@ const ListReportPagetst = (): ReactElement=> {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
+           
             <TableCell align="right">Data</TableCell>
             <TableCell align="right">Descrição</TableCell>
-            <TableCell align="right">Vacina(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">Vacina</TableCell>
+          
           </TableRow>
         </TableHead>;
         <TableBody>
           {reports.map(report => (
             <TableRow
-            //   key={report}
+            //   key={report.date}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
            
-           <TableCell align="right">{report.date}</TableCell>
+           <TableCell align="right">{report.register_date}</TableCell>
            <TableCell align="right">{report.description}</TableCell>
            <TableCell align="right">{report.vacine}</TableCell>
 
