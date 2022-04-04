@@ -109,6 +109,7 @@ const ListAnimalsPage = (): ReactElement => {
                 <FormatAlignLeftIcon />
               </Fab>
             </Link>
+            
             <Fab
               size="small"
               color="error"
@@ -125,6 +126,8 @@ const ListAnimalsPage = (): ReactElement => {
   const [selectedAnimal, setSelectedAnimal] = useState<Animal>();
   const [animals, setAnimals] = useState<Animal[]>([]);
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
+
+   const {id} = useParams()
 
   /**
    * No inicio do carregamento da pagina é executado a função de carregar os animais
@@ -220,6 +223,8 @@ const ListAnimalsPage = (): ReactElement => {
         </TableContainer>
       </Paper>
       {renderDeleteAnimalModal()}
+
+     
     </>
   );
 };

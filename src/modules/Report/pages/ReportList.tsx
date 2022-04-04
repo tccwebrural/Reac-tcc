@@ -16,132 +16,61 @@ import TableRow from '@mui/material/TableRow';
 import './ReportList.css';
 import { ReportService } from "../services/Reports.services";
 import { ReportForm } from "../models/Report.model";
+import { useParams } from "react-router-dom";
+import { Animal } from "../../animals/models/Animal.model";
 
 
 const ListReportPage = (): ReactElement=> {    
   
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const params = useParams();
+  //  console.log(params)
+  const [reports, setReports] = useState<ReportForm[]>([]);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [animal, setAnimals] = useState<Animal[]>([]);
 
-  const [reports, setReports]  = useState<ReportForm[]>([])
-  const reportService = new ReportService()
-
-  const handleChangePage = (event: unknown, newPage: number) => {
-      setPage(newPage);
-  };
+  const reportService = new ReportService();
 
   useEffect(() => {
     //TODO: Implementar chamada para o backend
-    reportService.getReportById('20d4dd92-95cc-4d58-ad2f-4fa0fb6af08a').then((reports) => setReports(reports));
+
+    if (params.animalId) {
+      reportService.get_Animal_Id_Reports(params.animalId ).then((reports) => setReports(reports));
+
+    }
+
+    console.log(reportService);
+    // console.log(reportService)
   }, []);
-
-
-  const handleChangeRowsPerPage = (
-      event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
-  interface Column {
-    id: 'Data' | 'Description';
-    label: string;
-    minWidth?: number;
-    align?: 'right';
-    format?: (value: number) => string;
-  }
-  
-    const columns: readonly Column[] = [
-        { id: 'Data', label: 'Data', minWidth: 10 },
-        { id: 'Description', label: 'Descrição', minWidth: 600 },
-    ];
-      
-      interface Data {
-        Data: String;
-        Description: string;
-    }
-      
-      function createData(Data: String, Description: string): Data {
-        const density = '';
-        return { Data, Description };
-    }
-
-    const rows = [
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-        createData( '20/02/2022', 'Vacina aplicada'),
-    ];
 
     return(<>
     
     <div id="table">
       <h1>Lista de Relatorio</h1>
-      <Paper>
-        <TableContainer sx={{ maxHeight: 370 }}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}
-                    align={column.align}
-                    style={{ minWidth: column.minWidth }}
-                  >
-                    {column.label}
-                  </TableCell>
-                ))}
+      <TableContainer component={Paper}>
+        <Table sx={{ maxHeight: 370 }} size="small" aria-label="a dense table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="right">Data</TableCell>
+              <TableCell align="right">Descrição</TableCell>
+              <TableCell align="right">Vacina</TableCell>
+            </TableRow>
+          </TableHead>
+          ;
+          <TableBody>
+            {reports.map((report) => (
+              <TableRow
+                //   key={report.date}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell align="right">{report.register_date}</TableCell>
+                <TableCell align="right">{report.description}</TableCell>
+                <TableCell align="right">{report.vacine}</TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>              
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => {
-                  return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.Description}>
-                      {columns.map((column) => {
-                        const value = row[column.id];
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            {column.format && typeof value === 'number'
-                              ? column.format(value)
-                              : value}
-                          </TableCell>
-                        );                        
-                      })}
-                      <div id="btDelete">
-                          <Tooltip title="Deletar">
-                            <IconButton>
-                              <DeleteIcon/>
-                            </IconButton>
-                          </Tooltip>
-                      </div>  
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[8, 16, 32]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </Paper>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
     </div>
 
     <div id="Button">
