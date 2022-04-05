@@ -16,6 +16,7 @@ interface Route {
 	enabled: boolean;
 	/* Componente a ser renderizado */
 	component: FC<{}>;
+	btnCabecalho: boolean;
 }
 
 export const ROOT_ROUTES: Array<Route> = [
@@ -24,6 +25,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Lista de animais",
 		enabled: true,
 		path: "animals/list",
+		btnCabecalho: true,
 		component: ListAnimalsPage,
 	},
 	{
@@ -31,6 +33,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Cadastrar animal",
 		path: "animals/form",
 		enabled: true,
+		btnCabecalho: false,
 		component: FormAnimalPage,
 	},
 
@@ -38,7 +41,8 @@ export const ROOT_ROUTES: Array<Route> = [
 		key: "create-Form-Report",
 		title: "Formulario Relatorio",
 		path: "animals/:animalId/reports/form",
-		enabled: false,
+		enabled: true,
+		btnCabecalho: true,
 		component: FormReportPage,
 	},
 
@@ -46,14 +50,16 @@ export const ROOT_ROUTES: Array<Route> = [
 		key: "create-List-Report",
 		title: "Lista Relatorio",
 		path: "animals/:animalId/reports",
-		enabled:false,
+		enabled:true,
+		btnCabecalho: false,
 		component: ListReportPage,
 	},
 	{
 		key: "create-List-Report",
 		title: "Lista Relatorio TESTE",
 		path: "animals/:animalId/reportstst",
-		enabled:false,
+		enabled: true,
+		btnCabecalho: false,
 		component: ListReportPagetst,
 	},
 	{
@@ -61,6 +67,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Anuncio",
 		path: "Anuncio/Anuncio",
 		enabled: true,
+		btnCabecalho: false,
 		component: Anuncio,
 	},
 ];

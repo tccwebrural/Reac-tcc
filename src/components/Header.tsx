@@ -76,7 +76,7 @@ const Header = (props: any): ReactElement => {
 									display: { xs: "block", md: "none" },
 								}}
 							>
-								{ROOT_ROUTES.map((page) => (
+								{ROOT_ROUTES.filter(page => page.btnCabecalho).map((page) => (
 									<Link
 										key={page.key}
 										component={NavLink}
@@ -111,7 +111,7 @@ const Header = (props: any): ReactElement => {
 									marginLeft: "1rem",
 								}}
 							>
-								{ROOT_ROUTES.map((page) => (
+								{ROOT_ROUTES.filter(page => page.btnCabecalho).map((page) => (
 									<Link
 										key={page.key}
 										component={NavLink}
@@ -121,7 +121,7 @@ const Header = (props: any): ReactElement => {
 										variant="button"
 										sx={{ fontSize: "large", marginLeft: "2rem" }}
 									>
-										{page.title}
+									{page.title}
 									</Link>
 								))}
 							</Box>
