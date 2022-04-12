@@ -1,0 +1,56 @@
+
+#MinhaCriacaoTxt_Linha{
+    margin: 5.0% 0% 0% 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+}
+
+#MinhaCriacao-titulo {
+    color: var(--cor005);
+    margin-right: -60px;
+    margin-left: 10px;
+}
+#MinhaCriacao-linha {
+    content: " ";
+    background-color: var(--cor007);
+    display: flex;
+    height: 3px;
+    width: 840px;
+    margin-top: 1.8%;
+    margin-right: -20px;
+}
+#AddIcon{
+    background-color: var(--cor001);
+    border: 1px solid var(--cor002);
+    margin-top: -24px;
+    margin-left: 1392%;
+}
+
+#mainMinhaCriacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tabelaMinhaCriacao{
+    margin-bottom: 3%;
+    margin-top: 30px;
+    width: 95%;
+}
+
+#btVisualizarDadosAnimal{
+    background-color: var(--cor006);
+    margin: 8px;
+    padding-top: 7px;
+}
+#btVacina{
+    padding-top: 7px; 
+}
+#btEditar{
+    background-color: var(--cor007);
+    margin: 8px;
+    padding-top: 7px;
+}
+#btDelete{
+    padding-top: 7px; 
+}

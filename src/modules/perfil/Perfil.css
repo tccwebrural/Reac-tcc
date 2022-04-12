@@ -1,0 +1,96 @@
+#MeuPerfilTxt_Linha{
+    margin: 5.0% 0% 0% 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+}
+#MeuPerfil-titulo {
+   color: var(--cor005);
+   margin-right: 230px;
+}
+#MeuPerfil-linha {
+    content: " ";
+    background-color: var(--cor007);
+    display: flex;
+    height: 3px;
+    width: 840px;
+    margin-top: 1.8%;
+    margin-right: 20px;
+    margin-left: -330px;
+}
+#perfil{
+    display: flex;
+    justify-content: center;
+    margin-top: -2%;
+}
+#bloPerfil{
+    height: 440px;
+    width: 450px;
+    border: none;
+    box-shadow: 0px 1px 5px 0px rgba(192, 192, 192, 0.651);
+    border-radius: 8px;
+    padding: 3%;
+    margin-top: 5%;
+}
+#imgPerfil{
+    display: flex;
+    justify-content: center;
+    margin-top: -8%
+}
+fieldset#img{
+    width: 100px;
+    height: 100px;
+    border-radius: 70px;
+    border:1px solid rgb(170, 170, 170);
+}
+#blocoNomePerfil{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    color: var(--cor004);
+}
+#nomePerfil{
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    font-size: 17px;
+    color: var(--cor004);
+}
+#menuPerfil{
+    margin-left:85%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    margin-top: -4%
+
+}
+#camposPerfil{
+    margin-top: 10%;
+    height: 200px;
+    line-height: 50px;
+    display: block;
+    
+}
+.labelCamposPerfil{
+    font-weight: bold;
+    color: var(--cor004);
+}
+.txt-camposPerfil{
+    border: none;
+    border-bottom: 1px solid var(--cor002);
+    color: rgb(100, 100, 100);
+    font-size: 16px;
+}
+
+#InputEmail{
+    padding-right: 24%;
+}
+#InputCpf{
+    padding-right: 28%;
+}
+#InputTel{
+    padding-right: 19%;
+}
+#InputNameFarm{
+    padding-right: 2.5%;
+}
+

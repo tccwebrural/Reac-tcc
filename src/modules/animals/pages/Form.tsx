@@ -1,16 +1,12 @@
 import React, { ReactElement } from "react";
 import { Alert, Box, Snackbar, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
-
 import "./Form.css";
 import { Link } from "react-router-dom";
-
 import { AnimalService } from "../services/Animals.service";
-
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
-
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -22,15 +18,12 @@ import { Animal } from "../models/Animal.model";
 import { checkServerIdentity } from "tls";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
   padding: theme.spacing(1),
   margin: "auto",
-  marginTop: 120,
-  maxWidth: 800,
-  minheight: 420,
+  marginTop: 32,
+  maxWidth: 928,
+  height: 390,
   borderTop: 2,
-  color: theme.palette.text.secondary,
 }));
 
 interface SnackBarProps {
@@ -54,7 +47,7 @@ const FormAnimalPage = (): ReactElement => {
   };
   const salvarDadosAnimal = () => {
     animalService
-      .createAnimal(dataForm, "fb855675-3191-4ce7-918a-308c4a165128")
+      .createAnimal(dataForm, "363dcf73-3155-4a3c-a69a-385fbd9b643f")
       .then(() => {
         setSnackbar({
           show: true,
@@ -105,7 +98,8 @@ const FormAnimalPage = (): ReactElement => {
     if (dataForm.category === 1 && dataForm.type === 2) {
       return (
         <>
-          <FormControl sx={{ m: 1, minWidth: 220 }}>
+        
+          {/* <FormControl sx={{ m: 1, minWidth: 220 }}>
             <InputLabel htmlFor="qtyMilk">Qtd de Leite por dia</InputLabel>
             <Select
               name="qtyMilk"
@@ -125,17 +119,22 @@ const FormAnimalPage = (): ReactElement => {
               <MenuItem value={10}>10 Litros</MenuItem>
               <MenuItem value={11}>À cima de 10 Litros</MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> */}
         </>
       );
     }
   };
   return (
     <>
+    <div id="Bloco">
+        <div id="FormTxt_Linha">
+            <h2 id="Form-titulo">Minha Criação &gt; Cadastrar Gado</h2>
+            <span id="Form-linha">
+            </span>
+        </div>
       <Box sx={{ "& .MuiTextField-root": { m: 1, width: "33ch" } }}>
         <Grid>
           <Item id="formCadAnimal">
-            <h1>Cadastrar Animal</h1>
 
             <FormControl sx={{ m: 1, minWidth: 221 }}>
               <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
@@ -220,25 +219,27 @@ const FormAnimalPage = (): ReactElement => {
                 <Stack
                   spacing={2}
                   direction="row"
-                  sx={{ margin: 3, marginTop: 8 }}
+                  sx={{ marginRight:7.5 }}
                 >
-                  <Button
-                    variant="contained"
-                    color="error"
-                    component={Link}
-                    to="animals/list"
-                  >
-                    Cancelar
-                  </Button>
+                  <div id="bts-CadastrarAnimal-CancelSave">
+                    <Button
+                      style={{marginRight: 4}}
+                      variant="contained"
+                      color="error"
+                      component={Link}
+                      to="animals/list"
+                    >
+                      Cancelar
+                    </Button>
 
-                  <Button
-                    variant="contained"
-                    color="success"
-                    onClick={salvarDadosAnimal}
-                  >
-                    Salvar
-                  </Button>
-
+                    <Button
+                      variant="contained"
+                      color="success"
+                      onClick={salvarDadosAnimal}
+                    >
+                      Salvar
+                    </Button>
+                  </div>
                   <Snackbar
                     open={snackbar.show}
                     autoHideDuration={6000}
@@ -254,6 +255,7 @@ const FormAnimalPage = (): ReactElement => {
           </Item>
         </Grid>
       </Box>
+      </div>
     </>
   );
 };

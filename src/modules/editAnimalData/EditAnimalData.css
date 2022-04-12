@@ -1,0 +1,58 @@
+#Bloco{
+    width: 1100px;
+    margin:auto;
+    margin-top: 2%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+    padding: 1px;
+    padding-bottom: 3%;
+}
+#EditAnimalDataTxt_Linha{
+    margin: 5.0% 0% 0% 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+}
+#EditAnimalData-titulo {
+   color: var(--cor005);
+}
+#EditAnimalData-linha {
+        content: " ";
+        background-color: var(--cor007);
+        display: flex;
+        height: 3px;
+        width: 620px;
+        margin-top: 1.8%;
+        margin-right: 20px;
+        margin-left: -80px;
+}
+#Bloco-camposEditAnimalData{
+    margin-top: 3.8%;
+    padding: 1%;
+    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+}
+#form-AtualizarDadosAnimal{
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    margin-top: 1.8%;
+}
+#bts-AtualizarDadosAnimal{
+    height: 230px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin-right: 22px;
+}
+#btSalvar-AtualizarDadosAnimal{
+    color: var(--cor001);
+    background-color: var(--cor006);
+    border: none;
+    box-shadow: 0px 2px 5px 3px rgb(201, 201, 201);
+}
+#btCancelar-AtualizarDadosAnimal{
+    color: var(--cor001);
+    background-color: var(--cor009);
+    border: none;
+    box-shadow: 0px 2px 5px 3px rgb(201, 201, 201);
+}
