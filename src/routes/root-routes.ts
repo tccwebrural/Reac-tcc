@@ -5,6 +5,8 @@ import FormReportPage  from "../modules/Report/pages/ReportForm";
 import ListReportPage  from "../modules/Report/pages/ReportList";
 import Anuncio from "../modules/Anuncio/pages/Anuncio";
 import ListReportPagetst from "../modules/Report/pages/Reportlisttst";
+import login from "../modules/credenciais/login/login";
+import registrar from "../modules/credenciais/registrar/registrar";
 
 interface Route {
 	key: string;
@@ -25,7 +27,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Lista de animais",
 		enabled: true,
 		path: "animals/list",
-		btnCabecalho: true,
+		btnCabecalho: false,
 		component: ListAnimalsPage,
 	},
 	{
@@ -42,7 +44,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Formulario Relatorio",
 		path: "animals/:animalId/reports/form",
 		enabled: true,
-		btnCabecalho: true,
+		btnCabecalho: false,
 		component: FormReportPage,
 	},
 
@@ -70,4 +72,25 @@ export const ROOT_ROUTES: Array<Route> = [
 		btnCabecalho: false,
 		component: Anuncio,
 	},
+
+	{
+		key: "login",
+		title: "login",
+		path: "/login",
+		enabled: true,
+		btnCabecalho: false,
+		component: login,
+	},
+
+	{
+		key: "registrar",
+		title: "registrar",
+		path: "/registrar",
+		enabled: true,
+		btnCabecalho: false,
+		component: registrar,
+	},
+	
+
+	
 ];

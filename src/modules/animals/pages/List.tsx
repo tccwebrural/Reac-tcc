@@ -3,7 +3,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { AiFillFileAdd } from "react-icons/ai";
+
 import { Box, Button, Fab, Modal } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import TableContainer from "@mui/material/TableContainer";
@@ -99,7 +99,7 @@ const ListAnimalsPage = (): ReactElement => {
             </Link>
             <Link to={`/animals/${currentAnimalRow.id}/reports/form`}>
               <Fab size="small" color="primary">
-                <AiFillFileAdd />
+                
               </Fab>
             </Link>
 

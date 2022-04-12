@@ -121,7 +121,7 @@ const Header = (props: any): ReactElement => {
 										variant="button"
 										sx={{ fontSize: "large", marginLeft: "2rem" }}
 									>
-									{page.title}
+										{page.title}
 									</Link>
 								))}
 							</Box>
