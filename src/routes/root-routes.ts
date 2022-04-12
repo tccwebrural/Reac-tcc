@@ -3,8 +3,12 @@ import FormAnimalPage from "../modules/animals/pages/Form";
 import ListAnimalsPage from "../modules/animals/pages/List";
 import FormReportPage  from "../modules/Report/pages/ReportForm";
 import ListReportPage  from "../modules/Report/pages/ReportList";
-import Anuncio from "../modules/Anuncio/pages/Anuncio";
 import ListReportPagetst from "../modules/Report/pages/Reportlisttst";
+import Home from "../modules/home-private/HomePrivate";
+import DeclareDoRebanho from "../modules/declareDoRebanho/DeclareDoRebanho";
+import Perfil from "../modules/perfil/Perfil";
+import EditAnimalData from "../modules/editAnimalData/EditAnimalData";
+import CadastroVacina from"../modules/cadastroVacina/CadastroVacina";
 
 interface Route {
 	key: string;
@@ -21,20 +25,61 @@ interface Route {
 
 export const ROOT_ROUTES: Array<Route> = [
 	{
+		key: "key-home-private",
+		title: "Home",
+		enabled: true,
+		path: "home-private/HomePrivate",
+		btnCabecalho: true,
+		component: Home,
+	},
+	{
 		key: "list-animals",
-		title: "Lista de animais",
+		title: "Minha Criação",
 		enabled: true,
 		path: "animals/list",
 		btnCabecalho: true,
 		component: ListAnimalsPage,
 	},
 	{
+		key: "key-declareDoRebanho",
+		title: "Declare do Rebanho",
+		enabled: true,
+		path: "declareDoRebanho/DeclareDoRebanho",
+		btnCabecalho: true,
+		component: DeclareDoRebanho,
+	},
+	{
+		key: "key-perfil",
+		title: "Meu Perfil",
+		enabled: true,
+		path: "perfil/Perfil",
+		btnCabecalho: true,
+		component: Perfil,
+	},
+
+	{
 		key: "create-animals",
 		title: "Cadastrar animal",
 		path: "animals/form",
 		enabled: true,
-		btnCabecalho: false,
+		btnCabecalho:  true,
 		component: FormAnimalPage,
+	},
+	{
+		key: "key-editAnimalData",
+		title: "Editar Dados do Animal",
+		enabled: true,
+		path: "animals/:animalId/editAnimalData/EditAnimalData",
+		btnCabecalho:true,
+		component: EditAnimalData,
+	},
+	{
+		key: "key-cadastroVacina",
+		title: "Cadastro Vacina",
+		enabled: true,
+		path: "cadastroVacina/CadastroVacina",
+		btnCabecalho:true,
+		component: CadastroVacina,
 	},
 
 	{
@@ -42,7 +87,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Formulario Relatorio",
 		path: "animals/:animalId/reports/form",
 		enabled: true,
-		btnCabecalho: true,
+		btnCabecalho:  false,
 		component: FormReportPage,
 	},
 
@@ -59,15 +104,8 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Lista Relatorio TESTE",
 		path: "animals/:animalId/reportstst",
 		enabled: true,
-		btnCabecalho: false,
+		btnCabecalho:  false,
 		component: ListReportPagetst,
 	},
-	{
-		key: "create-Anuncio",
-		title: "Anuncio",
-		path: "Anuncio/Anuncio",
-		enabled: true,
-		btnCabecalho: false,
-		component: Anuncio,
-	},
+
 ];

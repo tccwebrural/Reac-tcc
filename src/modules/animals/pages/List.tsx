@@ -1,9 +1,10 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
+import {ImEye} from "react-icons/im" ;
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { AiFillFileAdd } from "react-icons/ai";
+import VaccinesIcon from '@mui/icons-material/Vaccines';
+import {HiPlus} from "react-icons/hi";
 import { Box, Button, Fab, Modal } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import TableContainer from "@mui/material/TableContainer";
@@ -11,8 +12,9 @@ import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { Animal } from "../models/Animal.model";
 import { AnimalService } from "../services/Animals.service";
 import { Link } from "react-router-dom";
-
+import "./List.css";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import AddIcon from '@mui/icons-material/Add';
 
 const ListAnimalsPage = (): ReactElement => {
   const animalService = new AnimalService();
@@ -22,7 +24,7 @@ const ListAnimalsPage = (): ReactElement => {
     {
       field: "identifier",
       headerName: "Identificador",
-      width: 250,
+      width: 100,
       headerAlign: "center",
       align: "center",
       sortable: false,
@@ -30,7 +32,7 @@ const ListAnimalsPage = (): ReactElement => {
     {
       field: "name",
       headerName: "Nome",
-      width: 350,
+      width: 115,
       headerAlign: "center",
       align: "center",
       sortable: false,
@@ -39,6 +41,7 @@ const ListAnimalsPage = (): ReactElement => {
       field: "birthday",
       headerName: "idade",
       headerAlign: "center",
+      width: 110,
       sortable: false,
     },
     {
@@ -53,7 +56,7 @@ const ListAnimalsPage = (): ReactElement => {
       field: "type",
       headerName: "Tipo",
       sortable: false,
-      width: 350,
+      width: 100,
       headerAlign: "center",
       align: "center",
     },
@@ -61,24 +64,26 @@ const ListAnimalsPage = (): ReactElement => {
       field: "qtyChildreen",
       headerName: "Qtd Cria",
       headerAlign: "center",
+      width: 100,
       sortable: false,
     },
     {
       field: "weight",
       headerName: "Peso aproximado",
       headerAlign: "center",
+      width: 135,
       sortable: false,
     },
-    {
-      field: "qtyMilk",
-      headerName: "Quantidade de leite/dia",
-      headerAlign: "center",
-      sortable: false,
-    },
+    // {
+    //   field: "qtyMilk",
+    //   headerName: "Quantidade de leite/dia",
+    //   headerAlign: "center",
+    //   sortable: false,
+    // },
     {
       field: "operacoes",
       headerName: "Operacoes",
-      width: 380,
+      width: 210,
       headerAlign: "center",
       align: "center",
       sortable: false,
@@ -87,35 +92,35 @@ const ListAnimalsPage = (): ReactElement => {
         // setSelectedAnimal(animalSelected);
         return (
           <>
-            <Link to={`/animals/form/${currentAnimalRow.id}/`}>
-              <Fab size="small" color="warning">
-                <EditIcon />
-              </Fab>
-            </Link>
-            <Link to={`/ads/form/${currentAnimalRow.id}/`}>
+            {/* <Link to={`/ads/form/${currentAnimalRow.id}/`}>
               <Fab size="small" color="success">
                 <ShoppingCartIcon />
               </Fab>
+            </Link> */}
+             {/* AQUI VAMOS MUDAR ESSA ROTA */}
+             <Link to={`/animals/${currentAnimalRow.id}/reports`}>
+              <Fab size="small" style={{color:'white'}} id="btVisualizarDadosAnimal">
+                <abbr title="Visualizar Dados do Animal"><ImEye size={20} /></abbr>
+              </Fab>
             </Link>
             <Link to={`/animals/${currentAnimalRow.id}/reports/form`}>
-              <Fab size="small" color="primary">
-                <AiFillFileAdd />
+              <Fab size="small" color="primary" id="btVacina">
+                <abbr title="Cartão de Vacina"><VaccinesIcon/></abbr>
               </Fab>
             </Link>
-
-            {/* AQUI VAMOS MUDAR ESSA ROTA */}
-            <Link to={`/animals/${currentAnimalRow.id}/reports`}>
-              <Fab size="small" color="secondary">
-                <FormatAlignLeftIcon />
+            <Link to={`editAnimalData/EditAnimalData`}>
+              <Fab size="small"style={{color:'white'}} id="btEditar">
+                <abbr title="Editar Dados do Animal"><EditIcon/></abbr>
               </Fab>
             </Link>
-            
+           
             <Fab
+              id="btDelete"
               size="small"
               color="error"
               onClick={() => openDeleteAnimalModal(currentAnimalRow)}
             >
-              <DeleteIcon />
+              <abbr title="Deletar"><DeleteIcon/></abbr>
             </Fab>
           </>
         );
@@ -126,8 +131,6 @@ const ListAnimalsPage = (): ReactElement => {
   const [selectedAnimal, setSelectedAnimal] = useState<Animal>();
   const [animals, setAnimals] = useState<Animal[]>([]);
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
-
-   const {id} = useParams()
 
   /**
    * No inicio do carregamento da pagina é executado a função de carregar os animais
@@ -204,15 +207,28 @@ const ListAnimalsPage = (): ReactElement => {
 
   return (
     <>
+    <div id="Bloco">
+     <div id="MinhaCriacaoTxt_Linha">
+            <h2 id="MinhaCriacao-titulo">Minha Criação</h2>
+            <span id="MinhaCriacao-linha">
+            <abbr title="Adicionar Animal">
+  
+            <Fab id="AddIcon" 
+            component={Link}
+            to="animals/form"
+            style={{width:50, height:50}}
+            >
+              <AddIcon/>
+            </Fab>
+            
+              </abbr>
+            </span>
+      </div>
+    <main id="mainMinhaCriacao">
       <Paper
-        sx={{
-          width: "100%",
-          height: "100%",
-          overflow: "hidden",
-          padding: "2%",
-        }}
+       id="tabelaMinhaCriacao"
       >
-        <TableContainer sx={{ height: "500px" }}>
+        <TableContainer sx={{ height: "400px" }}>
           <DataGrid
             getRowId={(e: any) => e.id}
             rows={animals}
@@ -223,8 +239,8 @@ const ListAnimalsPage = (): ReactElement => {
         </TableContainer>
       </Paper>
       {renderDeleteAnimalModal()}
-
-     
+      </main>
+      </div>
     </>
   );
 };
