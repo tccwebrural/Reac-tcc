@@ -6,7 +6,9 @@ import { BiMenu } from "react-icons/bi";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+
 const Perfil = (): ReactElement => {
+  
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -75,21 +77,13 @@ const Perfil = (): ReactElement => {
                 <input className="txt-camposPerfil" id="InputCpf" value={cpf} />
                 <br />
                 <label className="labelCamposPerfil">E-mail: </label>
-                <input
-                  className="txt-camposPerfil"
-                  id="InputEmail"
-                  value={email}
-                />
+                <input className="txt-camposPerfil" id="InputEmail" value={email}/>
                 <br />
                 <label className="labelCamposPerfil">Telefone: </label>
                 <input className="txt-camposPerfil" id="InputTel" value={tel} />
                 <br />
                 <label className="labelCamposPerfil">Nome da Fazenda: </label>
-                <input
-                  className="txt-camposPerfil"
-                  id="InputNameFarm"
-                  value={nameFarm}
-                />
+                <input className="txt-camposPerfil" id="InputNameFarm" value={nameFarm} />
                 <br />
               </div>
             </div>

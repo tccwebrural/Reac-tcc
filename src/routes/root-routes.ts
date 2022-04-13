@@ -12,7 +12,7 @@ import Perfil from "../modules/perfil/Perfil";
 import EditAnimalData from "../modules/editAnimalData/EditAnimalData";
 import CadastroVacina from"../modules/cadastroVacina/CadastroVacina";
 import inicial from "../modules/home/Home";
-
+import ListTeste from "../modules/animals/pages/ListTeste";
 interface Route {
 	key: string;
 	/* Título da página */
@@ -50,9 +50,10 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Minha Criação",
 		enabled: true,
 		path: "animals/list",
-		btnCabecalho: false,
+		btnCabecalho: true,
 		component: ListAnimalsPage,
 	},
+	
 	{
 		key: "key-declareDoRebanho",
 		title: "Declare do Rebanho",
@@ -69,13 +70,20 @@ export const ROOT_ROUTES: Array<Route> = [
 		btnCabecalho: true,
 		component: Perfil,
 	},
-
+	{
+		key: "key-listTeste",
+		title: "Minha Criação Teste",
+		enabled: true,
+		path: "animals/ListTeste",
+		btnCabecalho: false,
+		component: ListTeste,
+	},
 	{
 		key: "create-animals",
 		title: "Cadastrar animal",
 		path: "animals/form",
 		enabled: true,
-		btnCabecalho:  true,
+		btnCabecalho: false,
 		component: FormAnimalPage,
 	},
 	{
@@ -83,7 +91,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Editar Dados do Animal",
 		enabled: true,
 		path: "animals/:animalId/editAnimalData/EditAnimalData",
-		btnCabecalho:true,
+		btnCabecalho:false,
 		component: EditAnimalData,
 	},
 	{

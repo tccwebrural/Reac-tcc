@@ -23,8 +23,10 @@
 #linksCabecalho{
     color: var(--cor003);
     text-transform: capitalize;
+
 }
 #linksCabecalho:focus{
-   text-decoration: underline 5px var(--cor006);
+   text-decoration:none;
+   border-bottom: 5px solid var(--cor006);
    color: var(--cor008);
 }

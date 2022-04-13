@@ -1,43 +1,38 @@
 
 #MinhaCriacaoTxt_Linha{
-    margin: 5.0% 0% 0% 0%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 1100px;
+    height: 90px;
 }
 
 #MinhaCriacao-titulo {
     color: var(--cor005);
-    margin-right: -60px;
-    margin-left: 10px;
+    padding: 10px 0px;
 }
 #MinhaCriacao-linha {
     content: " ";
     background-color: var(--cor007);
     display: flex;
     height: 3px;
-    width: 840px;
-    margin-top: 1.8%;
-    margin-right: -20px;
+    width: 900px;
+    margin-top: 8px;
+    margin-left:-50px ;
 }
 #AddIcon{
     background-color: var(--cor001);
-    border: 1px solid var(--cor002);
     margin-top: -24px;
-    margin-left: 1392%;
-}
+    margin-left: 1798%;
 
-#mainMinhaCriacao{
+}
+#tabela-MinhaCriacao{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 600px;
+    margin-top: -90px;
 }
-#tabelaMinhaCriacao{
-    margin-bottom: 3%;
-    margin-top: 30px;
-    width: 95%;
-}
-
 #btVisualizarDadosAnimal{
     background-color: var(--cor006);
     margin: 8px;

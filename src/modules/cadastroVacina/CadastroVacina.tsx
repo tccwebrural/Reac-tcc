@@ -4,6 +4,7 @@ import "./CadastroVacina.css";
 import {MdCoronavirus} from "react-icons/md";
 import {GiLoveInjection} from "react-icons/gi";
 import Checkbox from "@mui/material/Checkbox";
+import bezerro from "../../images/bezerro.png";
 
 import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -35,7 +36,7 @@ const CadastroVacina = (): ReactElement => {
             </div>
 
 
-            <form id="form-AtualizarDadosAnimal">
+            <div id="form-AtualizarDadosAnimal">
           <Box
             component="form"
             sx={{
@@ -113,15 +114,18 @@ const CadastroVacina = (): ReactElement => {
                 </fieldset>
             </div>
 
+            <div id="bloco-imgBezerro-CadastroVacina">
+              <img id="imgBezerro-CadastroVacina" src={bezerro} alt="bezerro"/>
+            </div>
             
             <div id="bts-AdcVacina-CancelAdd">
               <Grid item xs={2} sx={{ margin: 1 }}>
               <Button
-                      style={{marginRight: 4}}
+                      style={{marginRight: 4,padding:3,paddingLeft:10, paddingRight:10}}
                       variant="contained"
                       color="error"
                       component={Link}
-                      to="animals/list"
+                      to="/animals/list"
                     >
                       Cancelar
                     </Button>
@@ -136,7 +140,7 @@ const CadastroVacina = (): ReactElement => {
             </div>
             </div>
           </Box>
-        </form>
+        </div>
         </div>
          </Box>
     </>

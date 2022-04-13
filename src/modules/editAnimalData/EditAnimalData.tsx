@@ -12,6 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
+import bezerro from "../../images/bezerro.png";
+
 const EditAnimalData = (): ReactElement => {
   const salvarDadosAnimal = (e: any) => {
     alert("Dados Atualizados com Sucesso");
@@ -112,14 +114,17 @@ const EditAnimalData = (): ReactElement => {
                 }}
               /> */}
             
+            <div id="bloco-imgBezerro-EditAnimalData">
+              <img id="imgBezerro-EditAnimalData" src={bezerro} alt="bezerro"/>
+            </div>
             <div id="bts-AtualizarDadosAnimal">
-              <Grid item xs={2} sx={{ margin: 1 }}>
+              <Grid item sx={{ margin: 1 }}>
               <Button
-                      style={{marginRight: 4}}
+                      style={{marginRight: 4,padding:3,paddingLeft:10, paddingRight:10}}
                       variant="contained"
                       color="error"
                       component={Link}
-                      to="animals/list"
+                      to="/animals/list"
                     >
                       Cancelar
                     </Button>
