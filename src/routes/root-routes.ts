@@ -11,6 +11,7 @@ import DeclareDoRebanho from "../modules/declareDoRebanho/DeclareDoRebanho";
 import Perfil from "../modules/perfil/Perfil";
 import EditAnimalData from "../modules/editAnimalData/EditAnimalData";
 import CadastroVacina from"../modules/cadastroVacina/CadastroVacina";
+import inicial from "../modules/home/Home";
 
 interface Route {
 	key: string;
@@ -34,6 +35,16 @@ export const ROOT_ROUTES: Array<Route> = [
 		btnCabecalho: true,
 		component: Home,
 	},
+
+	{
+		key: "Create-inicial",
+		title: "inicial",
+		enabled: true,
+		path: "/inicial",
+		btnCabecalho: true,
+		component: inicial,
+	},
+
 	{
 		key: "list-animals",
 		title: "Minha Criação",
