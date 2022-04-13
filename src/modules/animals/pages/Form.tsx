@@ -16,6 +16,7 @@ import Paper from "@mui/material/Paper";
 import { useState } from "react";
 import { Animal } from "../models/Animal.model";
 import { checkServerIdentity } from "tls";
+import bezerro from "../../../images/bezerro.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -221,13 +222,16 @@ const FormAnimalPage = (): ReactElement => {
                   direction="row"
                   sx={{ marginRight:7.5 }}
                 >
+                  <div id="bloco-imgBezerro-Form">
+                    <img id="imgBezerro-Form" src={bezerro} alt="bezerro"/>
+                  </div>
                   <div id="bts-CadastrarAnimal-CancelSave">
                     <Button
-                      style={{marginRight: 4}}
+                      style={{marginRight: 4,paddingTop:2.5,paddingBottom:2.5,paddingLeft:13, paddingRight:13}}
                       variant="contained"
                       color="error"
                       component={Link}
-                      to="animals/list"
+                      to="/animals/list"
                     >
                       Cancelar
                     </Button>

@@ -1,6 +1,5 @@
 import React, { ReactElement } from "react";
 import "./Header.css";
-
 import {
 	Box,
 	Link,

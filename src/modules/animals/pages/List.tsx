@@ -1,33 +1,41 @@
 import React, { ReactElement, useEffect, useState } from "react";
+import "./List.css"
+import {
+  DataGrid,
+  GridColDef,
+  GridRenderCellParams,
+  GridValueGetterParams,
+} from "@mui/x-data-grid";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import {ImEye} from "react-icons/im" ;
+import { ImEye } from "react-icons/im";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import VaccinesIcon from '@mui/icons-material/Vaccines';
-import {HiPlus} from "react-icons/hi";
+import VaccinesIcon from "@mui/icons-material/Vaccines";
+import { HiPlus } from "react-icons/hi";
 import { Box, Button, Fab, Modal } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import TableContainer from "@mui/material/TableContainer";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { Animal } from "../models/Animal.model";
 import { AnimalService } from "../services/Animals.service";
 import { Link } from "react-router-dom";
 import "./List.css";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
+const columns: GridColDef[] = [
 
-const ListAnimalsPage = (): ReactElement => {
-  const animalService = new AnimalService();
-
-  /** Configurações das colunas da tabela */
-  const columns: GridColDef[] = [
+  { field: 'id',
+    headerName: 'Identificador',
+    headerAlign: "center",
+    align: "center",
+    width: 100 },
     {
-      field: "identifier",
-      headerName: "Identificador",
-      width: 100,
+      field: "category",
+      headerName: "Categoria",
+      sortable: false,
+      width: 90,
       headerAlign: "center",
       align: "center",
-      sortable: false,
     },
     {
       field: "name",
@@ -38,173 +46,88 @@ const ListAnimalsPage = (): ReactElement => {
       sortable: false,
     },
     {
-      field: "birthday",
-      headerName: "idade",
-      headerAlign: "center",
-      width: 110,
-      sortable: false,
-    },
-    {
-      field: "category",
-      headerName: "Categoria",
-      sortable: false,
-      width: 100,
-      headerAlign: "center",
-      align: "center",
-    },
+    field: "birthday",
+    headerName: "Idade",
+    headerAlign: "center",
+    align: "center",
+    width: 110,
+    sortable: false,
+  },
     {
       field: "type",
       headerName: "Tipo",
       sortable: false,
-      width: 100,
+      width: 120,
       headerAlign: "center",
       align: "center",
     },
-    {
-      field: "qtyChildreen",
-      headerName: "Qtd Cria",
-      headerAlign: "center",
-      width: 100,
-      sortable: false,
-    },
-    {
-      field: "weight",
-      headerName: "Peso aproximado",
-      headerAlign: "center",
-      width: 135,
-      sortable: false,
-    },
-    // {
-    //   field: "qtyMilk",
-    //   headerName: "Quantidade de leite/dia",
-    //   headerAlign: "center",
-    //   sortable: false,
-    // },
-    {
-      field: "operacoes",
-      headerName: "Operacoes",
-      width: 210,
-      headerAlign: "center",
-      align: "center",
-      sortable: false,
-      renderCell: (params: GridRenderCellParams) => {
-        const currentAnimalRow = params.row as Animal;
-        // setSelectedAnimal(animalSelected);
-        return (
-          <>
-            {/* <Link to={`/ads/form/${currentAnimalRow.id}/`}>
-              <Fab size="small" color="success">
-                <ShoppingCartIcon />
-              </Fab>
-            </Link> */}
-             {/* AQUI VAMOS MUDAR ESSA ROTA */}
-             <Link to={`/animals/${currentAnimalRow.id}/reports`}>
-              <Fab size="small" style={{color:'white'}} id="btVisualizarDadosAnimal">
+  {
+    field: 'weight',
+    headerName: 'Peso',
+    headerAlign: "center",
+    align: "center",
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: "qtyChildreen",
+    headerName: "Qtd de Cria",
+    headerAlign: "center",
+    align: "center",
+    width: 90,
+    sortable: false,
+  },
+  {
+    field: 'operacoes',
+    headerName: 'Operações',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    headerAlign: "center",
+    width: 210,
+    renderCell: (params: GridRenderCellParams) =>{
+      return(
+        <>
+      <Fab size="small" style={{color:'white'}} id="btVisualizarDadosAnimal">
                 <abbr title="Visualizar Dados do Animal"><ImEye size={20} /></abbr>
-              </Fab>
-            </Link>
-            <Link to={`/animals/${currentAnimalRow.id}/reports/form`}>
-              <Fab size="small" color="primary" id="btVacina">
-                <abbr title="Cartão de Vacina"><VaccinesIcon/></abbr>
-              </Fab>
-            </Link>
-            <Link to={`editAnimalData/EditAnimalData`}>
-              <Fab size="small"style={{color:'white'}} id="btEditar">
-                <abbr title="Editar Dados do Animal"><EditIcon/></abbr>
-              </Fab>
-            </Link>
-           
-            <Fab
+      </Fab>
+      <Fab size="small" color="primary" id="btVacina">
+        <abbr title="Cartão de Vacina"><VaccinesIcon/></abbr>
+      </Fab>
+    <Fab  size="small"
+          style={{color:'white'}}
+          id="btEditar"
+          component={Link}
+          to="/animals/:animalId/editAnimalData/EditAnimalData"
+     >
+       <abbr title="Editar Dados do Animal"><EditIcon/></abbr>
+       
+     </Fab>
+     <Fab     style={{marginBottom: 9}}
               id="btDelete"
               size="small"
               color="error"
-              onClick={() => openDeleteAnimalModal(currentAnimalRow)}
             >
               <abbr title="Deletar"><DeleteIcon/></abbr>
             </Fab>
-          </>
-        );
-      },
-    },
-  ];
-
-  const [selectedAnimal, setSelectedAnimal] = useState<Animal>();
-  const [animals, setAnimals] = useState<Animal[]>([]);
-  const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
-
-  /**
-   * No inicio do carregamento da pagina é executado a função de carregar os animais
-   */
-  useEffect(() => {
-    //TODO: Implementar chamada para o backend
-    animalService.getAnimals().then((animals) => setAnimals(animals));
-  }, []);
-
-  /** Método responsável por abrir o modal de excluir o animal */
-  const openDeleteAnimalModal = (animalSelected: Animal) => {
-    setSelectedAnimal(animalSelected);
-    setModalDeleteOpen(true);
-  };
-
-  /**
-   * Método responsável por realizar a exclusão do animal no banco de dados;
-   * @param isToDelete - Quando verdadeiro a ação de delete é realizada
-   */
-  //
-  const HandleDeleteAnimal = async (isToDelete: boolean) => {
-    if (isToDelete && selectedAnimal && selectedAnimal.id) {
-      //TODO: Chamar a api para realizar a exclusão
-      //TODO: Chamar a api para atulizar a lista de animais;.
-
-      //
-      await animalService.delteAnimalById(selectedAnimal.id);
-      await animalService.getAnimals().then(setAnimals);
-
-      console.log(animals);
+        </>
+      )
     }
+  },
+];
 
-    // Limpa o animal atual do campo de selecionado para evitar problemas
-    setSelectedAnimal({});
-    // Fecha o modal
-    setModalDeleteOpen(false);
-  };
+const rows = [
+  { id: 1,category:"Vaca",  name: 'Mimosa', birthday: 5,type:"Gado Leiteiro", weight: 350,  qtyChildreen:4 },
+  { id: 2,category:"Vaca",  name: 'Malhada', birthday: 9,type:"Gado Leiteiro", weight: 420,  qtyChildreen:3 },
+  { id: 3,category:"Novilha",  name: null, birthday: 2,type:"Gado de Corte", weight: 450,  qtyChildreen:2 },
+  { id: 4,category:"Novilha",  name: null, birthday: 2,type:"Gado de Corte", weight: 160, qtyChildreen:0 },
+  { id: 5,category:"Boi",  name: 'Teló', birthday: 5,type:"Gado de Corte", weight: null, qtyChildreen:null },
+  { id: 6,category:"Vaca",  name: 'Vaca006', birthday: 3,type:"Gado Leiteiro", weight: 150, qtyChildreen:22 },
+  { id: 7,category:"Vaca",  name: 'Vaca007', birthday: 1,type:"Gado Leiteiro", weight: 440, qtyChildreen:22 },
+  { id: 8,category:"Vaca",  name: 'Vaca008', birthday: 1,type:"Gado Leiteiro", weight: 360, qtyChildreen:22 },
+  { id: 9,category:"Vaca",  name: 'Vaca009', birthday: 1,type:"Gado Leiteiro",  weight: 650, qtyChildreen:22 },
+];
 
-  const renderDeleteAnimalModal = () => {
-    if (selectedAnimal) {
-      return (
-        <Modal
-          hideBackdrop
-          open={modalDeleteOpen}
-          onClose={() => HandleDeleteAnimal(false)}
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <Box>
-            <h2>
-              Você realmente deseja excluir esse animal ( {selectedAnimal.name}{" "}
-              )?
-            </h2>
-            <p>
-              Após a exclusão não será possível recuperar os dados do animal ({" "}
-              {selectedAnimal.name} )
-            </p>
-            <Button onClick={() => HandleDeleteAnimal(false)}>Não</Button>
-            <Button onClick={() => HandleDeleteAnimal(true)}>Sim</Button>
-          </Box>
-        </Modal>
-      );
-    }
-  };
-
+const List = (): ReactElement => {
   return (
     <>
     <div id="Bloco">
@@ -215,8 +138,8 @@ const ListAnimalsPage = (): ReactElement => {
   
             <Fab id="AddIcon" 
             component={Link}
-            to="animals/form"
-            style={{width:50, height:50}}
+            to="/animals/form"
+            style={{width:45, height:45}}
             >
               <AddIcon/>
             </Fab>
@@ -224,25 +147,18 @@ const ListAnimalsPage = (): ReactElement => {
               </abbr>
             </span>
       </div>
-    <main id="mainMinhaCriacao">
-      <Paper
-       id="tabelaMinhaCriacao"
-      >
-        <TableContainer sx={{ height: "400px" }}>
-          <DataGrid
-            getRowId={(e: any) => e.id}
-            rows={animals}
-            columns={columns}
-            pageSize={9}
-            rowsPerPageOptions={[9]}
-          />
-        </TableContainer>
-      </Paper>
-      {renderDeleteAnimalModal()}
-      </main>
-      </div>
+      
+    <Box id="tabela-MinhaCriacao" >
+     <div  style={{ height: 420, width: 948 }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+      />
+    </div>
+    </Box>
+    </div>
     </>
   );
 };
 
-export default ListAnimalsPage;
+export default List;
