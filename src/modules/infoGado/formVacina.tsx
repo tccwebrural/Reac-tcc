@@ -4,6 +4,7 @@ import { BsPrinter } from "react-icons/bs";
 import { MdCoronavirus } from "react-icons/md";
 import { Animal } from "../animals/models/Animal.model";
 import "./formVacina.css"
+import AddIcon from "@mui/icons-material/Add";
 
 const onChangeDataForm = (event: any) => {
     const [dataForm, setDataForm] = useState<Animal>({});
@@ -105,6 +106,11 @@ const formVacina = (): ReactElement => {
                             <div id="tituloVacina">
                                 <h2 id="nomeTitulo">Cartao de Vacina</h2>
                                 <span id="nomeTituloLinhaVacina"></span>
+                                <Fab id="printAdd">
+                                    <button id="btPrintAddIcon">
+                                        <AddIcon />
+                                    </button>
+                                </Fab>
                             </div>
                             <div id="infoGado">
                                 <Box>

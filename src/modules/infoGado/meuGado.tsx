@@ -4,7 +4,6 @@ import { Box, Checkbox, Container, Fab, FormControl, Grid, InputLabel, MenuItem,
 import { MdCoronavirus } from "react-icons/md";
 import { Animal } from "../animals/models/Animal.model";
 import { BsPrinter } from "react-icons/bs";
-import AddIcon from "@mui/icons-material/Add";
 
 const onChangeDataForm = (event: any) => {
     const [dataForm, setDataForm] = useState<Animal>({});
@@ -106,11 +105,6 @@ const meuGado = (): ReactElement => {
                             <div id="tituloVacina">
                                 <h2 id="nomeTitulo">Cartao de Vacina</h2>
                                 <span id="nomeTituloLinhaVacina"></span>
-                                <Fab id="printAdd">
-                                    <button id="btPrintAddIcon">
-                                        <AddIcon />
-                                    </button>
-                                </Fab>
                             </div>
 
                             <div id="blocoVacinas">
