@@ -24,28 +24,30 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
 const columns: GridColDef[] = [
 
-  { field: 'id',
+  {
+    field: 'id',
     headerName: 'Identificador',
     headerAlign: "center",
     align: "center",
-    width: 100 },
-    {
-      field: "category",
-      headerName: "Categoria",
-      sortable: false,
-      width: 90,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "name",
-      headerName: "Nome",
-      width: 115,
-      headerAlign: "center",
-      align: "center",
-      sortable: false,
-    },
-    {
+    width: 100
+  },
+  {
+    field: "category",
+    headerName: "Categoria",
+    sortable: false,
+    width: 90,
+    headerAlign: "center",
+    align: "center",
+  },
+  {
+    field: "name",
+    headerName: "Nome",
+    width: 115,
+    headerAlign: "center",
+    align: "center",
+    sortable: false,
+  },
+  {
     field: "birthday",
     headerName: "Idade",
     headerAlign: "center",
@@ -53,14 +55,14 @@ const columns: GridColDef[] = [
     width: 110,
     sortable: false,
   },
-    {
-      field: "type",
-      headerName: "Tipo",
-      sortable: false,
-      width: 120,
-      headerAlign: "center",
-      align: "center",
-    },
+  {
+    field: "type",
+    headerName: "Tipo",
+    sortable: false,
+    width: 120,
+    headerAlign: "center",
+    align: "center",
+  },
   {
     field: 'weight',
     headerName: 'Peso',
@@ -84,36 +86,41 @@ const columns: GridColDef[] = [
     sortable: false,
     headerAlign: "center",
     width: 210,
-    renderCell: (params: GridRenderCellParams) =>{
-      return(
+    renderCell: (params: GridRenderCellParams) => {
+      return (
         <>
-      <Fab size="small" style={{color:'white'}} id="btVisualizarDadosAnimal">
-                <abbr title="Visualizar Dados do Animal"><ImEye size={20} /></abbr>
-      </Fab>
-      <Fab size="small" 
-          color="primary" 
-          id="btVacina"
-          component={Link}
-          to="/infoGado/meuGado"
+          <Fab size="small"
+            style={{ color: 'white' }}
+            id="btVisualizarDadosAnimal"
+            component={Link}
+            to="/infoGado/meuGado"
           >
-        <abbr title="Cartão de Vacina"><VaccinesIcon/></abbr>
-      </Fab>
-    <Fab  size="small"
-          style={{color:'white'}}
-          id="btEditar"
-          component={Link}
-          to="/animals/:animalId/editAnimalData/EditAnimalData"
-     >
-       <abbr title="Editar Dados do Animal"><EditIcon/></abbr>
-       
-     </Fab>
-     <Fab     style={{marginBottom: 9}}
-              id="btDelete"
-              size="small"
-              color="error"
-            >
-              <abbr title="Deletar"><DeleteIcon/></abbr>
-            </Fab>
+            <abbr title="Visualizar Dados do Animal"><ImEye size={20} /></abbr>
+          </Fab>
+          <Fab size="small"
+            color="primary"
+            id="btVacina"
+            component={Link}
+            to="/infoGado/formVacina"
+          >
+            <abbr title="Cartão de Vacina"><VaccinesIcon /></abbr>
+          </Fab>
+          <Fab size="small"
+            style={{ color: 'white' }}
+            id="btEditar"
+            component={Link}
+            to="/animals/:animalId/editAnimalData/EditAnimalData"
+          >
+            <abbr title="Editar Dados do Animal"><EditIcon /></abbr>
+
+          </Fab>
+          <Fab style={{ marginBottom: 9 }}
+            id="btDelete"
+            size="small"
+            color="error"
+          >
+            <abbr title="Deletar"><DeleteIcon /></abbr>
+          </Fab>
         </>
       )
     }
@@ -121,47 +128,47 @@ const columns: GridColDef[] = [
 ];
 
 const rows = [
-  { id: 1,category:"Vaca",  name: 'Mimosa', birthday: 5,type:"Gado Leiteiro", weight: 350,  qtyChildreen:4 },
-  { id: 2,category:"Vaca",  name: 'Malhada', birthday: 9,type:"Gado Leiteiro", weight: 420,  qtyChildreen:3 },
-  { id: 3,category:"Novilha",  name: null, birthday: 2,type:"Gado de Corte", weight: 450,  qtyChildreen:2 },
-  { id: 4,category:"Novilha",  name: null, birthday: 2,type:"Gado de Corte", weight: 160, qtyChildreen:0 },
-  { id: 5,category:"Boi",  name: 'Teló', birthday: 5,type:"Gado de Corte", weight: null, qtyChildreen:null },
-  { id: 6,category:"Vaca",  name: 'Vaca006', birthday: 3,type:"Gado Leiteiro", weight: 150, qtyChildreen:22 },
-  { id: 7,category:"Vaca",  name: 'Vaca007', birthday: 1,type:"Gado Leiteiro", weight: 440, qtyChildreen:22 },
-  { id: 8,category:"Vaca",  name: 'Vaca008', birthday: 1,type:"Gado Leiteiro", weight: 360, qtyChildreen:22 },
-  { id: 9,category:"Vaca",  name: 'Vaca009', birthday: 1,type:"Gado Leiteiro",  weight: 650, qtyChildreen:22 },
+  { id: 1, category: "Vaca", name: 'Mimosa', birthday: 5, type: "Gado Leiteiro", weight: 350, qtyChildreen: 4 },
+  { id: 2, category: "Vaca", name: 'Malhada', birthday: 9, type: "Gado Leiteiro", weight: 420, qtyChildreen: 3 },
+  { id: 3, category: "Novilha", name: null, birthday: 2, type: "Gado de Corte", weight: 450, qtyChildreen: 2 },
+  { id: 4, category: "Novilha", name: null, birthday: 2, type: "Gado de Corte", weight: 160, qtyChildreen: 0 },
+  { id: 5, category: "Boi", name: 'Teló', birthday: 5, type: "Gado de Corte", weight: null, qtyChildreen: null },
+  { id: 6, category: "Vaca", name: 'Vaca006', birthday: 3, type: "Gado Leiteiro", weight: 150, qtyChildreen: 22 },
+  { id: 7, category: "Vaca", name: 'Vaca007', birthday: 1, type: "Gado Leiteiro", weight: 440, qtyChildreen: 22 },
+  { id: 8, category: "Vaca", name: 'Vaca008', birthday: 1, type: "Gado Leiteiro", weight: 360, qtyChildreen: 22 },
+  { id: 9, category: "Vaca", name: 'Vaca009', birthday: 1, type: "Gado Leiteiro", weight: 650, qtyChildreen: 22 },
 ];
 
 const List = (): ReactElement => {
   return (
     <>
-    <div id="Bloco">
-     <div id="MinhaCriacaoTxt_Linha">
-            <h2 id="MinhaCriacao-titulo">Minha Criação</h2>
-            <span id="MinhaCriacao-linha">
+      <div id="Bloco">
+        <div id="MinhaCriacaoTxt_Linha">
+          <h2 id="MinhaCriacao-titulo">Minha Criação</h2>
+          <span id="MinhaCriacao-linha">
             <abbr title="Adicionar Animal">
-  
-            <Fab id="AddIcon" 
-            component={Link}
-            to="/animals/form"
-            style={{width:45, height:45}}
-            >
-              <AddIcon/>
-            </Fab>
-            
-              </abbr>
-            </span>
+
+              <Fab id="AddIcon"
+                component={Link}
+                to="/animals/form"
+                style={{ width: 45, height: 45 }}
+              >
+                <AddIcon />
+              </Fab>
+
+            </abbr>
+          </span>
+        </div>
+
+        <Box id="tabela-MinhaCriacao" >
+          <div style={{ height: 420, width: 948 }}>
+            <DataGrid
+              rows={rows}
+              columns={columns}
+            />
+          </div>
+        </Box>
       </div>
-      
-    <Box id="tabela-MinhaCriacao" >
-     <div  style={{ height: 420, width: 948 }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-      />
-    </div>
-    </Box>
-    </div>
     </>
   );
 };

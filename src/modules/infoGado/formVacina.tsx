@@ -5,6 +5,7 @@ import { MdCoronavirus } from "react-icons/md";
 import { Animal } from "../animals/models/Animal.model";
 import "./formVacina.css"
 import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 const onChangeDataForm = (event: any) => {
     const [dataForm, setDataForm] = useState<Animal>({});
@@ -107,7 +108,10 @@ const formVacina = (): ReactElement => {
                             <div id="DeclareDoRebanhoTxt_Linha">
                                 <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
                                 <span id="DeclareDoRebanho-linha">
-                                    <Fab id="printIconAddIcon">
+                                    <Fab id="printIconAddIcon"
+                                        component={Link}
+                                        to="/cadastroVacina/CadastroVacina"
+                                    >
                                         <button id="btPrintIconAddIcon">
                                             <AddIcon/>
                                         </button>
