@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { BsPrinter } from "react-icons/bs";
 import "./DeclareDoRebanho.css";
 import Checkbox from "@mui/material/Checkbox";
-
+import vaca from "../../images/vaca-sem-chifre.png";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -237,8 +237,10 @@ const DeclareDoRebanho = (): ReactElement => {
                   <p>Leite</p>
                   <Checkbox
                     {...label}
-                    sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    sx={{ "& .MuiSvgIcon-root": { fontSize: 28} }}
+                    style={{marginRight:-35, marginTop:-80}}
                   />
+                  <img id="imgVaca-DeclareDoRebanho" src={vaca} />
                 </div>
               </div>
             </div>

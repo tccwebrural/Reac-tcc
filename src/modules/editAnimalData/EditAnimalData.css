@@ -28,7 +28,6 @@
     margin-right:10px ;
 }
 #Bloco-camposEditAnimalData{
-    margin-top: 3.8%;
     padding: 1%;
     box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
 }
@@ -37,14 +36,30 @@
     height: 400px;
     margin: auto;
 }
-#bloco-imgBezerro-EditAnimalData{
+#bloco-imgVaca-EditAnimalData{
     display: flex;
     justify-content: end;
 }
+#imgVaca-EditAnimalData{
+    width: 350px;
+    height: 220px;
+    margin-right:55%;
+    margin-top: 1%;
+    margin-bottom: -2.5%;
+}
+#bloco-imgBezerro-EditAnimalData{
+    display: flex;
+    justify-content: end;
+    margin-top: -26%;
+}
 #imgBezerro-EditAnimalData{
-    width: 200px;
-    margin-right: 3%;
-    margin-top: 2%;
+    width: 160px;
+    height: 140px;
+    position: relative;
+    margin-right: -130%;
+    margin-top: 7%;
+    margin-right: 7%;
+    margin-bottom: -2%;
 }
 #bts-AtualizarDadosAnimal{
     height: 60px;

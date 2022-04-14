@@ -1,3 +1,11 @@
+#BlocoPerfil{
+    width: 1100px;
+    height: 542px;
+    margin:auto;
+    margin-top: 2%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+}
 #MeuPerfilTxt_Linha{
     display: flex;
     justify-content: space-around;
@@ -25,13 +33,15 @@
     margin-top: -2%;
 }
 #bloPerfil{
-    height: 440px;
+    height: 420px;
     width: 450px;
     border: none;
     box-shadow: 0px 1px 5px 0px rgba(192, 192, 192, 0.651);
     border-radius: 8px;
     padding: 3%;
     margin-top: 2%;
+    background-color: var(--cor001);
+    position: relative;
 }
 #imgPerfil{
     display: flex;
@@ -39,16 +49,24 @@
     margin-top: -8%
 }
 fieldset#img{
-    width: 100px;
+    width: 90px;
+    height: 95px;
+    border-radius: 70px;
+    border: 1px solid rgb(124, 124, 124);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imgUser{
+    width: 95px;
     height: 100px;
     border-radius: 70px;
-    border:1px solid rgb(170, 170, 170);
+
 }
 #blocoNomePerfil{
     display: flex;
     justify-content: center;
     margin-top: 4%;
-    color: var(--cor004);
 }
 #nomePerfil{
     font-weight: bold;
@@ -73,25 +91,30 @@ fieldset#img{
 }
 .labelCamposPerfil{
     font-weight: bold;
-    color: var(--cor004);
+    color: var(--cor003);
 }
 .txt-camposPerfil{
     border: none;
     border-bottom: 1px solid var(--cor002);
-    color: rgb(100, 100, 100);
+    color: rgb(155, 155, 155);
     font-size: 16px;
+    padding-bottom: 2.5px;
 }
 
 #InputEmail{
-    padding-right: 24%;
+    padding-right: 34%;
 }
 #InputCpf{
-    padding-right: 28%;
+    padding-right: 38%;
 }
 #InputTel{
-    padding-right: 19%;
+    padding-right: 29%;
 }
 #InputNameFarm{
-    padding-right: 2.5%;
+    padding-right: 12%;
 }
+#imgRodape-Perfil{
+    margin-top: -15.8%;
+    width: 1100px;
 
+}

@@ -13,7 +13,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 import bezerro from "../../images/bezerro.png";
-
+import vaca from "../../images/vaca-com-chifre-andando.png";
 const EditAnimalData = (): ReactElement => {
   const salvarDadosAnimal = (e: any) => {
     alert("Dados Atualizados com Sucesso");
@@ -113,7 +113,9 @@ const EditAnimalData = (): ReactElement => {
                   shrink: true,
                 }}
               /> */}
-            
+            <div id="bloco-imgVaca-EditAnimalData">
+              <img id="imgVaca-EditAnimalData" src={vaca} alt="bezerro"/>
+            </div>
             <div id="bloco-imgBezerro-EditAnimalData">
               <img id="imgBezerro-EditAnimalData" src={bezerro} alt="bezerro"/>
             </div>

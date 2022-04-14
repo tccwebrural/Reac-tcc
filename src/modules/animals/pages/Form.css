@@ -1,10 +1,9 @@
 #FormTxt_Linha{
-    margin: 5.0% 0% 0% 0%;
     display: flex;
     justify-content: space-around;
-    width: 1100px;
-    font-size: 15px;
     align-items: center;
+    width: 1100px;
+    height: 90px;
 }
 #Form-titulo {
    color: var(--cor005);
@@ -20,17 +19,33 @@
         margin-right: 5px;
         margin-left: -80px;
 }
+#formCadAnimal{
+    margin-top: 0%;
+}
 #bloco-imgBezerro-Form{
     display: flex;
     justify-content: end;
 
 }
 #imgBezerro-Form{
-    width: 200px;
-    height: 160px;
+    width: 160px;
+    height: 140px;
     position: relative;
-    margin-right: -105%;
-    margin-top: 10%;
+    margin-right: -120%;
+    margin-top: 30%;
+
+}
+#bloco-imgVaca-Form{
+    display: flex;
+    justify-content: end;
+
+}
+#imgVaca-Form{
+    width: 350px;
+    height: 220px;
+    position: relative;
+    margin-right:18%;
+    margin-top: 4%;
 
 }
 #bts-CadastrarAnimal-CancelSave{

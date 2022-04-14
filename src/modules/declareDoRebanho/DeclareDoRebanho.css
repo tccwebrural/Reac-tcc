@@ -110,9 +110,7 @@
     border: 1px solid var(--cor002);
 
 }
-#separacao{
-    background-color: aqua;
-}
+
 #total{
     background-color: var(--cor005);
     width: 161px;
@@ -253,4 +251,9 @@
     justify-content: space-evenly;
     margin-top: 12%;
     text-align: center;
+}
+#imgVaca-DeclareDoRebanho{
+    margin-top: -160%;
+    margin-right: -180px;
+    width: 220px;
 }

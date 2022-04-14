@@ -2,11 +2,11 @@ import React, { ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
 import "./Perfil.css";
 import { BiMenu } from "react-icons/bi";
-
+import rodape from "../../images/rodape.png";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
+import imgUser from "../../images/imgUser.png";
 const Perfil = (): ReactElement => {
   
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -33,7 +33,7 @@ const Perfil = (): ReactElement => {
           justifyContent: "center",
         }}
       >
-        <div id="Bloco">
+        <div id="BlocoPerfil">
           <div id="MeuPerfilTxt_Linha">
             <h2 id="MeuPerfil-titulo">Meu Perfil</h2>
             <span id="MeuPerfil-linha"></span>
@@ -66,7 +66,9 @@ const Perfil = (): ReactElement => {
               </div>
 
               <div id="imgPerfil">
-                <fieldset id="img"></fieldset>
+                <fieldset id="img">
+                  <img id="imgUser" src={imgUser}/>
+                </fieldset>
               </div>
 
               <span id="blocoNomePerfil">
@@ -88,6 +90,7 @@ const Perfil = (): ReactElement => {
               </div>
             </div>
           </div>
+          <img id="imgRodape-Perfil" src={rodape}/>
         </div>
       </Box>
     </>

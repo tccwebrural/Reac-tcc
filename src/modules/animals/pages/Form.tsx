@@ -17,7 +17,7 @@ import { useState } from "react";
 import { Animal } from "../models/Animal.model";
 import { checkServerIdentity } from "tls";
 import bezerro from "../../../images/bezerro.png";
-
+import vaca from "../../../images/vaca-com-chifre-andando.png";
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   margin: "auto",
@@ -222,6 +222,9 @@ const FormAnimalPage = (): ReactElement => {
                   direction="row"
                   sx={{ marginRight:7.5 }}
                 >
+                  <div id="bloco-imgVaca-Form">
+                    <img id="imgVaca-Form" src={vaca} alt="vaca"/>
+                  </div>
                   <div id="bloco-imgBezerro-Form">
                     <img id="imgBezerro-Form" src={bezerro} alt="bezerro"/>
                   </div>
