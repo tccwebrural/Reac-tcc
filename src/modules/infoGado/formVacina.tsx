@@ -108,7 +108,7 @@ const formVacina = (): ReactElement => {
                                 <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
                                 <span id="DeclareDoRebanho-linha">
                                     <Fab id="printIconAddIcon">
-                                        <button id="btPrintIconAddIcon" type="submit" onClick={imprimir}>
+                                        <button id="btPrintIconAddIcon">
                                             <AddIcon/>
                                         </button>
                                     </Fab>
