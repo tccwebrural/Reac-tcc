@@ -13,6 +13,8 @@ import EditAnimalData from "../modules/editAnimalData/EditAnimalData";
 import CadastroVacina from"../modules/cadastroVacina/CadastroVacina";
 import inicial from "../modules/home/Home";
 import ListTeste from "../modules/animals/pages/ListTeste";
+import meuGado from "../modules/infoGado/meuGado"
+import formVacina from "../modules/infoGado/formVacina";
 interface Route {
 	key: string;
 	/* Título da página */
@@ -41,7 +43,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "inicial",
 		enabled: true,
 		path: "/inicial",
-		btnCabecalho: true,
+		btnCabecalho: false,
 		component: inicial,
 	},
 
@@ -146,7 +148,24 @@ export const ROOT_ROUTES: Array<Route> = [
 		btnCabecalho: false,
 		component: registrar,
 	},
+
+	{
+		key: "create-meuGado",
+		title: "Meu Gado",
+		enabled: true,
+		path: "infoGado/meuGado",
+		btnCabecalho: true,
+		component: meuGado,
+	},
 	
+	{
+		key: "create-FormVacina",
+		title: "FormVacina",
+		enabled: true,
+		path: "infoGado/formVacina",
+		btnCabecalho: true,
+		component: formVacina,
+	},
 
 	
 ];
