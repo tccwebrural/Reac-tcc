@@ -20,16 +20,17 @@ const formVacina = (): ReactElement => {
     return (<>
         <Container sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
             <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
-                <div id="blocoGeral">
+                <div id="blocoGeralVacina">
                     <section>
-                        <div id="tituloGado">
-                            <h2 id="nomeTitulo">Minha Criação &gt; Gado</h2>
-                            <span id="nomeTituloLinhaGado"></span>
-                            <Fab id="print">
-                                <button id="btPrintIcon" type="submit" onClick={imprimir}>
-                                    <BsPrinter size={20} />
-                                </button>
-                            </Fab>
+                        <div id="DeclareDoRebanhoTxt_Linha">
+                            <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
+                            <span id="DeclareDoRebanho-linha">
+                                <Fab id="printIcon">
+                                    <button id="btPrintIcon" type="submit" onClick={imprimir}>
+                                        <BsPrinter size={20} />
+                                    </button>
+                                </Fab>
+                            </span>
                         </div>
 
                         <div id="infoGado">
@@ -103,14 +104,15 @@ const formVacina = (): ReactElement => {
 
                     <section>
                         <div>
-                            <div id="tituloVacina">
-                                <h2 id="nomeTitulo">Cartao de Vacina</h2>
-                                <span id="nomeTituloLinhaVacina"></span>
-                                <Fab id="printAdd">
-                                    <button id="btPrintAddIcon">
-                                        <AddIcon />
-                                    </button>
-                                </Fab>
+                            <div id="DeclareDoRebanhoTxt_Linha">
+                                <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
+                                <span id="DeclareDoRebanho-linha">
+                                    <Fab id="printIconAddIcon">
+                                        <button id="btPrintIconAddIcon" type="submit" onClick={imprimir}>
+                                            <AddIcon/>
+                                        </button>
+                                    </Fab>
+                                </span>
                             </div>
                             <div id="infoGado">
                                 <Box>
@@ -185,26 +187,7 @@ const formVacina = (): ReactElement => {
                                     <h1>Virus 1</h1>
                                     <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 2</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
-                                </Grid>
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 3</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
-                                </Grid>
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 4</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
-                                </Grid>
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 5</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
-                                </Grid>
+
                             </div>
                         </div>
                         <div id="button">
