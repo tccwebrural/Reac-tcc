@@ -1,6 +1,6 @@
 import "../infoGado/meuGado.css";
 import React, { ReactElement, useState } from "react";
-import { Box, Checkbox, Container, Fab, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Container, Fab, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { MdCoronavirus } from "react-icons/md";
 import { Animal } from "../animals/models/Animal.model";
 import { BsPrinter } from "react-icons/bs";
@@ -21,14 +21,15 @@ const meuGado = (): ReactElement => {
             <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
                 <div id="blocoGeral">
                     <section>
-                        <div id="tituloGado">
-                            <h2 id="nomeTitulo">Minha Criação &gt; Gado</h2>
-                            <span id="nomeTituloLinhaGado"></span>
-                            <Fab id="print">
-                                <button id="btPrintIcon" type="submit" onClick={imprimir}>
-                                    <BsPrinter size={20} />
-                                </button>
-                            </Fab>
+                        <div id="DeclareDoRebanhoTxt_Linha">
+                            <h2 id="DeclareDoRebanho-titulo">Minha Criação &gt; Gado</h2>
+                            <span id="DeclareDoRebanho-linha">
+                                <Fab id="printIcon">
+                                    <button id="btPrintIcon" type="submit" onClick={imprimir}>
+                                        <BsPrinter size={20} />
+                                    </button>
+                                </Fab>
+                            </span>
                         </div>
 
                         <div id="infoGado">
@@ -71,7 +72,7 @@ const meuGado = (): ReactElement => {
                                             type="date"
                                             InputLabelProps={{
                                                 shrink: true,
-                                              }}
+                                            }}
                                         />
                                     </Grid>
                                     <Grid sx={{ margin: "1%" }}>
@@ -102,36 +103,31 @@ const meuGado = (): ReactElement => {
 
                     <section>
                         <div>
-                            <div id="tituloVacina">
-                                <h2 id="nomeTitulo">Cartao de Vacina</h2>
-                                <span id="nomeTituloLinhaVacina"></span>
+                            <div id="DeclareDoRebanhoTxt_Linha">
+                                <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
+                                <span id="DeclareDoRebanho-linha"></span>
                             </div>
 
                             <div id="blocoVacinas">
                                 <Grid id="vacinas">
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 1</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
                                 <Grid id="vacinas">
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 2</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
                                 <Grid id="vacinas">
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 3</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
                                 <Grid id="vacinas">
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 4</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
                                 <Grid id="vacinas">
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 5</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
                             </div>
                         </div>
