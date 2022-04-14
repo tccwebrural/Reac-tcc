@@ -90,7 +90,12 @@ const columns: GridColDef[] = [
       <Fab size="small" style={{color:'white'}} id="btVisualizarDadosAnimal">
                 <abbr title="Visualizar Dados do Animal"><ImEye size={20} /></abbr>
       </Fab>
-      <Fab size="small" color="primary" id="btVacina">
+      <Fab size="small" 
+          color="primary" 
+          id="btVacina"
+          component={Link}
+          to="/infoGado/meuGado"
+          >
         <abbr title="Cartão de Vacina"><VaccinesIcon/></abbr>
       </Fab>
     <Fab  size="small"

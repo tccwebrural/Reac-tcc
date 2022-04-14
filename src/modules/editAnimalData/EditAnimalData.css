@@ -3,7 +3,7 @@
     margin:auto;
     margin-top: 2%;
     border-radius: 8px;
-    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+    box-shadow: 2px 2px 4px 2px var(--cor011);
     padding: 1px;
     padding-bottom: 3%;
 }
@@ -29,7 +29,7 @@
 }
 #Bloco-camposEditAnimalData{
     padding: 1%;
-    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+    box-shadow: 2px 2px 4px 2px var(--cor111);
 }
 #form-AtualizarDadosAnimal{
     width: 900px;

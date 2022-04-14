@@ -101,7 +101,7 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "Cadastro Vacina",
 		enabled: true,
 		path: "cadastroVacina/CadastroVacina",
-		btnCabecalho:true,
+		btnCabecalho:false,
 		component: CadastroVacina,
 	},
 
@@ -153,8 +153,8 @@ export const ROOT_ROUTES: Array<Route> = [
 		key: "create-meuGado",
 		title: "Meu Gado",
 		enabled: true,
-		path: "infoGado/meuGado",
-		btnCabecalho: true,
+		path: "/infoGado/meuGado",
+		btnCabecalho: false,
 		component: meuGado,
 	},
 	

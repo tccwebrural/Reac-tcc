@@ -34,7 +34,7 @@
     
 }
 #tableMeusRelatorios{
-    border: 1px solid rgb(216, 216, 216);
+    border: 1px solid var(--cor002);
     width: 900px;
     padding: 1.5%;
    
