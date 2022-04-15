@@ -7,11 +7,7 @@ import "./formVacina.css"
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 
-const onChangeDataForm = (event: any) => {
-    const [dataForm, setDataForm] = useState<Animal>({});
-    const { name, value } = event.target;
-    setDataForm({ ...dataForm, [name]: value });
-}
+
 
 function imprimir() {
     window.print();
@@ -59,7 +55,7 @@ const formVacina = (): ReactElement => {
                                             <Select
                                                 label="Grouping"
                                                 name="type"
-                                                onChange={onChangeDataForm}
+                                                
                                             >
                                                 <MenuItem value={1}>Gado de Corte</MenuItem>
                                                 <MenuItem value={2}>Gado Leitero</MenuItem>
@@ -91,7 +87,7 @@ const formVacina = (): ReactElement => {
                                             <Select
                                                 label="Grouping"
                                                 name="type"
-                                                onChange={onChangeDataForm}
+                                               
                                             >
                                                 <MenuItem value={1}>Macho</MenuItem>
                                                 <MenuItem value={2}>Femea</MenuItem>
@@ -143,7 +139,7 @@ const formVacina = (): ReactElement => {
                                                 <Select
                                                     label="Grouping"
                                                     name="type"
-                                                    onChange={onChangeDataForm}
+                                                  
                                                 >
                                                     <MenuItem value={1}>Gado de Corte</MenuItem>
                                                     <MenuItem value={2}>Gado Leitero</MenuItem>
@@ -175,7 +171,7 @@ const formVacina = (): ReactElement => {
                                                 <Select
                                                     label="Grouping"
                                                     name="type"
-                                                    onChange={onChangeDataForm}
+                                                 
                                                 >
                                                     <MenuItem value={1}>Macho</MenuItem>
                                                     <MenuItem value={2}>Femea</MenuItem>

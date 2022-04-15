@@ -29,7 +29,7 @@ const DeclareDoRebanho = (): ReactElement => {
         }}
       >
         {" "}
-        <div id="Bloco">
+        <div className="MainBlock">
           <div id="DeclareDoRebanhoTxt_Linha">
             <h2 id="DeclareDoRebanho-titulo">Declare do Rebanho</h2>
             <span id="DeclareDoRebanho-linha">

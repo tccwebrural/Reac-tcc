@@ -35,38 +35,38 @@ const Home = (): ReactElement => {
   return (
     <>
       <main>
-        <div id="Bloco">
-          <div id="MeusRelatoriosTxt_Linha">
-            <h2 id="MeusRelatorios-titulo">Meus Relatórios</h2>
-            <span id="MeusRelatorios-linha"></span>
+        <div className="MainBlock">
+          <div className="Block-Txt-Line">
+            <h2 className="Block-Txt">Meus Relatórios</h2>
+            <span className="Block-Line"></span>
           </div>
-          <Box id="blocoMeusRelatorios">
-            <div id="div">
-              <TableContainer id="tableMeusRelatorios" component={Paper}>
+          <Box id="Block-MyReports">
+            <div>
+              <TableContainer id="Table-MyReports" component={Paper}>
                 <Table sx={{ maxWidth: 1000 }}>
                   <TableHead>
                     <TableRow>
-                      <TableCell id="itensDaTabela_txt">Período </TableCell>
-                      <TableCell id="itensDaTabela_txt">
+                      <TableCell className="Table-MyReports-Itens-txt">Período </TableCell>
+                      <TableCell className="Table-MyReports-Itens-txt">
                         Bezerros{" "}
                         <p className="txt_parenteses">de 0 à 6 meses</p>
                       </TableCell>
-                      <TableCell id="itensDaTabela_txt">
+                      <TableCell className="Table-MyReports-Itens-txt">
                         Desmamados
-                        <p className="txt_parenteses">de 7 à 12 meses</p>
+                        <p className="Itens-txt-caption">de 7 à 12 meses</p>
                       </TableCell>
-                      <TableCell id="itensDaTabela_txt">
+                      <TableCell className="Table-MyReports-Itens-txt">
                         Garrotes{" "}
-                        <p className="txt_parenteses">de 13 à 24 meses</p>
+                        <p className="Itens-txt-caption">de 13 à 24 meses</p>
                       </TableCell>
-                      <TableCell id="itensDaTabela_txt">
+                      <TableCell className="Table-MyReports-Itens-txt">
                         Novilhos{" "}
-                        <p className="txt_parenteses">de 25 à 36 meses</p>
+                        <p className="Itens-txt-caption">de 25 à 36 meses</p>
                       </TableCell>
-                      <TableCell id="itensDaTabela_txt">
-                        Acima de <p className="txt_parenteses">de 36 meses </p>
+                      <TableCell className="Table-MyReports-Itens-txt">
+                        Acima de <p className="Itens-txt-caption">de 36 meses </p>
                       </TableCell>
-                      <TableCell id="itensDaTabela_txt">TOTAL</TableCell>
+                      <TableCell className="Table-MyReports-Itens-txt">TOTAL</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>

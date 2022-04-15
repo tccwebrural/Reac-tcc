@@ -12,7 +12,7 @@ import Perfil from "../modules/perfil/Perfil";
 import EditAnimalData from "../modules/editAnimalData/EditAnimalData";
 import CadastroVacina from"../modules/cadastroVacina/CadastroVacina";
 import inicial from "../modules/home/Home";
-import ListTeste from "../modules/animals/pages/ListTeste";
+import ListTeste from "../modules/animals/pages/ListAntigo";
 import meuGado from "../modules/infoGado/meuGado"
 import formVacina from "../modules/infoGado/formVacina";
 interface Route {
@@ -163,9 +163,9 @@ export const ROOT_ROUTES: Array<Route> = [
 		title: "FormVacina",
 		enabled: true,
 		path: "infoGado/formVacina",
-		btnCabecalho: true,
+		btnCabecalho: false,
 		component: formVacina,
 	},
-
+	
 	
 ];

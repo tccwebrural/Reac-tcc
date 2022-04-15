@@ -2,7 +2,8 @@
 :root{
     --transparente: rgba(255, 255, 255, 0);
     --cor001:white;
-    --cor111:rgb(236, 236, 236);
+    /* --cor111:rgb(236, 236, 236); */
+    --cor111:rgba(236, 236, 236, 0.685);
     --cor011:rgba(245, 245, 245, 0.603);
     --cor002:rgb(211, 211, 211);
     --cor033:rgba(192, 192, 192, 0.651);
@@ -18,7 +19,7 @@
 #cabecalho{
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 8px 0px var(--cor003);
+    box-shadow: 2px 2px 4px 2px var(--cor111);
     color: var(--cor003);
     text-decoration: none;
     

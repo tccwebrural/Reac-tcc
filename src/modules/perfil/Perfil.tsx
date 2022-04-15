@@ -7,8 +7,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import imgUser from "../../images/imgUser.png";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+
 const Perfil = (): ReactElement => {
-  
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,7 +24,6 @@ const Perfil = (): ReactElement => {
   const email = "george@gmail.com";
   const tel = "(22) 99009900";
   const nameFarm = "Fazenda Olhos d`agua";
-
 
   return (
     <>
@@ -67,15 +68,15 @@ const Perfil = (): ReactElement => {
 
               <div id="imgPerfil">
                 <fieldset id="img">
-                  <img id="imgUser" src={imgUser}/>
+                  <img id="imgUser" src={imgUser} />
                 </fieldset>
               </div>
 
               <span id="blocoNomePerfil">
-                <input id="nomePerfil" value={userName} />
+                <input id="nomePerfil" defaultValue={userName} />
               </span>
               <div id="camposPerfil">
-                <label className="labelCamposPerfil">CPF: </label>
+                {/* <label className="labelCamposPerfil">CPF: </label>
                 <input className="txt-camposPerfil" id="InputCpf" value={cpf} />
                 <br />
                 <label className="labelCamposPerfil">E-mail: </label>
@@ -86,11 +87,42 @@ const Perfil = (): ReactElement => {
                 <br />
                 <label className="labelCamposPerfil">Nome da Fazenda: </label>
                 <input className="txt-camposPerfil" id="InputNameFarm" value={nameFarm} />
-                <br />
+                <br /> */}
+                <TextField
+                  label="CPF"
+                  id="standard-size-small"
+                  defaultValue={cpf}
+                  size="small"
+                  variant="standard"
+                  className="txt-camposPerfil"
+                />
+                <TextField
+                  label="E-mail"
+                  id="standard-size-normal"
+                  defaultValue={email}
+                  variant="standard"
+                  className="txt-camposPerfil"
+                />
+                <TextField
+                  label="Telefone"
+                  id="standard-size-small"
+                  defaultValue={tel}
+                  size="small"
+                  variant="standard"
+                  className="txt-camposPerfil"
+                />
+                <TextField
+                  label="Nome da Fazenda"
+                  id="standard-size-normal"
+                  defaultValue={nameFarm}
+                  variant="standard"
+                  className="txt-camposPerfil"
+                />
+                <div></div>
               </div>
             </div>
           </div>
-          <img id="imgRodape-Perfil" src={rodape}/>
+          <img id="imgRodape-Perfil" src={rodape} />
         </div>
       </Box>
     </>

@@ -1,32 +1,10 @@
-#CadastroVacinaTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-    font-size: 15px;
-  
-}
-#CadastroVacina-titulo {
-   color: var(--cor005);
-   padding: 10px 0px;
-}
-#CadastroVacina-linha {
-        background-color: var(--cor007);
-        display: flex;
-        height: 3px;
-        width: 570px;
-        margin-left: -25px;
-        margin-top: 8px;
-}
-
-#VacinaIcones{
+#Block-VaccineIcons{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 230px; 
 }
-#FieldVacina{
+#FieldVaccineIcons{
     margin: 0px 30px;
     width: 150px;
     height: 150px;
@@ -42,20 +20,20 @@
     border: none;   
     box-shadow: 0px 0px 4px 4px var(--cor111);
 }
-#VacinaIcon-Virus{
+#VacinaIcon-Txt{
     text-align: center;
 }
-#bloco-imgBezerro-CadastroVacina{
+#Block-CalfImgae-CadastroVacina{
     display: flex;
     justify-content: end;
     margin-top: -16%;
 }
-#imgBezerro-CadastroVacina{
+#CalfImgae-CadastroVacina{
     width: 200px;
     margin-right: 3%;
     margin-bottom: 2%;
 }
-#bts-AdcVacina-CancelAdd{
+#Btns-Add-Cancel-CadastroVacina{
     display: flex;
     justify-content: end;
 }

@@ -87,6 +87,7 @@ fieldset#img{
     height: 200px;
     line-height: 50px;
     display: block;
+   
     
 }
 .labelCamposPerfil{
@@ -94,11 +95,7 @@ fieldset#img{
     color: var(--cor003);
 }
 .txt-camposPerfil{
-    border: none;
-    border-bottom: 1px solid var(--cor002);
-    color: rgb(155, 155, 155);
-    font-size: 16px;
-    padding-bottom: 2.5px;
+    width: 100%;
 }
 
 #InputEmail{

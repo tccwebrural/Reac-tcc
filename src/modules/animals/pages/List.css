@@ -1,51 +1,28 @@
-
-#MinhaCriacaoTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-
-#MinhaCriacao-titulo {
-    color: var(--cor005);
-    padding: 10px 0px;
-}
-#MinhaCriacao-linha {
-    content: " ";
-    background-color: var(--cor007);
-    display: flex;
-    height: 3px;
-    width: 900px;
-    margin-top: 8px;
-    margin-left:-50px ;
-}
 #AddIcon{
     background-color: var(--cor001);
     margin-top: -24px;
     margin-left: 1798%;
-
 }
-#tabela-MinhaCriacao{
+#table-MinhaCriacao{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 600px;
     margin-top: -90px;
 }
-#btVisualizarDadosAnimal{
+#btn-ViewAnimalData{
     background-color: var(--cor006);
     margin: 8px;
     padding-top: 7px;
 }
-#btVacina{
+#btn-ViewVaccine{
     padding-top: 7px; 
 }
-#btEditar{
+#btn-EditAnimalData{
     background-color: var(--cor007);
     margin: 8px;
     padding-top: 7px;
 }
-#btDelete{
+#btn-DeleteAnimal{
     padding-top: 7px; 
 }

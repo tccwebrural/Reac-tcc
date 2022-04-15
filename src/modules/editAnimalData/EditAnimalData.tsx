@@ -27,22 +27,19 @@ const EditAnimalData = (): ReactElement => {
           justifyContent: "center",
         }}
       >
-        <div id="Bloco">
-        <div id="EditAnimalDataTxt_Linha">
-          <h2 id="EditAnimalData-titulo">Minha Criação &gt; Atualizar Gado</h2>
-          <span id="EditAnimalData-linha"></span>
+        <div className="MainBlock">
+        <div className="Block-Txt-Line">
+          <h2 className="Block-Txt">Minha Criação &gt; Atualizar Gado</h2>
+          <span className="Block-Line"></span>
         </div>
 
-        <form id="form-AtualizarDadosAnimal">
+        <form id="Block-EditAnimalData">
           <Box
-            component="form"
             sx={{
               "& .MuiTextField-root": { m: 1, width: "25ch" },
             }}
-            // noValidate
-            // autoComplete="off"
+
           >
-            <div id="Bloco-camposEditAnimalData">
 
               <FormControl sx={{ m: 1, minWidth: 221 }}>
               <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
@@ -68,14 +65,12 @@ const EditAnimalData = (): ReactElement => {
               />
               <TextField
                 style={{ width: 300 }}
-                id="outlined-disabled"
                 label="Nome"
                 InputLabelProps={{
                   shrink: true,
                 }}
               />
               <TextField
-                id="outlined-number"
                 style={{ width: 280 }}
                 label="Data de Nascimento"
                 type="date"
@@ -96,7 +91,6 @@ const EditAnimalData = (): ReactElement => {
             </FormControl>
 
                <TextField
-                id="outlined-password-input"
                 style={{ width: 260 }}
                 label="Peso"
                 type="password"
@@ -104,22 +98,14 @@ const EditAnimalData = (): ReactElement => {
                   shrink: true,
                 }}
               />
-{/*               
-              <TextField
-                id="outlined-helperText"
-                style={{ width: 270 }}
-                label="Qtd de Cria"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              /> */}
-            <div id="bloco-imgVaca-EditAnimalData">
-              <img id="imgVaca-EditAnimalData" src={vaca} alt="bezerro"/>
+
+            <div id="Block-CowImage-EditAnimalData">
+              <img id="CowImage-EditAnimalData" src={vaca} alt="bezerro"/>
             </div>
-            <div id="bloco-imgBezerro-EditAnimalData">
-              <img id="imgBezerro-EditAnimalData" src={bezerro} alt="bezerro"/>
+            <div id="Block-CalfImage-EditAnimalData">
+              <img id="CalfImage-EditAnimalData" src={bezerro} alt="bezerro"/>
             </div>
-            <div id="bts-AtualizarDadosAnimal">
+            <div id="Btns-Update-Cancel-EditAnimalData">
               <Grid item sx={{ margin: 1 }}>
               <Button
                       style={{marginRight: 4,padding:3,paddingLeft:10, paddingRight:10}}
@@ -139,7 +125,6 @@ const EditAnimalData = (): ReactElement => {
                       Atualizar
                     </Button>
               </Grid>
-            </div>
             </div>
           </Box>
         </form>

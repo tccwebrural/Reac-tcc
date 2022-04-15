@@ -1,46 +1,18 @@
-
-#MeusRelatoriosTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-#MeusRelatorios-titulo {
-    color: var(--cor005);
-    margin-right: -80px;
-}
-#MeusRelatorios-linha {
-    content: " ";
-    background-color: var(--cor007);
-    display: flex;
-    height: 3px;
-    width: 800px;
-    margin-top: 8px;
-    margin-right: 20px;
-    margin-left: -10px;
-}
-
-#blocoMeusRelatorios{
+#Block-MyReports{
     display: flex;
     justify-content: center;
-    width: 100%;
-    
+    width: 100%;    
 }
- 
-#itensDaTabela_txt{
-    font-size: 18px;
-    color: var(--cor005);
-    
-}
-#tableMeusRelatorios{
+#Table-MyReports{
     border: 1px solid var(--cor002);
     width: 900px;
     padding: 1.5%;
-   
-
 }
-.txt_parenteses{
+.Table-MyReports-Itens-txt{
+    font-size: 18px;
+    color: var(--cor005);
+}
+.Itens-txt-caption{
     font-size: 13px;
     color: var(--cor003);
 }

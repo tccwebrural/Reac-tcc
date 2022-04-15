@@ -1,58 +1,28 @@
-#Bloco{
-    width: 1100px;
-    margin:auto;
-    margin-top: 2%;
-    border-radius: 8px;
-    box-shadow: 2px 2px 4px 2px var(--cor011);
-    padding: 1px;
-    padding-bottom: 3%;
-}
-#EditAnimalDataTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-#EditAnimalData-titulo {
-   color: var(--cor005);
-}
-#EditAnimalData-linha {
-    content: " ";
-    background-color: var(--cor007);
-    display: flex;
-    height: 3px;
-    width: 720px;
-    margin-top: 8px;
-    margin-left:-50px ;
-    margin-right:10px ;
-}
-#Bloco-camposEditAnimalData{
-    padding: 1%;
-    box-shadow: 2px 2px 4px 2px var(--cor111);
-}
-#form-AtualizarDadosAnimal{
+#Block-EditAnimalData{
     width: 900px;
     height: 400px;
     margin: auto;
+    padding: 1%;
+    box-shadow: 2px 2px 4px 2px var(--cor111);
+    border-radius: 8px;
 }
-#bloco-imgVaca-EditAnimalData{
+#Block-CowImage-EditAnimalData{
     display: flex;
     justify-content: end;
 }
-#imgVaca-EditAnimalData{
+#CowImage-EditAnimalData{
     width: 350px;
     height: 220px;
     margin-right:55%;
     margin-top: 1%;
     margin-bottom: -2.5%;
 }
-#bloco-imgBezerro-EditAnimalData{
+#Block-CalfImage-EditAnimalData{
     display: flex;
     justify-content: end;
     margin-top: -26%;
 }
-#imgBezerro-EditAnimalData{
+#CalfImage-EditAnimalData{
     width: 160px;
     height: 140px;
     position: relative;
@@ -61,7 +31,7 @@
     margin-right: 7%;
     margin-bottom: -2%;
 }
-#bts-AtualizarDadosAnimal{
+#Btns-Update-Cancel-EditAnimalData{
     height: 60px;
     display: flex;
     justify-content: end;

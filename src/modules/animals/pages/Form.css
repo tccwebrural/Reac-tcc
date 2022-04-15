@@ -1,57 +1,26 @@
-#FormTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-#Form-titulo {
-   color: var(--cor005);
-   margin-right: 14px;
-}
-#Form-linha {
-        content: " ";
-        background-color: var(--cor007);
-        display: flex;
-        height: 3px;
-        width: 660px;
-        margin-top: 8px;
-        margin-right: 5px;
-        margin-left: -80px;
-}
-#formCadAnimal{
+#AnimalRegister-Form{
     margin-top: 0%;
 }
-#bloco-imgBezerro-Form{
+#Block-CowImage-Form{
     display: flex;
     justify-content: end;
-
 }
-#imgBezerro-Form{
-    width: 160px;
-    height: 140px;
-    position: relative;
-    margin-right: -120%;
-    margin-top: 30%;
-
-}
-#bloco-imgVaca-Form{
-    display: flex;
-    justify-content: end;
-
-}
-#imgVaca-Form{
+#CowImage-Form{
     width: 350px;
     height: 220px;
     position: relative;
     margin-right:18%;
     margin-top: 4%;
-
 }
-#bts-CadastrarAnimal-CancelSave{
+#Block-CalfImage-Form{
     display: flex;
     justify-content: end;
-    align-items: flex-end;
-    height: 220px;
-
 }
+#CalfImage-Form{
+    width: 160px;
+    height: 140px;
+    position: relative;
+    margin-right: -120%;
+    margin-top: 30%;
+}
+
