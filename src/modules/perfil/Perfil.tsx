@@ -1,14 +1,15 @@
-import React, { ReactElement } from "react";
-import { Box, Typography } from "@mui/material";
-import "./Perfil.css";
-import { BiMenu } from "react-icons/bi";
-import rodape from "../../images/rodape.png";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import imgUser from "../../images/imgUser.png";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
+import React, { ReactElement } from "react"
+import { Box, Typography } from "@mui/material"
+import "./Perfil.css"
+import "../../../src/style.css"
+import { BiMenu } from "react-icons/bi"
+import rodape from "../../images/rodape.png"
+import Button from "@mui/material/Button"
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+import imgUser from "../../images/imgUser.png"
+import Stack from "@mui/material/Stack"
+import TextField from "@mui/material/TextField"
 
 const Perfil = (): ReactElement => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

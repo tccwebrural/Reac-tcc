@@ -1,11 +1,13 @@
-import React, { ReactElement } from "react";
-import { Box, Typography } from "@mui/material";
-import { BsPrinter } from "react-icons/bs";
-import "./DeclareDoRebanho.css";
-import Checkbox from "@mui/material/Checkbox";
-import vaca from "../../images/vaca-sem-chifre.png";
-import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
+import React, { ReactElement } from "react"
+import { Box, Typography } from "@mui/material"
+import { BsPrinter } from "react-icons/bs"
+import "./DeclareDoRebanho.css"
+import "../../../src/style.css"
+import Checkbox from "@mui/material/Checkbox"
+import vaca from "../../images/vaca-sem-chifre.png"
+import Fab from "@mui/material/Fab"
+import AddIcon from "@mui/icons-material/Add"
+import TextField from "@mui/material/TextField"
 
 const DeclareDoRebanho = (): ReactElement => {
   function imprimir() {
@@ -30,66 +32,67 @@ const DeclareDoRebanho = (): ReactElement => {
       >
         {" "}
         <div className="MainBlock">
-          <div id="DeclareDoRebanhoTxt_Linha">
-            <h2 id="DeclareDoRebanho-titulo">Declare do Rebanho</h2>
-            <span id="DeclareDoRebanho-linha">
-              <Fab id="printIcon">
-                <button id="btPrintIcon" type="submit" onClick={imprimir}>
+          <div className="Block-Txt-Line">
+            <h2 className="Block-Txt">Declare do Rebanho</h2>
+            <span className="Block-Line">
+              <Fab id="printIcon" onClick={imprimir}>
                   <BsPrinter size={20} />
-                </button>
               </Fab>
             </span>
           </div>
 
           <div>
-            <p className="DeclareDoRebanho">Dados do Proprietário</p>
-            <div id="dadosDoPropietario">
-              <label className="labelDadosProprietario">
-                Nome do Proprietário:{" "}
-              </label>
-              <input
-                className="Declare-dadosDoPropietario"
-                id="userNameInput"
-                value={userName}
-              />
-              <br />
-              <label className="labelDadosProprietario">Email: </label>
-              <input
-                className="Declare-dadosDoPropietario"
-                id="emailInput"
-                value={email}
-              />
-              <label className="labelDadosProprietario">CPF: </label>
-              <input
-                className="Declare-dadosDoPropietario"
-                id="cpfInput"
-                value={cpf}
-              />
-              <br />
-              <label className="labelDadosProprietario">
-                Nome da Fazenda:{" "}
-              </label>
-              <input
-                className="Declare-dadosDoPropietario"
-                id="nameFarmInput"
-                value={nameFarm}
-              />
-              <label className="labelDadosProprietario">Telefone: </label>
-              <input
-                className="Declare-dadosDoPropietario"
-                id="telInput"
-                value={tel}
-              />
-              <br />
+          <p className="CattleDeclaration">Dados do Proprietário</p> {/* declare do gado */}
+            <div id="OwnerData">                              {/* dados do proprietario */}
+             
+              <TextField
+                  label="Nome do Proprietário"
+                  id="standard-size-normal"
+                  defaultValue={userName}
+                  variant="standard"
+                  sx={{ width:"100%"}} 
+                                 
+                />
+              
+                <TextField
+                  label="E-mail"
+                  id="standard-size-normal"
+                  defaultValue={email}
+                  variant="standard"
+                  sx={{ width:"50%"}} 
+                />
+                <TextField
+                  label="CPF"
+                  id="standard-size-small"
+                  defaultValue={cpf}
+                  size="small"
+                  variant="standard"
+                  sx={{marginTop:0.3, width:"50%"}}  
+                /><br/>
+                <TextField
+                  label="Telefone"
+                  id="standard-size-small"
+                  defaultValue={tel}
+                  size="small"
+                  variant="standard"
+                  sx={{marginTop:0.3, width:"50%"}} 
+                />
+                <TextField
+                  label="Nome da Fazenda"
+                  id="standard-size-normal"
+                  defaultValue={nameFarm}
+                  variant="standard"
+                  sx={{ width:"50%"}} 
+                />
             </div>
           </div>
 
           <div>
-            <p className="DeclareDoRebanho">Rebanho Bovino Atual Existente</p>
+            <p className="CattleDeclaration">Rebanho Bovino Atual Existente</p>
             <div id="RebanhoBovinoAtual">
               <div className="Rebanho-AtualExistente">
                 <p id="blocosRebanhoBovAtualExitente">
-                  Nascimento<p>(de 0 à 6 meses)</p>
+                  Nascimento<br/>(de 0 à 6 meses)
                 </p>
                 <div id="MF">
                   <p className="M-txt">Macho</p>
@@ -103,7 +106,7 @@ const DeclareDoRebanho = (): ReactElement => {
 
               <div className="Rebanho-AtualExistente">
                 <p id="blocosRebanhoBovAtualExitente">
-                  Animais Desmamados<p>(de 7 à 12 meses)</p>
+                  Animais Desmamados<br/>(de 7 à 12 meses)
                 </p>
                 <div id="MF">
                   <p className="M-txt">Macho</p>
@@ -117,7 +120,7 @@ const DeclareDoRebanho = (): ReactElement => {
 
               <div className="Rebanho-AtualExistente">
                 <p id="blocosRebanhoBovAtualExitente">
-                  Garrotes<p>(de 13 à 24 meses)</p>
+                  Garrotes<br/>(de 13 à 24 meses)
                 </p>
                 <div id="MF">
                   <p className="M-txt">Macho</p>
@@ -131,7 +134,7 @@ const DeclareDoRebanho = (): ReactElement => {
 
               <div className="Rebanho-AtualExistente">
                 <p id="blocosRebanhoBovAtualExitente">
-                  Novilhos<p>(de 25 à 36 meses)</p>
+                  Novilhos<br/>(de 25 à 36 meses)
                 </p>
                 <div id="MF">
                   <p className="M-txt">Macho</p>
@@ -158,7 +161,7 @@ const DeclareDoRebanho = (): ReactElement => {
           </div>
           <div>
             <p id="DeclareDoRebanho-Mortalidade">
-              Mortalidade de Bovinos<p>(ainda não declarados)</p>
+              Mortalidade de Bovinos<br/>(ainda não declarados)
             </p>
             <div id="RebanhoBovinoAtual">
               <div className="Rebanho-AtualExistente">
@@ -219,7 +222,7 @@ const DeclareDoRebanho = (): ReactElement => {
             </div>
           </div>
           <div>
-            <p className="DeclareDoRebanho">
+            <p className="CattleDeclaration">
               Marque a principal finalidade do seu rebanho bovino
             </p>
             <div id="DeclareDoRebanho-Finalidade">

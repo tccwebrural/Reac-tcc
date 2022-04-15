@@ -1,34 +1,9 @@
-#DeclareDoRebanhoTxt_Linha{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-#DeclareDoRebanho-titulo {
-   color: var(--cor005);
-   margin-right: -90px;
-}
-#DeclareDoRebanho-linha {
-    content: " ";
-    background-color: var(--cor007);
-    display: flex;
-    height: 3px;
-    width: 741px;
-    margin-top: 8px;
-    margin-right: 20px;
-    margin-left: -10px;
-}
 #printIcon{
     background-color: var(--cor007);
     margin-top: -25px;
     margin-left: 87%;
 }
-#btPrintIcon{
-    border: none;
-    background-color: var(--cor007);
-}
-.DeclareDoRebanho{
+.CattleDeclaration{
     background-color:var(--cor006);
     text-align: center;
     font-size: 18px;
@@ -44,14 +19,16 @@
     border-right: 1px solid var(--cor002);
   
 }
-#dadosDoPropietario{
+#OwnerData{
     background-color:  var(--cor011);
     height: 200px;
     border: 1px solid var(--cor002);
-    padding: 20px;
+    padding: 15px;
     width: 898px;
     margin: auto;
 }
+
+
 .labelDadosProprietario{
     font-weight: bold;
     color: var(--cor004);
