@@ -22,7 +22,9 @@ const formVacina = (): ReactElement => {
                             <span id="blocoTituloLine-criacao">
                                 <Fab id="printIcon">
                                     <button id="btPrintIcon" type="submit" onClick={imprimir}>
-                                        <BsPrinter size={20} />
+                                        <abbr title="Imprimir">
+                                            <BsPrinter size={20} />
+                                        </abbr>
                                     </button>
                                 </Fab>
                             </span>
@@ -157,11 +159,13 @@ const formVacina = (): ReactElement => {
                                 </Box>
                             </div>
                             <div id="blocoVacinas">
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 1</h1>
-                                    <Checkbox sx={{ fontSize: 28 }} />
-                                </Grid>
+                                <abbr title="Dados da Vacina">
+                                    <Grid id="vacinas">
+                                        <MdCoronavirus size={80} style={{}} />
+                                        <h1>Virus 1</h1>
+                                        <Checkbox sx={{ fontSize: 28 }} />
+                                    </Grid>
+                                </abbr>
                             </div>
                         </div>
                         <div id="button">

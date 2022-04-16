@@ -1,11 +1,23 @@
 import { Box, Grid, Container, TextField } from "@mui/material";
 import React, { ReactElement } from "react";
 import './login.css';
-import { textAlign } from "@mui/system";
 import logoPequena from "../../../imagens/logoPequena.png"
+import footer from "../../../imagens/footer.png"
+import vaca3 from '../../../imagens/vaca3.png'
+import vaca4 from '../../../imagens/vaca4.png'
 
 const login = (): ReactElement => {
     return (<>
+        <div id="imgFooter">
+            <img src={footer} alt="" />
+        </div>
+        <div id="imgVaca1">
+            <img src={vaca4} alt="" />
+        </div>
+        <div id="imgVaca2">
+            <img src={vaca3} alt="" />
+        </div>
+        
         <Container>
             <section>
                 <div id="logi">

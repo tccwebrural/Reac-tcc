@@ -19,7 +19,12 @@ header{
     display: flex;
     justify-content: space-evenly;   
     max-width: 100%;
-    background-color: #33648a10;    
+    background-color: #33648a10;  
+    position: relative;  
+}
+
+main{
+    position: relative;
 }
 
 #btn{
@@ -141,11 +146,16 @@ section{
     text-align: center;
 }
 
-#rodape{
-    display: flex;
-    text-align: center;
-    background-color: #33648a1c;
+#imgfooter{
+    display: flex;   
+    position: relative;
 }
+
+#imgfooter img {
+    width: 100%;
+    position: absolute;
+}
+
 
 #img-sobre{
     width: 150px;
@@ -155,5 +165,40 @@ section{
     margin: 5%;
 }
 
+#imgMeio{
+    position: absolute;
+    top: 600px;
+}
 
+#imgMeio img{
+    width: 100%;
+}
+
+#imgMeio1{
+    position: absolute;
+    top: 300px;
+    left: 1000px;
+    z-index: -1;
+}
+
+#imgMeio1 img{
+    width: 100%;
+}
+
+#imgMeio2{
+    position: absolute;
+    top: 400px;
+    left: 50px;    
+    z-index: -1;
+}
+
+#imgMeio2 img{
+    width: 100%;
+}
    
+
+#teste{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+}

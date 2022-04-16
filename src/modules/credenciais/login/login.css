@@ -59,3 +59,35 @@ span a {
     text-decoration: none;
     margin: 0% 1%;
 }
+
+
+#imgFooter{
+    position: absolute;
+    top: 61.5%;
+}
+
+#imgFooter img {
+    width: 100%;
+}
+
+#imgVaca1{
+    position: absolute;
+    top: 40%;
+    left: 70px;
+    z-index: -1;
+}
+
+#imgVaca1 img {
+    width: 100%;
+}
+
+#imgVaca2{
+    position: absolute;
+    top: 39%;
+    z-index: -1;
+    left: 1000px;
+}
+
+#imgVaca2 img {
+    width: 80%;
+}

@@ -2,9 +2,21 @@ import { Box, Container, Grid, TextField } from "@mui/material";
 import React, { ReactElement } from "react";
 import './registrar.css';
 import logoPequena from "../../../imagens/logoPequena.png"
+import footer from "../../../imagens/footer.png"
+import vaca3 from '../../../imagens/vaca3.png'
+import vaca2 from '../../../imagens/vaca2.png'
 
 const registrar = (): ReactElement => {
     return (<>
+        <div id="imgFooter">
+            <img src={footer} alt="" />
+        </div>
+        <div id="imgVaca1">
+            <img src={vaca2} alt="" />
+        </div>
+        <div id="imgVaca2">
+            <img src={vaca3} alt="" />
+        </div>
         <Container>
             <section>
                 <div id="login">

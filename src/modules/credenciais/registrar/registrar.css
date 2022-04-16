@@ -14,7 +14,7 @@
 }
 
 #login{
-    background-color: rgba(238, 236, 236, 0.171);
+    background-color: rgba(238, 236, 236, 0.336);
     width: 400px;
     height: 550px;
     position: absolute;
@@ -46,4 +46,36 @@ span a {
     color: #33658A;
     text-decoration: none;
 }
+
+#imgFooter{
+    position: absolute;
+    top: 61.5%;
+}
+
+#imgFooter img {
+    width: 100%;
+}
+
+#imgVaca1{
+    position: absolute;
+    top: 30%;
+    left: 70px;
+    z-index: -1;
+}
+
+#imgVaca1 img {
+    width: 100%;
+}
+
+#imgVaca2{
+    position: absolute;
+    top: 39%;
+    z-index: -1;
+    left: 1000px;
+}
+
+#imgVaca2 img {
+    width: 80%;
+}
+
 
