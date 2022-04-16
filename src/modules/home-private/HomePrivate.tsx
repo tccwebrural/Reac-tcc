@@ -37,14 +37,13 @@ const Home = (): ReactElement => {
     <>
       <main>
         <div className="MainBlock">
-          <div id="Block-Txt-Line-HomePrivate">
-            <h2 id="Block-Txt-HomePrivate">Meus Relatórios</h2>
-            <span id="Block-Line-HomePrivate"></span>
-          </div>
+        <div className="Block-Txt-Line"> 
+          <h2 className="Block-Line"><span className="Block-Txt">Meus Relatórios</span></h2>
+         </div> 
           <Box id="Block-MyReports">
             <div>
-              <TableContainer id="Table-MyReports" component={Paper}>
-                <Table sx={{ maxWidth: 1000 }}>
+              <TableContainer id="Table-MyReports" component={Paper} style={{border:"none",width: 1025, boxShadow:" 2px 2px 4px 2px var(--cor111)"}}>
+                <Table sx={{ maxWidth: 1000 } }>
                   <TableHead>
                     <TableRow>
                       <TableCell

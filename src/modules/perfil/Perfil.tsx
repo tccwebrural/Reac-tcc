@@ -35,14 +35,15 @@ const Perfil = (): ReactElement => {
           justifyContent: "center",
         }}
       >
-        <div id="Block-Profile">
-          <div id="Block-Txt-Line-Profile">
-            <h2 id="Block-Txt-Profile">Meu Perfil</h2>
-            <span id="Block-Line-Profile"></span>
-          </div>
+        <div className="MainBlock">
+        <div className="Block-Txt-Line"> 
+          <h2 className="Block-Line"><span className="Block-Txt">Meu Perfil</span></h2>
+         </div> 
+          
           <div id="Profile">
             <div id="SmallBlock-Profile">
               <div>
+              <abbr title="Menu">
                 <Button
                   id="menuProfile"
                   aria-controls={open ? "basic-menu" : undefined}
@@ -52,6 +53,7 @@ const Perfil = (): ReactElement => {
                 >
                   <BiMenu size={30} style={{ color: "var(--cor005)" }} />
                 </Button>
+                </abbr>
                 <Menu
                   id="basic-menu"
                   anchorEl={anchorEl}
@@ -69,7 +71,9 @@ const Perfil = (): ReactElement => {
 
               <div id="imgProfile">
                 <fieldset id="img">
+                  <abbr title="Adicionar foto de perfil">
                   <img id="imgUser" src={imgUser} />
+                  </abbr>
                 </fieldset>
               </div>
 

@@ -3,7 +3,7 @@ import "./CadastroVacina.css";
 import "../../../src/style.css";
 import { Box } from "@mui/material";
 import { MdCoronavirus } from "react-icons/md";
-import { GiLoveInjection } from "react-icons/gi";
+import VaccinesIcon from '@mui/icons-material/Vaccines';
 import Checkbox from "@mui/material/Checkbox";
 import bezerro from "../../images/bezerro.png";
 import { Button, Grid } from "@mui/material";
@@ -23,13 +23,9 @@ const CadastroVacina = (): ReactElement => {
         }}
       >
         <div className="MainBlock">
-          <div id="Block-Txt-Line-VaccineRegister">
-            <h2 id="Block-Txt-VaccineRegister">
-              Minha Criação &gt; Visualizar Gado &gt; Adicionar Vacina
-            </h2>
-            <span id="Block-Line-VaccineRegister"></span>
-          </div>
-
+        <div className="Block-Txt-Line"> 
+          <h2 className="Block-Line"><span className="Block-Txt">Minha Criação &gt; Visualizar Gado &gt; Adicionar Vacina</span></h2>
+         </div> 
           <div id="Block-AnimalData">
             <Box
               sx={{
@@ -78,10 +74,9 @@ const CadastroVacina = (): ReactElement => {
                 />
                 <div id="Block-VaccineIcons">
                   <fieldset id="FieldVaccineIcons">
-                    <GiLoveInjection
-                      size={70}
-                      style={{ marginTop: 14, marginLeft: 35 }}
-                    />
+                  <abbr title="Vacina contra doenças">
+                  <VaccinesIcon style={{fontSize:75,marginTop:10, marginLeft:35}}/>
+                  </abbr>
                     <p id="VacinaIcon-Txt">Vacina</p>
                     <Checkbox
                       {...label}
@@ -91,11 +86,12 @@ const CadastroVacina = (): ReactElement => {
                   </fieldset>
 
                   <fieldset id="FieldVirus">
+                  <abbr title="Vacina contra vírus">
                     <MdCoronavirus
                       size={80}
                       style={{ marginTop: 5, marginLeft: 35 }}
                     />
-
+                  </abbr>
                     <p id="VacinaIcon-Txt">Vírus</p>
                     <Checkbox
                       {...label}

@@ -1,19 +1,21 @@
 #Block-Txt-Line-CattleDeclaration{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 1100px;
+    width: 95%;
     height: 90px;
+    margin: auto;
 }
 #Block-Txt-CattleDeclaration{
     color: var(--cor005);
     padding: 10px 10px;
-    margin-right: 5%;
+    margin-right: -5%;
     width: 25%;
     font-size: 22px;
+    background-color: var(--cor001);
+    position: relative;
 }
 #Block-Line-CattleDeclaration{
-    content: " ";
     background-color: var(--cor007);
     display: flex;
     height: 3px;
@@ -25,7 +27,7 @@
 #printIcon{
     background-color: var(--cor007);
     margin-top: -25px;
-    margin-left: 87%;
+    margin-left: 1447%;
 }
 .CattleDeclaration{
     background-color:var(--cor006);

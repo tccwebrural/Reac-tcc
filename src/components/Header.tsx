@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import { ROOT_ROUTES } from "../routes/root-routes";
 import { APP_TITLE, ROOT_THEME } from "../constants";
+import logoPequena from "../imagens/logoPequena.png";
 
 const Header = (props: any): ReactElement => {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,7 +46,7 @@ const Header = (props: any): ReactElement => {
 								display: { xs: "none", md: "flex" },
 							}}
 						>
-							{APP_TITLE}
+							<img id="imgLogo-Header" src={logoPequena}/>
 						</Typography>
 						<Box  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 							<IconButton
