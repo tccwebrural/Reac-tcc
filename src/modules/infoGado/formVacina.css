@@ -24,3 +24,9 @@
     color: black;
     border: none;
 }
+
+#btPrintIcon{
+    background-color: var(--cor007);
+    color: black;
+    border: none;
+}

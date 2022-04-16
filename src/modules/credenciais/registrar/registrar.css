@@ -14,7 +14,7 @@
 }
 
 #login{
-    background-color: rgba(238, 236, 236, 0.336);
+    background-color: rgba(238, 236, 236, 0.171);
     width: 400px;
     height: 550px;
     position: absolute;
@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 25px;
+    box-shadow: 2px 2px 4px 4px  var(--cor111);
 }
 
 button{

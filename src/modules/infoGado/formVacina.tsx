@@ -1,10 +1,8 @@
 import { Box, Button, Checkbox, Container, Fab, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { BsPrinter } from "react-icons/bs";
 import { MdCoronavirus } from "react-icons/md";
-import { Animal } from "../animals/models/Animal.model";
 import "./formVacina.css"
-import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
 
 
@@ -19,9 +17,9 @@ const formVacina = (): ReactElement => {
             <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
                 <div id="blocoGeralVacina">
                     <section>
-                        <div id="DeclareDoRebanhoTxt_Linha">
-                            <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
-                            <span id="DeclareDoRebanho-linha">
+                        <div id="blocoTitulo-criacao">
+                            <h2 id="blocoTituloTxt-criacao">Minha Criação &gt; Gado</h2>
+                            <span id="blocoTituloLine-criacao">
                                 <Fab id="printIcon">
                                     <button id="btPrintIcon" type="submit" onClick={imprimir}>
                                         <BsPrinter size={20} />
@@ -32,7 +30,7 @@ const formVacina = (): ReactElement => {
 
                         <div id="infoGado">
                             <Box>
-                                <FormControl sx={{ display: "flex", flexDirection: "row", margin: "auto" }}>
+                                <FormControl sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
                                     <Grid item xs={2} sx={{ margin: "1%" }}>
                                         <TextField
                                             style={{ width: 180 }}
@@ -55,7 +53,7 @@ const formVacina = (): ReactElement => {
                                             <Select
                                                 label="Grouping"
                                                 name="type"
-                                                
+
                                             >
                                                 <MenuItem value={1}>Gado de Corte</MenuItem>
                                                 <MenuItem value={2}>Gado Leitero</MenuItem>
@@ -87,7 +85,7 @@ const formVacina = (): ReactElement => {
                                             <Select
                                                 label="Grouping"
                                                 name="type"
-                                               
+
                                             >
                                                 <MenuItem value={1}>Macho</MenuItem>
                                                 <MenuItem value={2}>Femea</MenuItem>
@@ -101,22 +99,14 @@ const formVacina = (): ReactElement => {
 
                     <section>
                         <div>
-                            <div id="DeclareDoRebanhoTxt_Linha">
-                                <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
-                                <span id="DeclareDoRebanho-linha">
-                                    <Fab id="printIconAddIcon"
-                                        component={Link}
-                                        to="/cadastroVacina/CadastroVacina"
-                                    >
-                                        <button id="btPrintIconAddIcon">
-                                            <AddIcon/>
-                                        </button>
-                                    </Fab>
+                            <div id="blocoTitulo-vacina">
+                                <h2 id="blocoTituloTxt-vacina">Cartao de Vacina</h2>
+                                <span id="blocoTituloLine-vacina">
                                 </span>
                             </div>
                             <div id="infoGado">
                                 <Box>
-                                    <FormControl sx={{ display: "flex", flexDirection: "row", margin: "auto" }}>
+                                    <FormControl sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
                                         <Grid item xs={2} sx={{ margin: "1%" }}>
                                             <TextField
                                                 style={{ width: 180 }}
@@ -127,30 +117,25 @@ const formVacina = (): ReactElement => {
                                         </Grid>
                                         <Grid sx={{ margin: "1%" }}>
                                             <TextField
-                                                style={{ width: 80 }}
+                                                style={{ width: 150 }}
                                                 id="outlined-disabled"
-                                                label="Peso"
+                                                label="Lote"
                                                 type="number"
                                             />
-                                        </Grid>
-                                        <Grid sx={{ margin: "1%" }}>
-                                            <FormControl sx={{ minWidth: 221 }}>
-                                                <InputLabel>Tipo</InputLabel>
-                                                <Select
-                                                    label="Grouping"
-                                                    name="type"
-                                                  
-                                                >
-                                                    <MenuItem value={1}>Gado de Corte</MenuItem>
-                                                    <MenuItem value={2}>Gado Leitero</MenuItem>
-                                                </Select>
-                                            </FormControl>
                                         </Grid>
                                         <Grid sx={{ margin: "1%" }}>
                                             <TextField
                                                 style={{ width: 180 }}
                                                 id="outlined-disabled"
-                                                label="Data de Nascimento"
+                                                label="Fabricante"
+                                                type="text"
+                                            />
+                                        </Grid>
+                                        <Grid sx={{ margin: "1%" }}>
+                                            <TextField
+                                                style={{ width: 180 }}
+                                                id="outlined-disabled"
+                                                label="Data da Aplicação"
                                                 type="date"
                                                 InputLabelProps={{
                                                     shrink: true,
@@ -159,24 +144,14 @@ const formVacina = (): ReactElement => {
                                         </Grid>
                                         <Grid sx={{ margin: "1%" }}>
                                             <TextField
-                                                style={{ width: 100 }}
-                                                id="Qtd de Cria"
-                                                label="Qtd de Cria"
-                                                type="number"
+                                                style={{ width: 180 }}
+                                                id="outlined-disabled"
+                                                label="Data da Validade"
+                                                type="date"
+                                                InputLabelProps={{
+                                                    shrink: true,
+                                                }}
                                             />
-                                        </Grid>
-                                        <Grid sx={{ margin: "1%" }}>
-                                            <FormControl sx={{ minWidth: 100 }}>
-                                                <InputLabel htmlFor="type">Sexo</InputLabel>
-                                                <Select
-                                                    label="Grouping"
-                                                    name="type"
-                                                 
-                                                >
-                                                    <MenuItem value={1}>Macho</MenuItem>
-                                                    <MenuItem value={2}>Femea</MenuItem>
-                                                </Select>
-                                            </FormControl>
                                         </Grid>
                                     </FormControl>
                                 </Box>
@@ -187,13 +162,14 @@ const formVacina = (): ReactElement => {
                                     <h1>Virus 1</h1>
                                     <Checkbox sx={{ fontSize: 28 }} />
                                 </Grid>
-
                             </div>
                         </div>
                         <div id="button">
                             <Button
                                 variant="contained"
                                 color="inherit"
+                                component={Link}
+                                to="/animals/list"
                             >Voltar</Button>
                         </div>
                     </section>
