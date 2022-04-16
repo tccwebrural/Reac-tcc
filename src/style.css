@@ -23,4 +23,25 @@
     padding: 1px;
     padding-bottom: 3%;
 }
-
+.Block-Txt-Line{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    width: 93%;
+    margin: auto;
+}
+.Block-Txt{
+    background: var(--cor001);
+    padding: 0px 10px 0px 0px;
+    font-size: 23px;
+    color: var(--cor005);
+}
+.Block-Line{
+    width: 100%;
+    text-align: start;
+    background-color: var(--cor007);
+    height: 3px;
+    line-height: 0.1em;
+    margin: 20px 0 20px;
+    padding: 0px;
+}

@@ -6,7 +6,6 @@ import "../../../src/style.css";
 import Checkbox from "@mui/material/Checkbox";
 import vaca from "../../images/vaca-sem-chifre.png";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import TextField from "@mui/material/TextField";
 
 const DeclareDoRebanho = (): ReactElement => {
@@ -34,9 +33,11 @@ const DeclareDoRebanho = (): ReactElement => {
           <div id="Block-Txt-Line-CattleDeclaration">
             <h2 id="Block-Txt-CattleDeclaration">Declare do Rebanho</h2>
             <span id="Block-Line-CattleDeclaration">
+            <abbr title="Imprimir Declare do Rebanho">
               <Fab id="printIcon" onClick={imprimir}>
                 <BsPrinter size={20} />
               </Fab>
+            </abbr>
             </span>
           </div>
 

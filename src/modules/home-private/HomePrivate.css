@@ -1,26 +1,3 @@
-#Block-Txt-Line-HomePrivate{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 1100px;
-    height: 90px;
-}
-#Block-Txt-HomePrivate{
-    color: var(--cor005);
-    padding: 10px 10px;
-    margin-right: 5%;
-    width: 25%;
-    font-size: 22px;
-}
-#Block-Line-HomePrivate{
-    background-color: var(--cor007);
-    display: flex;
-    height: 3px;
-    width: 100%;
-    margin-top: 8px;
-    margin-right: 5px;
-    margin-left: -106px;
-}
 #Block-MyReports{
     display: flex;
     justify-content: center;

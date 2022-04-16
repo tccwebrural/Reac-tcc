@@ -27,16 +27,15 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const FormAnimalPage = (): ReactElement => {
   return (
-    <>
+    <>        
       <div className="MainBlock">
-        <div id="Block-Txt-Line-Form">
-          <h2 id="Block-Txt-Form">Minha Criação &gt; Cadastrar Gado</h2>
-          <span id="Block-Line-Form"></span>
-        </div>
+         <div className="Block-Txt-Line"> 
+          <h2 className="Block-Line"><span className="Block-Txt">Minha Criação &gt; Cadastrar Gado</span></h2>
+         </div> 
         <Box sx={{ "& .MuiTextField-root": { m: 1, width: "33ch" } }}>
-          <Grid>
+          <Grid >
             <Item id="AnimalRegister-Form">
-              <FormControl sx={{ m: 1, minWidth: 255 }}>
+              <FormControl  sx={{ m: 1, minWidth: 255 }}>
                 <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
                 <Select label="Grouping" name="category">
                   <MenuItem value={1}>Vaca</MenuItem>

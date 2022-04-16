@@ -15,20 +15,20 @@ const columns: GridColDef[] = [
     headerName: "Identificador",
     headerAlign: "center",
     align: "center",
-    width: 100,
+    width: 120,
   },
   {
     field: "category",
     headerName: "Categoria",
     sortable: false,
-    width: 90,
+    width: 110,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "name",
     headerName: "Nome",
-    width: 115,
+    width: 145,
     headerAlign: "center",
     align: "center",
     sortable: false,
@@ -62,7 +62,7 @@ const columns: GridColDef[] = [
     headerName: "Qtd de Cria",
     headerAlign: "center",
     align: "center",
-    width: 90,
+    width: 100,
     sortable: false,
   },
   {
@@ -110,7 +110,6 @@ const columns: GridColDef[] = [
             </abbr>
           </Fab>
           <Fab
-            style={{ marginBottom: 9 }}
             id="btn-DeleteAnimal"
             size="small"
             color="error"
@@ -129,17 +128,17 @@ const rows = [
   { id: 2, category: "Vaca",   name: 'Malhada',birthday: 9, type: "Gado Leiteiro", weight: 420, qtyChildreen: 3 },
   { id: 3, category: "Novilha",name: null,     birthday: 2, type: "Gado de Corte", weight: 450, qtyChildreen: 2 },
   { id: 4, category: "Novilha",name: null,     birthday: 2, type: "Gado de Corte", weight: 160, qtyChildreen: 0 },
-  { id: 5, category: "Boi",    name: 'Teló',   birthday: 5, type: "Gado de Corte", weight: null,qtyChildreen: null },
-  { id: 6, category: "Vaca",   name: 'Vaca006',birthday: 3, type: "Gado Leiteiro", weight: 150, qtyChildreen: 22 },
-  { id: 7, category: "Vaca",   name: 'Vaca007',birthday: 1, type: "Gado Leiteiro", weight: 440, qtyChildreen: 22 },
-  { id: 8, category: "Vaca",   name: 'Vaca008',birthday: 1, type: "Gado Leiteiro", weight: 360, qtyChildreen: 22 },
-  { id: 9, category: "Vaca",   name: 'Vaca009',birthday: 1, type: "Gado Leiteiro", weight: 650, qtyChildreen: 22 },
+  // { id: 5, category: "Boi",    name: 'Teló',   birthday: 5, type: "Gado de Corte", weight: null,qtyChildreen: null },
+  // { id: 6, category: "Vaca",   name: 'Vaca006',birthday: 3, type: "Gado Leiteiro", weight: 150, qtyChildreen: 22 },
+  // { id: 7, category: "Vaca",   name: 'Vaca007',birthday: 1, type: "Gado Leiteiro", weight: 440, qtyChildreen: 22 },
+  // { id: 8, category: "Vaca",   name: 'Vaca008',birthday: 1, type: "Gado Leiteiro", weight: 360, qtyChildreen: 22 },
+  // { id: 9, category: "Vaca",   name: 'Vaca009',birthday: 1, type: "Gado Leiteiro", weight: 650, qtyChildreen: 22 },
 ];
 
 const List = (): ReactElement => {
   return (
     <>
-      <div className="MainBlock">
+       <div className="MainBlock">
         <div id="Block-Txt-Line-List">
           <h2 id="Block-Txt-List">Minha Criação</h2>
           <span id="Block-Line-List">
@@ -157,7 +156,7 @@ const List = (): ReactElement => {
         </div>
 
         <Box id="table-MinhaCriacao" >
-          <div style={{ height: 420, width: 948 }}>
+          <div style={{ height: 420, width: 1025 }}>
             <DataGrid rows={rows} columns={columns} sx={{border:"none", boxShadow:" 2px 2px 4px 2px var(--cor111)"}} />
           </div>
         </Box>

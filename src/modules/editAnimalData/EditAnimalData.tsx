@@ -28,11 +28,9 @@ const EditAnimalData = (): ReactElement => {
         }}
       >
         <div className="MainBlock">
-        <div id="Block-Txt-Line-EditAnimalData">
-          <h2 id="Block-Txt-EditAnimalData">Minha Criação &gt; Atualizar Gado</h2>
-          <span id="Block-Line-EditAnimalData"></span>
-        </div>
-
+        <div className="Block-Txt-Line"> 
+          <h2 className="Block-Line"><span className="Block-Txt">Minha Criação &gt; Atualizar Gado</span></h2>
+         </div> 
         <form id="Block-EditAnimalData">
           <Box
             sx={{
