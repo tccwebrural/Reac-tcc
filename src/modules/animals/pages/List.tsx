@@ -156,9 +156,9 @@ const List = (): ReactElement => {
           </span>
         </div>
 
-        <Box id="table-MinhaCriacao">
+        <Box id="table-MinhaCriacao" >
           <div style={{ height: 420, width: 948 }}>
-            <DataGrid rows={rows} columns={columns} />
+            <DataGrid rows={rows} columns={columns} sx={{border:"none", boxShadow:" 2px 2px 4px 2px var(--cor111)"}} />
           </div>
         </Box>
       </div>

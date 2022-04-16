@@ -3,7 +3,7 @@ import "./CadastroVacina.css";
 import "../../../src/style.css";
 import { Box } from "@mui/material";
 import { MdCoronavirus } from "react-icons/md";
-import { GiLoveInjection } from "react-icons/gi";
+import VaccinesIcon from '@mui/icons-material/Vaccines';
 import Checkbox from "@mui/material/Checkbox";
 import bezerro from "../../images/bezerro.png";
 import { Button, Grid } from "@mui/material";
@@ -78,10 +78,7 @@ const CadastroVacina = (): ReactElement => {
                 />
                 <div id="Block-VaccineIcons">
                   <fieldset id="FieldVaccineIcons">
-                    <GiLoveInjection
-                      size={70}
-                      style={{ marginTop: 14, marginLeft: 35 }}
-                    />
+                  <VaccinesIcon style={{fontSize:75,marginTop:10, marginLeft:35}}/>
                     <p id="VacinaIcon-Txt">Vacina</p>
                     <Checkbox
                       {...label}

@@ -43,8 +43,8 @@ const Home = (): ReactElement => {
           </div>
           <Box id="Block-MyReports">
             <div>
-              <TableContainer id="Table-MyReports" component={Paper}>
-                <Table sx={{ maxWidth: 1000 }}>
+              <TableContainer id="Table-MyReports" component={Paper} style={{border:"none", boxShadow:" 2px 2px 4px 2px var(--cor111)"}}>
+                <Table sx={{ maxWidth: 1000 } }>
                   <TableHead>
                     <TableRow>
                       <TableCell
