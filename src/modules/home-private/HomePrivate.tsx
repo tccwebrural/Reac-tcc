@@ -48,42 +48,42 @@ const Home = (): ReactElement => {
                   <TableHead>
                     <TableRow>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18, textAlign: "center", }}
                       >
-                        Período{" "}
+                        Período
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18 ,textAlign: "center"}}
                       >
                         Bezerros
                         <p className="Itens-txt-caption">de 0 à 6 meses</p>
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18,textAlign: "center"}}
                       >
                         Desmamados
                         <p className="Itens-txt-caption">de 7 à 12 meses</p>
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18,textAlign: "center" }}
                       >
                         Garrotes
                         <p className="Itens-txt-caption">de 13 à 24 meses</p>
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18 ,textAlign: "center"}}
                       >
                         Novilhos
                         <p className="Itens-txt-caption">de 25 à 36 meses</p>
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18,textAlign: "center" }}
                       >
                         Acima de{" "}
                         <p className="Itens-txt-caption">de 36 meses </p>
                       </TableCell>
                       <TableCell
-                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                        style={{ color: "var(--cor005)", fontSize: 18 ,textAlign: "center"}}
                       >
                         TOTAL
                       </TableCell>
@@ -97,15 +97,15 @@ const Home = (): ReactElement => {
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}
                       >
-                        <TableCell component="th" scope="row">
+                        <TableCell component="th" scope="row" align="center">
                           {row.periodo}
                         </TableCell>
-                        <TableCell>{row.bezerros}</TableCell>
-                        <TableCell>{row.desmamados}</TableCell>
-                        <TableCell>{row.garrotes}</TableCell>
-                        <TableCell>{row.novilhos}</TableCell>
-                        <TableCell>{row.acimaDe}</TableCell>
-                        <TableCell>{row.total}</TableCell>
+                        <TableCell align="center">{row.bezerros}</TableCell>
+                        <TableCell align="center">{row.desmamados}</TableCell>
+                        <TableCell align="center">{row.garrotes}</TableCell>
+                        <TableCell align="center">{row.novilhos}</TableCell>
+                        <TableCell align="center">{row.acimaDe}</TableCell>
+                        <TableCell align="center">{row.total}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
