@@ -1,15 +1,10 @@
 import "../infoGado/meuGado.css";
-import React, { ReactElement, useState } from "react";
-import { Box, Container, Fab, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import React, { ReactElement } from "react";
+import { Box, Button, Container, Fab, FormControl, Grid, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { MdCoronavirus } from "react-icons/md";
-import { Animal } from "../animals/models/Animal.model";
 import { BsPrinter } from "react-icons/bs";
-
-const onChangeDataForm = (event: any) => {
-    const [dataForm, setDataForm] = useState<Animal>({});
-    const { name, value } = event.target;
-    setDataForm({ ...dataForm, [name]: value });
-}
+import { Link } from "react-router-dom";
+import AddIcon from "@mui/icons-material/Add";
 
 function imprimir() {
     window.print();
@@ -21,9 +16,9 @@ const meuGado = (): ReactElement => {
             <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
                 <div id="blocoGeral">
                     <section>
-                        <div id="DeclareDoRebanhoTxt_Linha">
-                            <h2 id="DeclareDoRebanho-titulo">Minha Criação &gt; Gado</h2>
-                            <span id="DeclareDoRebanho-linha">
+                        <div id="blocoTitulo-criacao">
+                            <h2 id="blocoTituloTxt-criacao">Minha Criação &gt; Gado</h2>
+                            <span id="blocoTituloLine-criacao">
                                 <Fab id="printIcon">
                                     <button id="btPrintIcon" type="submit" onClick={imprimir}>
                                         <BsPrinter size={20} />
@@ -34,7 +29,7 @@ const meuGado = (): ReactElement => {
 
                         <div id="infoGado">
                             <Box>
-                                <FormControl sx={{ display: "flex", flexDirection: "row", margin: "auto" }}>
+                                <FormControl sx={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
                                     <Grid item xs={2} sx={{ margin: "1%" }}>
                                         <TextField
                                             style={{ width: 180 }}
@@ -56,8 +51,8 @@ const meuGado = (): ReactElement => {
                                             <InputLabel>Tipo</InputLabel>
                                             <Select
                                                 label="Grouping"
-                                                name="type"
-                                                onChange={onChangeDataForm}
+                                                name="tipo"
+
                                             >
                                                 <MenuItem value={1}>Gado de Corte</MenuItem>
                                                 <MenuItem value={2}>Gado Leitero</MenuItem>
@@ -89,7 +84,6 @@ const meuGado = (): ReactElement => {
                                             <Select
                                                 label="Grouping"
                                                 name="type"
-                                                onChange={onChangeDataForm}
                                             >
                                                 <MenuItem value={1}>Macho</MenuItem>
                                                 <MenuItem value={2}>Femea</MenuItem>
@@ -103,9 +97,18 @@ const meuGado = (): ReactElement => {
 
                     <section>
                         <div>
-                            <div id="DeclareDoRebanhoTxt_Linha">
-                                <h2 id="DeclareDoRebanho-titulo">Cartao de Vacina</h2>
-                                <span id="DeclareDoRebanho-linha"></span>
+                            <div id="blocoTitulo-vacina">
+                                <h2 id="blocoTituloTxt-vacina">Cartao de Vacina</h2>
+                                <span id="blocoTituloLine-vacina">
+                                    <Fab id="printIconAddIcon"
+                                        component={Link}
+                                        to="/cadastroVacina/CadastroVacina"
+                                    >
+                                        <button id="btPrintIconAddIcon">
+                                            <AddIcon />
+                                        </button>
+                                    </Fab>
+                                </span>
                             </div>
 
                             <div id="blocoVacinas">
@@ -125,11 +128,15 @@ const meuGado = (): ReactElement => {
                                     <MdCoronavirus size={80} style={{}} />
                                     <h1>Virus 4</h1>
                                 </Grid>
-                                <Grid id="vacinas">
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 5</h1>
-                                </Grid>
                             </div>
+                        </div>
+                        <div id="button">
+                            <Button
+                                variant="contained"
+                                color="inherit"
+                                component={Link}
+                                to="/animals/list"
+                            >Voltar</Button>
                         </div>
                     </section>
                 </div>
