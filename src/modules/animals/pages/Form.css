@@ -1,3 +1,26 @@
+#Block-Txt-Line-Form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1100px;
+    height: 90px;
+}
+#Block-Txt-Form{
+    color: var(--cor005);
+    padding: 10px 10px;
+    margin-right: 5%;
+    width: 45%;
+    font-size: 22px;
+}
+#Block-Line-Form{
+    background-color: var(--cor007);
+    display: flex;
+    height: 3px;
+    width: 100%;
+    margin-top: 8px;
+    margin-right: 5px;
+    margin-left: -60px;
+}
 #AnimalRegister-Form{
     margin-top: 0%;
 }

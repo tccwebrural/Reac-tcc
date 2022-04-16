@@ -28,9 +28,9 @@ const EditAnimalData = (): ReactElement => {
         }}
       >
         <div className="MainBlock">
-        <div className="Block-Txt-Line">
-          <h2 className="Block-Txt">Minha Criação &gt; Atualizar Gado</h2>
-          <span className="Block-Line"></span>
+        <div id="Block-Txt-Line-EditAnimalData">
+          <h2 id="Block-Txt-EditAnimalData">Minha Criação &gt; Atualizar Gado</h2>
+          <span id="Block-Line-EditAnimalData"></span>
         </div>
 
         <form id="Block-EditAnimalData">

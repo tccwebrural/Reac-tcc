@@ -140,15 +140,15 @@ const List = (): ReactElement => {
   return (
     <>
       <div className="MainBlock">
-        <div className="Block-Txt-Line">
-          <h2 className="Block-Txt">Minha Criação</h2>
-          <span className="Block-Line">
+        <div id="Block-Txt-Line-List">
+          <h2 id="Block-Txt-List">Minha Criação</h2>
+          <span id="Block-Line-List">
             <abbr title="Adicionar Animal">
               <Fab
                 id="AddIcon"
                 component={Link}
                 to="/animals/form"
-                style={{ width: 45, height: 45 }}
+               
               >
                 <AddIcon />
               </Fab>

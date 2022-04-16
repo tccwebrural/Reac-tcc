@@ -1,14 +1,15 @@
-import React, { ReactElement } from "react";
-import { Box, Typography } from "@mui/material";
+import React, { ReactElement } from "react"
+import { Box, Typography } from "@mui/material"
 
-import "./HomePrivate.css";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import "./HomePrivate.css"
+import "../../../src/style.css"
+import Table from "@mui/material/Table"
+import TableBody from "@mui/material/TableBody"
+import TableCell from "@mui/material/TableCell"
+import TableContainer from "@mui/material/TableContainer"
+import TableHead from "@mui/material/TableHead"
+import TableRow from "@mui/material/TableRow"
+import Paper from "@mui/material/Paper"
 
 function createData(
   periodo: Number,
@@ -36,9 +37,9 @@ const Home = (): ReactElement => {
     <>
       <main>
         <div className="MainBlock">
-          <div className="Block-Txt-Line">
-            <h2 className="Block-Txt">Meus Relatórios</h2>
-            <span className="Block-Line"></span>
+          <div id="Block-Txt-Line-HomePrivate">
+            <h2 id="Block-Txt-HomePrivate">Meus Relatórios</h2>
+            <span id="Block-Line-HomePrivate"></span>
           </div>
           <Box id="Block-MyReports">
             <div>
@@ -46,32 +47,52 @@ const Home = (): ReactElement => {
                 <Table sx={{ maxWidth: 1000 }}>
                   <TableHead>
                     <TableRow>
-                      <TableCell className="Table-MyReports-Itens-txt">Período </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">
-                        Bezerros{" "}
-                        <p className="txt_parenteses">de 0 à 6 meses</p>
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        Período{" "}
                       </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        Bezerros
+                        <p className="Itens-txt-caption">de 0 à 6 meses</p>
+                      </TableCell>
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
                         Desmamados
                         <p className="Itens-txt-caption">de 7 à 12 meses</p>
                       </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">
-                        Garrotes{" "}
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        Garrotes
                         <p className="Itens-txt-caption">de 13 à 24 meses</p>
                       </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">
-                        Novilhos{" "}
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        Novilhos
                         <p className="Itens-txt-caption">de 25 à 36 meses</p>
                       </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">
-                        Acima de <p className="Itens-txt-caption">de 36 meses </p>
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        Acima de{" "}
+                        <p className="Itens-txt-caption">de 36 meses </p>
                       </TableCell>
-                      <TableCell className="Table-MyReports-Itens-txt">TOTAL</TableCell>
+                      <TableCell
+                        style={{ color: "var(--cor005)", fontSize: 18 }}
+                      >
+                        TOTAL
+                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {rows.map((row, i) => (
-                      <TableRow key={i}
+                      <TableRow
+                        key={i}
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}

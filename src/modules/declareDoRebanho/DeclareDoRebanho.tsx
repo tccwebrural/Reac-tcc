@@ -1,13 +1,13 @@
-import React, { ReactElement } from "react"
-import { Box, Typography } from "@mui/material"
-import { BsPrinter } from "react-icons/bs"
-import "./DeclareDoRebanho.css"
-import "../../../src/style.css"
-import Checkbox from "@mui/material/Checkbox"
-import vaca from "../../images/vaca-sem-chifre.png"
-import Fab from "@mui/material/Fab"
-import AddIcon from "@mui/icons-material/Add"
-import TextField from "@mui/material/TextField"
+import React, { ReactElement } from "react";
+import { Box, Typography } from "@mui/material";
+import { BsPrinter } from "react-icons/bs";
+import "./DeclareDoRebanho.css";
+import "../../../src/style.css";
+import Checkbox from "@mui/material/Checkbox";
+import vaca from "../../images/vaca-sem-chifre.png";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import TextField from "@mui/material/TextField";
 
 const DeclareDoRebanho = (): ReactElement => {
   function imprimir() {
@@ -30,194 +30,188 @@ const DeclareDoRebanho = (): ReactElement => {
           justifyContent: "center",
         }}
       >
-        {" "}
         <div className="MainBlock">
-          <div className="Block-Txt-Line">
-            <h2 className="Block-Txt">Declare do Rebanho</h2>
-            <span className="Block-Line">
+          <div id="Block-Txt-Line-CattleDeclaration">
+            <h2 id="Block-Txt-CattleDeclaration">Declare do Rebanho</h2>
+            <span id="Block-Line-CattleDeclaration">
               <Fab id="printIcon" onClick={imprimir}>
-                  <BsPrinter size={20} />
+                <BsPrinter size={20} />
               </Fab>
             </span>
           </div>
 
           <div>
-          <p className="CattleDeclaration">Dados do Proprietário</p> {/* declare do gado */}
-            <div id="OwnerData">                              {/* dados do proprietario */}
-             
+            <p className="CattleDeclaration">Dados do Proprietário</p>          {/* declare do gado */}
+            <div id="OwnerData">                                                {/* dados do proprietario */}
               <TextField
-                  label="Nome do Proprietário"
-                  id="standard-size-normal"
-                  defaultValue={userName}
-                  variant="standard"
-                  sx={{ width:"100%"}} 
-                                 
-                />
-              
-                <TextField
-                  label="E-mail"
-                  id="standard-size-normal"
-                  defaultValue={email}
-                  variant="standard"
-                  sx={{ width:"50%"}} 
-                />
-                <TextField
-                  label="CPF"
-                  id="standard-size-small"
-                  defaultValue={cpf}
-                  size="small"
-                  variant="standard"
-                  sx={{marginTop:0.3, width:"50%"}}  
-                /><br/>
-                <TextField
-                  label="Telefone"
-                  id="standard-size-small"
-                  defaultValue={tel}
-                  size="small"
-                  variant="standard"
-                  sx={{marginTop:0.3, width:"50%"}} 
-                />
-                <TextField
-                  label="Nome da Fazenda"
-                  id="standard-size-normal"
-                  defaultValue={nameFarm}
-                  variant="standard"
-                  sx={{ width:"50%"}} 
-                />
+                label="Nome do Proprietário"
+                defaultValue={userName}
+                variant="standard"
+                sx={{ width: "100%" }}
+              />
+              <TextField
+                label="E-mail"
+                defaultValue={email}
+                variant="standard"
+                sx={{ width: "50%" }}
+              />
+              <TextField
+                label="CPF"
+                defaultValue={cpf}
+                size="small"
+                variant="standard"
+                sx={{ marginTop: 0.3, width: "50%" }}
+              />
+              <br />
+              <TextField
+                label="Telefone"
+                defaultValue={tel}
+                size="small"
+                variant="standard"
+                sx={{ marginTop: 0.3, width: "50%" }}
+              />
+              <TextField
+                label="Nome da Fazenda"
+                defaultValue={nameFarm}
+                variant="standard"
+                sx={{ width: "50%" }}
+              />
             </div>
           </div>
 
           <div>
             <p className="CattleDeclaration">Rebanho Bovino Atual Existente</p>
-            <div id="RebanhoBovinoAtual">
-              <div className="Rebanho-AtualExistente">
-                <p id="blocosRebanhoBovAtualExitente">
-                  Nascimento<br/>(de 0 à 6 meses)
+            <div className="CurrentCattleHerd">                                 {/*rebanho bovino atual */}
+              <div className="Block-CurrentCattleHerd">                         {/*bloco rebanho bovino atual */}
+                <p className="SmallBlocks-CurrentCattleHerd">                   {/*blocos pequenos do rebanho bovino atual existente*/}
+                  Nascimento
+                  <br />
+                  (de 0 à 6 meses)
                 </p>
-                <div id="MF">
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>{" "}
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>
               </div>
-
-              <div className="Rebanho-AtualExistente">
-                <p id="blocosRebanhoBovAtualExitente">
-                  Animais Desmamados<br/>(de 7 à 12 meses)
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocks-CurrentCattleHerd">
+                  Animais Desmamados
+                  <br />
+                  (de 7 à 12 meses)
                 </p>
-                <div id="MF">
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>{" "}
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>{" "}
               </div>
-
-              <div className="Rebanho-AtualExistente">
-                <p id="blocosRebanhoBovAtualExitente">
-                  Garrotes<br/>(de 13 à 24 meses)
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocks-CurrentCattleHerd">
+                  Garrotes
+                  <br />
+                  (de 13 à 24 meses)
                 </p>
-                <div id="MF">
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>{" "}
+                <div className="FieldMF-alt-Left"> </div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>{" "}
               </div>
-
-              <div className="Rebanho-AtualExistente">
-                <p id="blocosRebanhoBovAtualExitente">
-                  Novilhos<br/>(de 25 à 36 meses)
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocks-CurrentCattleHerd">
+                  Novilhos
+                  <br />
+                  (de 25 à 36 meses)
                 </p>
-                <div id="MF">
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>{" "}
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>{" "}
               </div>
-
-              <div className="Rebanho-AtualExistente">
+              <div className="Block-CurrentCattleHerd">
                 <p id="total">Total de Bovinos</p>
-                <div id="MF">
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>{" "}
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>{" "}
               </div>
             </div>
           </div>
           <div>
-            <p id="DeclareDoRebanho-Mortalidade">
-              Mortalidade de Bovinos<br/>(ainda não declarados)
+            <p id="CurrentCattleHerd-Mortality">
+              Mortalidade de Bovinos
+              <br />
+              (ainda não declarados)
             </p>
-            <div id="RebanhoBovinoAtual">
-              <div className="Rebanho-AtualExistente">
-                <p id="causas-txt">CAUSAS</p>
-                <div id="Causas">
-                  <p className="txt-consumoProprio">Consumo própio</p>
-                  <p className="txt-ObitoCausasDiv">Obitos causas diversas</p>
+            <div className="CurrentCattleHerd">
+              <div className="Block-CurrentCattleHerd">
+                <p id="causes-txt">CAUSAS</p>
+                <div id="causes">
+                  <p id="txt-ownConsumption">Consumo própio</p>
+                  <p id="txt-DeathVariousCauses">Obitos causas diversas</p>
                 </div>
               </div>
-              <div className="Rebanho-AtualExistente">
-                <p id="mortalidade">Até 6 meses</p>
-
-                <div id="MF">
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocksMortality">Até 6 meses</p>
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>{" "}
               </div>
-              <div className="Rebanho-AtualExistente">
-                <p id="mortalidade">De 7 à 12 meses</p>
-
-                <div id="MF">
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocksMortality">De 7 à 12 meses</p>
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>
               </div>
-              <div className="Rebanho-AtualExistente">
-                <p id="mortalidade">De 13 a 24 meses</p>
-
-                <div id="MF">
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocksMortality">De 13 a 24 meses</p>
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>
               </div>
-              <div className="Rebanho-AtualExistente">
-                <p id="mortalidade">Mais de 24 meses</p>
-
-                <div id="MF">
+              <div className="Block-CurrentCattleHerd">
+                <p className="SmallBlocksMortality">Mais de 24 meses</p>
+                <div className="MF">
                   <p className="M-txt">Macho</p>
                   <p className="F-txt">Fêmea</p>
                 </div>
-                <div className="CampoMFalt-Left"></div>
-                <div className="CampoMFalt-Rigth"></div>
-                <div className="CampoMFDown-left"></div>
-                <div className="CampoMFDown-Rigth"></div>
+                <div className="FieldMF-alt-Left"></div>
+                <div className="FieldMF-alt-Rigth"></div>
+                <div className="FieldMF-Down-left"></div>
+                <div className="FieldMF-Down-Rigth"></div>
               </div>
             </div>
           </div>
@@ -225,8 +219,8 @@ const DeclareDoRebanho = (): ReactElement => {
             <p className="CattleDeclaration">
               Marque a principal finalidade do seu rebanho bovino
             </p>
-            <div id="DeclareDoRebanho-Finalidade">
-              <div id="Corte-Leite">
+            <div id="CattleDeclaration-Goal">
+              <div id="BeefCattle-DairyCattle">
                 <div>
                   <p>Corte</p>
                   <Checkbox
@@ -240,10 +234,10 @@ const DeclareDoRebanho = (): ReactElement => {
                   <p>Leite</p>
                   <Checkbox
                     {...label}
-                    sx={{ "& .MuiSvgIcon-root": { fontSize: 28} }}
-                    style={{marginRight:-35, marginTop:-80}}
+                    sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    style={{ marginRight: -35, marginTop: -80 }}
                   />
-                  <img id="imgVaca-DeclareDoRebanho" src={vaca} />
+                  <img id="CowImage-CattleDeclaration" src={vaca} />
                 </div>
               </div>
             </div>

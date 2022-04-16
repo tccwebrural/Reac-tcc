@@ -35,16 +35,16 @@ const Perfil = (): ReactElement => {
           justifyContent: "center",
         }}
       >
-        <div id="BlocoPerfil">
-          <div id="MeuPerfilTxt_Linha">
-            <h2 id="MeuPerfil-titulo">Meu Perfil</h2>
-            <span id="MeuPerfil-linha"></span>
+        <div id="Block-Profile">
+          <div id="Block-Txt-Line-Profile">
+            <h2 id="Block-Txt-Profile">Meu Perfil</h2>
+            <span id="Block-Line-Profile"></span>
           </div>
-          <div id="perfil">
-            <div id="bloPerfil">
+          <div id="Profile">
+            <div id="SmallBlock-Profile">
               <div>
                 <Button
-                  id="menuPerfil"
+                  id="menuProfile"
                   aria-controls={open ? "basic-menu" : undefined}
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
@@ -67,63 +67,47 @@ const Perfil = (): ReactElement => {
                 </Menu>
               </div>
 
-              <div id="imgPerfil">
+              <div id="imgProfile">
                 <fieldset id="img">
                   <img id="imgUser" src={imgUser} />
                 </fieldset>
               </div>
 
-              <span id="blocoNomePerfil">
-                <input id="nomePerfil" defaultValue={userName} />
+              <span id="BlockNameProfile">
+                <input id="nameProfile" defaultValue={userName} />
               </span>
-              <div id="camposPerfil">
-                {/* <label className="labelCamposPerfil">CPF: </label>
-                <input className="txt-camposPerfil" id="InputCpf" value={cpf} />
-                <br />
-                <label className="labelCamposPerfil">E-mail: </label>
-                <input className="txt-camposPerfil" id="InputEmail" value={email}/>
-                <br />
-                <label className="labelCamposPerfil">Telefone: </label>
-                <input className="txt-camposPerfil" id="InputTel" value={tel} />
-                <br />
-                <label className="labelCamposPerfil">Nome da Fazenda: </label>
-                <input className="txt-camposPerfil" id="InputNameFarm" value={nameFarm} />
-                <br /> */}
+              <div id="FieldsProfile">
                 <TextField
                   label="CPF"
-                  id="standard-size-small"
                   defaultValue={cpf}
                   size="small"
                   variant="standard"
-                  className="txt-camposPerfil"
+                  className="txt-FieldsProfile"
                 />
                 <TextField
                   label="E-mail"
-                  id="standard-size-normal"
                   defaultValue={email}
                   variant="standard"
-                  className="txt-camposPerfil"
+                  className="txt-FieldsProfile"
                 />
                 <TextField
                   label="Telefone"
-                  id="standard-size-small"
                   defaultValue={tel}
                   size="small"
                   variant="standard"
-                  className="txt-camposPerfil"
+                  className="txt-FieldsProfile"
                 />
                 <TextField
                   label="Nome da Fazenda"
-                  id="standard-size-normal"
                   defaultValue={nameFarm}
                   variant="standard"
-                  className="txt-camposPerfil"
+                  className="txt-FieldsProfile"
                 />
                 <div></div>
               </div>
             </div>
           </div>
-          <img id="imgRodape-Perfil" src={rodape} />
+          <img id="imgFooter-Profile" src={rodape} />
         </div>
       </Box>
     </>

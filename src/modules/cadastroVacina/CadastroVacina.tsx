@@ -23,11 +23,11 @@ const CadastroVacina = (): ReactElement => {
         }}
       >
         <div className="MainBlock">
-          <div className="Block-Txt-Line">
-            <h2 className="Block-Txt">
+          <div id="Block-Txt-Line-VaccineRegister">
+            <h2 id="Block-Txt-VaccineRegister">
               Minha Criação &gt; Visualizar Gado &gt; Adicionar Vacina
             </h2>
-            <span className="Block-Line"></span>
+            <span id="Block-Line-VaccineRegister"></span>
           </div>
 
           <div className="Block-AnimalData">

@@ -29,9 +29,9 @@ const FormAnimalPage = (): ReactElement => {
   return (
     <>
       <div className="MainBlock">
-        <div className="Block-Txt-Line">
-          <h2 className="Block-Txt">Minha Criação &gt; Cadastrar Gado</h2>
-          <span className="Block-Line"></span>
+        <div id="Block-Txt-Line-Form">
+          <h2 id="Block-Txt-Form">Minha Criação &gt; Cadastrar Gado</h2>
+          <span id="Block-Line-Form"></span>
         </div>
         <Box sx={{ "& .MuiTextField-root": { m: 1, width: "33ch" } }}>
           <Grid>
