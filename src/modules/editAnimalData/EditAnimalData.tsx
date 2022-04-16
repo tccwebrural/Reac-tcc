@@ -41,7 +41,7 @@ const EditAnimalData = (): ReactElement => {
 
           >
 
-              <FormControl sx={{ m: 1, minWidth: 221 }}>
+              <FormControl sx={{ m: 1, minWidth: 260 }}>
               <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
               <Select
                 label="Grouping"
@@ -57,7 +57,7 @@ const EditAnimalData = (): ReactElement => {
               </Select>
             </FormControl>
               <TextField
-                style={{ width: 250 }}
+                style={{ width: 270 }}
                 label="Identificador"
                 InputLabelProps={{
                   shrink: true,
@@ -79,7 +79,7 @@ const EditAnimalData = (): ReactElement => {
                 }}
               />
              
-              <FormControl sx={{ m: 1, minWidth: 231 }}>
+              <FormControl sx={{ m: 1, minWidth: 271 }}>
               <InputLabel htmlFor="type">Tipo</InputLabel>
               <Select
                 label="Grouping"
@@ -91,7 +91,7 @@ const EditAnimalData = (): ReactElement => {
             </FormControl>
 
                <TextField
-                style={{ width: 260 }}
+                style={{ width: 279 }}
                 label="Peso"
                 type="password"
                 InputLabelProps={{
@@ -108,11 +108,12 @@ const EditAnimalData = (): ReactElement => {
             <div id="Btns-Update-Cancel-EditAnimalData">
               <Grid item sx={{ margin: 1 }}>
               <Button
-                      style={{marginRight: 4,padding:3,paddingLeft:10, paddingRight:10}}
+                      sx={{ margin: 1 }}
                       variant="contained"
                       color="error"
                       component={Link}
                       to="/animals/list"
+                      
                     >
                       Cancelar
                     </Button>
@@ -121,6 +122,7 @@ const EditAnimalData = (): ReactElement => {
                       variant="contained"
                       color="success"
                       onClick={salvarDadosAnimal}
+                      sx={{paddingTop:2.3,paddingBottom:2.3,}}
                     >
                       Atualizar
                     </Button>

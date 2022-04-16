@@ -7,15 +7,4 @@
     padding: 1px;
     padding-bottom: 3%;
 }
-.Btns-SaveCancel-Form{
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    height: 220px;
 
-}
-.Block-AnimalData{
-    width: 900px;
-    height: 400px;
-    margin: auto;
-}

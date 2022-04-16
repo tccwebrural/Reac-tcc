@@ -30,7 +30,7 @@ const CadastroVacina = (): ReactElement => {
             <span id="Block-Line-VaccineRegister"></span>
           </div>
 
-          <div className="Block-AnimalData">
+          <div id="Block-AnimalData">
             <Box
               sx={{
                 "& .MuiTextField-root": { m: 1, width: "25ch" },
@@ -38,7 +38,7 @@ const CadastroVacina = (): ReactElement => {
             >
              
                 <TextField
-                  style={{ width: 180 }}
+                  style={{ width: 175 }}
                   label="Nome"
                   type="text"
                   InputLabelProps={{
@@ -104,7 +104,7 @@ const CadastroVacina = (): ReactElement => {
                   </fieldset>
                 </div>
 
-                <div id="Block-CalfImgae-CadastroVacina">
+                <div id="Block-CalfImage-CadastroVacina">
                   <img
                     id="CalfImgae-CadastroVacina"
                     src={bezerro}
@@ -124,10 +124,7 @@ const CadastroVacina = (): ReactElement => {
                       Cancelar
                     </Button>
 
-                    <Button variant="contained" color="success" sx={{
-                        paddingTop:2.2,
-                        paddingBottom:2.2,
-                      }}>
+                    <Button variant="contained" color="success" sx={{paddingTop:2.2,paddingBottom:2.2,}}>
                       Adicionar
                     </Button>
                   </Grid>

@@ -36,7 +36,7 @@ const FormAnimalPage = (): ReactElement => {
         <Box sx={{ "& .MuiTextField-root": { m: 1, width: "33ch" } }}>
           <Grid>
             <Item id="AnimalRegister-Form">
-              <FormControl sx={{ m: 1, minWidth: 221 }}>
+              <FormControl sx={{ m: 1, minWidth: 255 }}>
                 <InputLabel htmlFor="grouped-select">Categoria</InputLabel>
                 <Select label="Grouping" name="category">
                   <MenuItem value={1}>Vaca</MenuItem>
@@ -56,6 +56,7 @@ const FormAnimalPage = (): ReactElement => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                style={{ width: 268 }}
               />
 
               <TextField
@@ -65,6 +66,7 @@ const FormAnimalPage = (): ReactElement => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                style={{ width: 340 }}
               />
 
               <TextField
@@ -75,7 +77,7 @@ const FormAnimalPage = (): ReactElement => {
                 }}
                 name="birthday"
               />
-              <FormControl sx={{ m: 1, minWidth: 221 }}>
+              <FormControl sx={{ m: 1, minWidth: 270 }}>
                 <InputLabel htmlFor="type">Tipo</InputLabel>
                 <Select label="Grouping" name="type">
                   <MenuItem value={1}>Gado de Corte</MenuItem>
@@ -94,22 +96,16 @@ const FormAnimalPage = (): ReactElement => {
 
               <Stack direction="row" spacing={2}>
                 <Grid container justifyContent="flex-end">
-                  <Stack spacing={2} direction="row" sx={{ marginRight: 7.5 }}>
+                  <Stack spacing={2} direction="row" sx={{ marginRight: 1 }}>
                     <div id="Block-CowImage-Form">
                       <img id="CowImage-Form" src={vaca} alt="vaca" />
                     </div>
                     <div id="Block-CalfImage-Form">
                       <img id="CalfImage-Form" src={bezerro} alt="bezerro" />
                     </div>
-                    <div className="Btns-SaveCancel-Form">
+                    <div id="Btns-SaveCancel-Form">
                       <Button
-                        style={{
-                          marginRight: 4,
-                          paddingTop: 2.5,
-                          paddingBottom: 2.5,
-                          paddingLeft: 13,
-                          paddingRight: 13,
-                        }}
+                       sx={{ marginRight: 1 }}
                         variant="contained"
                         color="error"
                         component={Link}
@@ -118,7 +114,7 @@ const FormAnimalPage = (): ReactElement => {
                         Cancelar
                       </Button>
 
-                      <Button variant="contained" color="success">
+                      <Button variant="contained" color="success" sx={{paddingTop:2.3,paddingBottom:2.3}}>
                         Salvar
                       </Button>
                     </div>
