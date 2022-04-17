@@ -6,9 +6,6 @@ import { BsPrinter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
 import vaca1 from "../../imagens/vaca1.png";
-import vaca2 from "../../imagens/vaca2.png";
-import vaca3 from "../../imagens/vaca3.png";
-import vaca4 from "../../imagens/vaca4.png";
 
 
 function imprimir() {
@@ -26,13 +23,11 @@ const meuGado = (): ReactElement => {
                     <div id="blocoTitulo-criacao">
                         <h2 id="blocoTituloTxt-criacao">Minha Criação &gt; Gado</h2>
                         <span id="blocoTituloLine-criacao">
-                            <Fab id="printIcon">
-                                <button id="btPrintIcon" type="submit" onClick={imprimir}>
-                                    <abbr title="Imprimir">
-                                        <BsPrinter size={20} />
-                                    </abbr>
-                                </button>
-                            </Fab>
+                            <abbr title="Imprimir">
+                                <Fab id="icone" onClick={imprimir}>
+                                    <BsPrinter size={20} />
+                                </Fab>
+                            </abbr>
                         </span>
                     </div>
 
@@ -124,28 +119,30 @@ const meuGado = (): ReactElement => {
                         </div>
 
                         <div id="blocoVacinas">
+                            
+                                <Grid id="vacinas">
+                                    <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
+                                        <MdCoronavirus size={80} style={{}} />
+                                        <abbr title="Detalhes da vacina"> <h1>Virus 1</h1></abbr>
+                                    </Button>
+                                </Grid>
+                            
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
                                     <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 1</h1>
+                                    <abbr title="Detalhes da vacina"> <h1>Virus 2</h1></abbr>
                                 </Button>
                             </Grid>
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
                                     <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 2</h1>
+                                    <abbr title="Detalhes da vacina"> <h1>Virus 3</h1></abbr>
                                 </Button>
                             </Grid>
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
                                     <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 3</h1>
-                                </Button>
-                            </Grid>
-                            <Grid id="vacinas">
-                                <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <h1>Virus 4</h1>
+                                    <abbr title="Detalhes da vacina"> <h1>Virus 4</h1></abbr>
                                 </Button>
                             </Grid>
                         </div>
