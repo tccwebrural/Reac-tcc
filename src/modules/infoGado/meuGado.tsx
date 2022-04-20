@@ -6,6 +6,7 @@ import { BsPrinter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
 import vaca1 from "../../imagens/vaca1.png";
+import footer from "../../imagens/footer.png";
 
 
 function imprimir() {
@@ -14,6 +15,9 @@ function imprimir() {
 
 const meuGado = (): ReactElement => {
     return (<>
+    <div id="imgFooter">
+        <img src={footer} alt="Erro..." />
+    </div>
         <Container sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
             <div className="imgGados">
                 <img src={vaca1} alt="Erro..." />
@@ -55,8 +59,7 @@ const meuGado = (): ReactElement => {
                                         <InputLabel>Tipo</InputLabel>
                                         <Select
                                             label="Grouping"
-                                            name="tipo"
-
+                                            name="type"
                                         >
                                             <MenuItem value={1}>Gado de Corte</MenuItem>
                                             <MenuItem value={2}>Gado Leitero</MenuItem>
@@ -84,9 +87,8 @@ const meuGado = (): ReactElement => {
                                 </Grid>
                                 <Grid sx={{ margin: "1%" }}>
                                     <FormControl sx={{ minWidth: 100 }}>
-                                        <InputLabel htmlFor="type">Sexo</InputLabel>
+                                        <InputLabel>Sexo</InputLabel>
                                         <Select
-                                            label="Grouping"
                                             name="type"
                                         >
                                             <MenuItem value={1}>Macho</MenuItem>
@@ -122,27 +124,27 @@ const meuGado = (): ReactElement => {
                             
                                 <Grid id="vacinas">
                                     <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
-                                        <MdCoronavirus size={80} style={{}} />
-                                        <abbr title="Detalhes da vacina"> <h1>Virus 1</h1></abbr>
+                                    <abbr title="Detalhes da vacina"><MdCoronavirus size={80} style={{}} /></abbr>
+                                         <h1>Virus 1</h1>
                                     </Button>
                                 </Grid>
                             
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <abbr title="Detalhes da vacina"> <h1>Virus 2</h1></abbr>
+                                    <abbr title="Detalhes da vacina"><MdCoronavirus size={80} style={{}} /></abbr>
+                                     <h1>Virus 2</h1>
                                 </Button>
                             </Grid>
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <abbr title="Detalhes da vacina"> <h1>Virus 3</h1></abbr>
+                                    <abbr title="Detalhes da vacina"><MdCoronavirus size={80} style={{}} /></abbr>
+                                     <h1>Virus 3</h1>
                                 </Button>
                             </Grid>
                             <Grid id="vacinas">
                                 <Button component={Link} to="/infoGado/formVacina" sx={{ display: "flex", flexDirection: "column" }}>
-                                    <MdCoronavirus size={80} style={{}} />
-                                    <abbr title="Detalhes da vacina"> <h1>Virus 4</h1></abbr>
+                                    <abbr title="Detalhes da vacina"><MdCoronavirus size={80} style={{}} /></abbr>
+                                     <h1>Virus 4</h1>
                                 </Button>
                             </Grid>
                         </div>

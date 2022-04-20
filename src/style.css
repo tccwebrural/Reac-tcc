@@ -45,3 +45,10 @@
     margin: 20px 0 20px;
     padding: 0px;
 }
+
+/* Retira as setar do Type="number" */
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}/* Retira as setar do Type="number" */

@@ -29,16 +29,11 @@ const Header = (props: any): ReactElement => {
 
 	return (
 		<>
-			<Box
-				sx={{
-					width: "100%",
-					height: "auto",
-				}}
-			>
-				<Container maxWidth="xl"  id="cabecalho">
+			<Box id="cabecalho">
+				<Container maxWidth="xl" id="menu-cabecalho">
 					<Toolbar disableGutters>
 						{/* WEB */}
-						<Typography 
+						<Typography
 							variant="h6"
 							noWrap
 							sx={{
@@ -46,9 +41,9 @@ const Header = (props: any): ReactElement => {
 								display: { xs: "none", md: "flex" },
 							}}
 						>
-							<img id="imgLogo-Header" src={logoPequena}/>
+							<img id="imgLogo-Header" src={logoPequena} />
 						</Typography>
-						<Box  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+						<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 							<IconButton
 								size="large"
 								aria-label="account of current user"
@@ -102,8 +97,8 @@ const Header = (props: any): ReactElement => {
 						>
 							{APP_TITLE}
 						</Typography>
-						<Box  sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-							<Box 
+						<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+							<Box
 								sx={{
 									display: "flex",
 									flexDirection: "row",
